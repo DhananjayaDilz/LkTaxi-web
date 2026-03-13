@@ -2,6 +2,8 @@ const leaders = [
   {
     name: "T.A Uddeepana",
     position: "Founder & Managing Director",
+    image: "/ach.webp",
+    imagePosition: "center 15%",
     description:
       "T.A Uddeepana is the founder of LKTaxi and leads the company with a strong vision of providing reliable and professional taxi services across Sri Lanka. His focus is on customer satisfaction, service quality, and creating a trusted transportation experience for travelers visiting Sri Lanka.",
     initials: "TU",
@@ -9,6 +11,8 @@ const leaders = [
   {
     name: "Dhanajaya Wijerathna",
     position: "Co-Founder & Operations Manager",
+    image: "/dhn.webp",
+    imagePosition: "center center",
     description:
       "Dhanajaya Wijerathna manages daily operations at LKTaxi, ensuring every ride is organized smoothly and efficiently. His experience in tourism and transport coordination helps provide customers with comfortable vehicles and friendly professional drivers.",
     initials: "DW",
@@ -53,7 +57,19 @@ const LeadershipSection = () => {
                   className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-[#febe03]/60 flex items-center justify-center
                                bg-gradient-to-br from-[#1e2530] to-[#13171c] text-[#febe03] text-3xl font-bold select-none"
                 >
-                  {leader.initials}
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: leader.imagePosition }}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = "none";
+                      const fallback = target.nextElementSibling as HTMLSpanElement | null;
+                      if (fallback) fallback.style.display = "inline";
+                    }}
+                  />
+                  <span style={{ display: "none" }}>{leader.initials}</span>
                 </div>
               </div>
 

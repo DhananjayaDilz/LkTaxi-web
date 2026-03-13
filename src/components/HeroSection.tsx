@@ -8,7 +8,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { ridePricing, tourPricing, locations, vehicles, generateWhatsAppURL, getRouteKey } from "@/data/pricing";
+import { calculateRideFare, tourPricing, locations, vehicles, generateWhatsAppURL } from "@/data/pricing";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -75,14 +75,13 @@ function BookRideForm() {
   });
   const [vehicle, setVehicle] = useState("");
 
-  const price = useMemo(() => {
+  const fare = useMemo(() => {
     if (!pickup || !drop || !vehicle) return null;
-    const key = getRouteKey(pickup, drop);
-    return ridePricing[key]?.[vehicle] ?? null;
+    return calculateRideFare(pickup, drop, vehicle);
   }, [pickup, drop, vehicle]);
 
   const handleBook = () => {
-    const msg = `🚕 *Book Ride - LKTaxi*\n\n📍 Pickup: ${pickup}\n📍 Drop: ${drop}\n📅 Date: ${format(date, "PPP")}\n⏰ Time: ${time}\n🚗 Vehicle: ${vehicle}${price ? `\n💰 Price: LKR ${price.toLocaleString()}` : ""}`;
+    const msg = `🚕 *Book Ride - LKTaxi*\n\n📍 Pickup: ${pickup}\n📍 Drop: ${drop}\n📅 Date: ${format(date, "PPP")}\n⏰ Time: ${time}\n🚗 Vehicle: ${vehicle}${fare ? `\n💰 Price: LKR ${fare.price.toLocaleString()}` : ""}`;
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 
@@ -104,10 +103,11 @@ function BookRideForm() {
       </div>
       <SelectField label="Vehicle Type" icon={<Car className="w-4 h-4" />} value={vehicle} onValueChange={setVehicle} options={[...vehicles]} />
       
-      {price !== null && (
+      {fare !== null && (
         <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
           <p className="text-sm text-muted-foreground">Estimated Price</p>
-          <p className="text-2xl font-bold text-primary">LKR {price.toLocaleString()}</p>
+          <p className="text-2xl font-bold text-primary mt-1">LKR {fare.price.toLocaleString()}</p>
+          <p className="text-xs text-muted-foreground mt-2">Price can be negotiable.</p>
         </div>
       )}
 
