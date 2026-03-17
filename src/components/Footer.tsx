@@ -50,7 +50,7 @@ const Footer = () => (
               <a href="tel:+94705000526" className="hover:text-primary transition-colors">+94 70 5000 526</a>
             </li>
             <li>
-              <a href="mailto:info@slgotravel.com" className="hover:text-primary transition-colors">info@slgotravel.com</a>
+              <a href="mailto:hi.lktaxi@gmail.com" className="hover:text-primary transition-colors">hi.lktaxi@gmail.com</a>
             </li>
           </ul>
           <div className="flex gap-3 mt-4">

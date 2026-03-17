@@ -112,6 +112,62 @@
   }
 }
 
+@keyframes shared-tab-glow {
+  0% { box-shadow: 0 0 0 0 hsla(45, 99%, 50%, 0.45); }
+  50% { box-shadow: 0 0 0 8px hsla(45, 99%, 50%, 0); }
+  100% { box-shadow: 0 0 0 0 hsla(45, 99%, 50%, 0); }
+}
+
+@keyframes shared-attract {
+  0%, 100% { box-shadow: 0 0 0 1px hsla(45, 99%, 50%, 0.3), 0 0 12px hsla(45, 99%, 50%, 0.15); }
+  50% { box-shadow: 0 0 0 2px hsla(45, 99%, 50%, 0.5), 0 0 20px hsla(45, 99%, 50%, 0.3); }
+}
+
+@keyframes shared-spotlight {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shared-price-glow {
+  0% { box-shadow: 0 0 0 0 hsla(45, 99%, 50%, 0.2); transform: translateY(0); }
+  50% { box-shadow: 0 10px 25px -12px hsla(45, 99%, 50%, 0.45); transform: translateY(-1px); }
+  100% { box-shadow: 0 0 0 0 hsla(45, 99%, 50%, 0.2); transform: translateY(0); }
+}
+
+.shared-safari-tab-glow {
+  animation: shared-tab-glow 2.4s ease-in-out infinite;
+}
+
+.shared-safari-attract {
+  animation: shared-attract 2.2s ease-in-out infinite;
+}
+
+.shared-safari-panel {
+  animation: fade-in 0.45s ease-out;
+}
+
+.shared-safari-spotlight {
+  border: 1px solid hsl(var(--primary) / 0.28);
+  background-image: linear-gradient(120deg, hsl(var(--primary) / 0.08), hsl(var(--primary) / 0.2), hsl(var(--primary) / 0.08));
+  background-size: 220% 220%;
+  animation: shared-spotlight 4.5s ease-in-out infinite;
+}
+
+.shared-safari-price-glow {
+  animation: shared-price-glow 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shared-safari-tab-glow,
+  .shared-safari-attract,
+  .shared-safari-panel,
+  .shared-safari-spotlight,
+  .shared-safari-price-glow {
+    animation: none;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

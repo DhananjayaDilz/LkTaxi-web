@@ -12,7 +12,7 @@ import { countries, generateWhatsAppURL } from "@/data/pricing";
 import safariBg from "@/assets/safari-bg.jpg";
 
 const SafariSection = () => {
-  const [activeTab, setActiveTab] = useState<"full" | "half">("full");
+  const [activeTab, setActiveTab] = useState<"full" | "half" | "shared">("full");
 
   return (
     <section id="safari" className="section-padding relative">
@@ -32,22 +32,28 @@ const SafariSection = () => {
 
         <div className="max-w-3xl mx-auto">
           <div className="flex mb-6">
-            {(["full", "half"] as const).map((t) => (
+            {(["full", "half", "shared"] as const).map((t) => (
               <button
                 key={t}
                 onClick={() => setActiveTab(t)}
                 className={cn(
                   "flex-1 py-3 px-4 font-semibold rounded-t-lg transition-colors text-sm",
-                  activeTab === t ? "bg-primary text-primary-foreground" : "bg-secondary/50 text-secondary-foreground/70 hover:text-secondary-foreground"
+                  activeTab === t
+                    ? t === "shared"
+                      ? "bg-primary text-primary-foreground shared-safari-tab-glow"
+                      : "bg-primary text-primary-foreground"
+                    : t === "shared"
+                    ? "bg-secondary/50 text-primary hover:text-primary shared-safari-attract"
+                    : "bg-secondary/50 text-secondary-foreground/70 hover:text-secondary-foreground"
                 )}
               >
-                {t === "full" ? "Full Day Safari" : "Half Day Safari"}
+                {t === "full" ? "Full Day Safari" : t === "half" ? "Half Day Safari" : "Shared Safari"}
               </button>
             ))}
           </div>
 
           <div className="bg-card rounded-b-xl rounded-tr-xl p-6 md:p-8">
-            {activeTab === "full" ? <FullDaySafari /> : <HalfDaySafari />}
+            {activeTab === "full" ? <FullDaySafari /> : activeTab === "half" ? <HalfDaySafari /> : <SharedSafari />}
           </div>
         </div>
       </div>
@@ -187,6 +193,57 @@ function HalfDaySafari() {
 
       <Button onClick={handleBook} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-12">
         <Send className="w-4 h-4 mr-2" /> Book Safari via WhatsApp
+      </Button>
+    </div>
+  );
+}
+
+function SharedSafari() {
+  const [adults, setAdults] = useState(1);
+  const [children, setChildren] = useState(0);
+  const [country, setCountry] = useState("");
+  const [date, setDate] = useState<Date>(new Date());
+
+  const totalPeople = adults + children;
+
+  const handleBook = () => {
+    const msg = `🦁 *Shared Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\n👥 Adults: ${adults}\n👶 Children: ${children}\n👤 Total Guests: ${totalPeople}\n🌍 Country: ${country}\n\n✅ Option: Shared Safari Jeep\n\nPlease confirm seat availability and final price.`;
+    window.open(generateWhatsAppURL(msg), "_blank");
+  };
+
+  return (
+    <div className="space-y-6 shared-safari-panel">
+      <div className="shared-safari-spotlight rounded-xl p-4">
+        <p className="text-xs uppercase tracking-[0.16em] text-primary font-semibold">Popular Choice</p>
+        <p className="text-sm text-foreground/80 mt-1">Join other travelers and enjoy a lively shared safari experience.</p>
+      </div>
+
+      <div className="space-y-2">
+        <h4 className="font-semibold text-foreground text-sm">Includes:</h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {["Shared safari jeep seat", "Park entrance guidance", "Pickup coordination"].map((i) => (
+            <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Check className="w-4 h-4 text-primary" /> {i}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <NumberField label="Adults" value={adults} onChange={setAdults} min={1} />
+        <NumberField label="Children" value={children} onChange={setChildren} min={0} />
+      </div> shared-safari-price-glow
+
+      <CountrySelect value={country} onChange={setCountry} />
+      <SafariDatePicker date={date} setDate={setDate} />
+
+      <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
+        <p className="text-sm text-muted-foreground">Shared Safari Request</p>
+        <p className="text-lg font-bold text-primary">Seat availability and price on confirmation</p>
+      </div>
+
+      <Button onClick={handleBook} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-12">
+        <Send className="w-4 h-4 mr-2" /> Book Shared Safari via WhatsApp
       </Button>
     </div>
   );

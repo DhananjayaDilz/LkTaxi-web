@@ -1,55 +1,41 @@
 export const WHATSAPP_NUMBER = "94705000526";
 
-const locationCoordinates: Record<string, { lat: number; lng: number }> = {
-  "Colombo": { lat: 6.9271, lng: 79.8612 },
-  "Airport (BIA)": { lat: 7.1808, lng: 79.8841 },
-  "Kandy": { lat: 7.2906, lng: 80.6337 },
-  "Galle": { lat: 6.0535, lng: 80.221 },
-  "Ella": { lat: 6.8667, lng: 81.0466 },
-  "Sigiriya": { lat: 7.957, lng: 80.7603 },
-  "Nuwara Eliya": { lat: 6.9497, lng: 80.7891 },
-  "Mirissa": { lat: 5.9485, lng: 80.4588 },
-  "Trincomalee": { lat: 8.5874, lng: 81.2152 },
-  "Jaffna": { lat: 9.6615, lng: 80.0255 },
-  "Anuradhapura": { lat: 8.3114, lng: 80.4037 },
-  "Polonnaruwa": { lat: 7.9403, lng: 81.0188 },
-  "Dambulla": { lat: 7.8567, lng: 80.6517 },
-  "Bentota": { lat: 6.4253, lng: 79.9956 },
-  "Hikkaduwa": { lat: 6.1407, lng: 80.1018 },
-  "Unawatuna": { lat: 6.0104, lng: 80.249 },
-  "Tissamaharama": { lat: 6.2792, lng: 81.2897 },
-  "Yala": { lat: 6.3725, lng: 81.5185 },
-  "Arugam Bay": { lat: 6.8404, lng: 81.8368 },
-  "Negombo": { lat: 7.2083, lng: 79.8358 },
-};
+const TISSAMAHARAMA_PICKUP = "Tissamaharama";
 
 export const tourPricing: Record<string, number> = {
-  KDH: 24000,
-  SEDAN: 13000,
+  SEDAN: 25000,
 };
 
-export const locations = [
-  "Colombo",
-  "Airport (BIA)",
-  "Kandy",
-  "Galle",
+export const pickupLocations = [TISSAMAHARAMA_PICKUP];
+
+export const dropLocations = [
+  "Udawalawa",
   "Ella",
-  "Sigiriya",
+  "Haputhale",
+  "Sinharaja",
   "Nuwara Eliya",
-  "Mirissa",
-  "Trincomalee",
-  "Jaffna",
-  "Anuradhapura",
-  "Polonnaruwa",
+  "Kandy",
+  "Sigiriya",
   "Dambulla",
-  "Bentota",
+  "Rekawa",
+  "Tangalle / Beliatta",
+  "Hiriketiya / Dikwella",
+  "Talalla",
+  "Polhena / Mirissa",
+  "Weligama / Ahangama",
+  "Unawatuna / Galle",
   "Hikkaduwa",
-  "Unawatuna",
-  "Tissamaharama",
-  "Yala",
-  "Arugam Bay",
+  "Bentota / Beruwala",
+  "Colombo",
+  "Colombo Airport",
   "Negombo",
+  "Arugam Bay",
+  "Trincomalee",
+  "Batticaloa",
+  "Anuradhapura",
 ];
+
+export const locations = [TISSAMAHARAMA_PICKUP, ...dropLocations];
 
 export const countries = [
   "Afghanistan", "Albania", "Algeria", "Argentina", "Australia", "Austria", "Bangladesh",
@@ -62,56 +48,58 @@ export const countries = [
   "Ukraine", "USA", "Vietnam",
 ];
 
-export const vehicles = ["MINI CAR", "SEDAN", "KDH", "KDH HIGHROOF"] as const;
+export const vehicles = ["Nano Alto", "Wagon R", "Sedan", "KDH Flatroof", "KDH Highroof"] as const;
 export type VehicleType = (typeof vehicles)[number];
 
-export const vehicleRatePerKm: Record<VehicleType, number> = {
-  "MINI CAR": 60,
-  "SEDAN": 120,
-  "KDH": 180,
-  "KDH HIGHROOF": 200,
+const ridePricing: Record<string, Record<VehicleType, number>> = {
+  "Udawalawa": { "Nano Alto": 7000, "Wagon R": 8000, "Sedan": 9000, "KDH Flatroof": 11000, "KDH Highroof": 13000 },
+  "Ella": { "Nano Alto": 9000, "Wagon R": 10000, "Sedan": 11000, "KDH Flatroof": 14000, "KDH Highroof": 16000 },
+  "Haputhale": { "Nano Alto": 12000, "Wagon R": 14000, "Sedan": 16000, "KDH Flatroof": 18000, "KDH Highroof": 22000 },
+  "Sinharaja": { "Nano Alto": 15000, "Wagon R": 16000, "Sedan": 18000, "KDH Flatroof": 22000, "KDH Highroof": 26000 },
+  "Nuwara Eliya": { "Nano Alto": 17000, "Wagon R": 18000, "Sedan": 22000, "KDH Flatroof": 25000, "KDH Highroof": 28000 },
+  "Kandy": { "Nano Alto": 26000, "Wagon R": 30000, "Sedan": 35000, "KDH Flatroof": 38000, "KDH Highroof": 42000 },
+  "Sigiriya": { "Nano Alto": 32000, "Wagon R": 37000, "Sedan": 42000, "KDH Flatroof": 45000, "KDH Highroof": 50000 },
+  "Dambulla": { "Nano Alto": 30000, "Wagon R": 36000, "Sedan": 40000, "KDH Flatroof": 45000, "KDH Highroof": 50000 },
+  "Rekawa": { "Nano Alto": 7000, "Wagon R": 8000, "Sedan": 9000, "KDH Flatroof": 12000, "KDH Highroof": 15000 },
+  "Tangalle / Beliatta": { "Nano Alto": 8000, "Wagon R": 9000, "Sedan": 10000, "KDH Flatroof": 13000, "KDH Highroof": 16000 },
+  "Hiriketiya / Dikwella": { "Nano Alto": 9000, "Wagon R": 10000, "Sedan": 11000, "KDH Flatroof": 14000, "KDH Highroof": 17000 },
+  "Talalla": { "Nano Alto": 11000, "Wagon R": 12000, "Sedan": 13000, "KDH Flatroof": 17000, "KDH Highroof": 20000 },
+  "Polhena / Mirissa": { "Nano Alto": 13000, "Wagon R": 14000, "Sedan": 15000, "KDH Flatroof": 21000, "KDH Highroof": 25000 },
+  "Weligama / Ahangama": { "Nano Alto": 15000, "Wagon R": 16000, "Sedan": 17000, "KDH Flatroof": 23000, "KDH Highroof": 26000 },
+  "Unawatuna / Galle": { "Nano Alto": 16000, "Wagon R": 17000, "Sedan": 18000, "KDH Flatroof": 26000, "KDH Highroof": 30000 },
+  "Hikkaduwa": { "Nano Alto": 18000, "Wagon R": 19000, "Sedan": 20000, "KDH Flatroof": 28000, "KDH Highroof": 32000 },
+  "Bentota / Beruwala": { "Nano Alto": 24000, "Wagon R": 25000, "Sedan": 26000, "KDH Flatroof": 36000, "KDH Highroof": 40000 },
+  "Colombo": { "Nano Alto": 28000, "Wagon R": 30000, "Sedan": 33000, "KDH Flatroof": 40000, "KDH Highroof": 45000 },
+  "Colombo Airport": { "Nano Alto": 30000, "Wagon R": 33000, "Sedan": 35000, "KDH Flatroof": 45000, "KDH Highroof": 50000 },
+  "Negombo": { "Nano Alto": 35000, "Wagon R": 39000, "Sedan": 41000, "KDH Flatroof": 47000, "KDH Highroof": 52000 },
+  "Arugam Bay": { "Nano Alto": 16000, "Wagon R": 17000, "Sedan": 18000, "KDH Flatroof": 26000, "KDH Highroof": 30000 },
+  "Trincomalee": { "Nano Alto": 38000, "Wagon R": 39000, "Sedan": 40000, "KDH Flatroof": 56000, "KDH Highroof": 60000 },
+  "Batticaloa": { "Nano Alto": 28000, "Wagon R": 29000, "Sedan": 30000, "KDH Flatroof": 40000, "KDH Highroof": 45000 },
+  "Anuradhapura": { "Nano Alto": 38000, "Wagon R": 39000, "Sedan": 40000, "KDH Flatroof": 55000, "KDH Highroof": 60000 },
 };
 
 export type RideFare = {
-  distanceKm: number;
-  ratePerKm: number;
+  distanceKm: null;
+  ratePerKm: null;
   price: number;
 };
 
-function toRadians(degrees: number): number {
-  return (degrees * Math.PI) / 180;
-}
-
-export function getEstimatedDistanceKm(pickup: string, drop: string): number | null {
-  const start = locationCoordinates[pickup];
-  const end = locationCoordinates[drop];
-  if (!start || !end || pickup === drop) return null;
-
-  const earthRadiusKm = 6371;
-  const deltaLat = toRadians(end.lat - start.lat);
-  const deltaLng = toRadians(end.lng - start.lng);
-  const a =
-    Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
-    Math.cos(toRadians(start.lat)) * Math.cos(toRadians(end.lat)) *
-      Math.sin(deltaLng / 2) * Math.sin(deltaLng / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  const straightLineKm = earthRadiusKm * c;
-
-  // Apply a road-distance factor to approximate actual travel distance.
-  return Math.max(1, Math.round(straightLineKm * 1.28));
-}
-
 export function calculateRideFare(pickup: string, drop: string, vehicle: string): RideFare | null {
-  const distanceKm = getEstimatedDistanceKm(pickup, drop);
-  if (distanceKm === null) return null;
+  const normalizedPickup = pickup.trim().toLowerCase();
+  if (normalizedPickup !== "tissamaharama" && normalizedPickup !== "thissamaharama" && normalizedPickup !== "thissmaharana") {
+    return null;
+  }
 
-  const ratePerKm = vehicleRatePerKm[vehicle as VehicleType];
-  if (!ratePerKm) return null;
+  const destinationPricing = ridePricing[drop];
+  if (!destinationPricing) return null;
+
+  const price = destinationPricing[vehicle as VehicleType];
+  if (!price) return null;
 
   return {
-    distanceKm,
-    ratePerKm,
-    price: distanceKm * ratePerKm,
+    distanceKm: null,
+    ratePerKm: null,
+    price,
   };
 }
 

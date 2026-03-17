@@ -34,7 +34,7 @@ const ContactSection = () => {
               {[
                 { icon: MapPin, label: "Address", value: "379 Jayasirimawatha, Thissamaharama, Sri Lanka" },
                 { icon: Phone, label: "Phone", value: "+94 70 5000 526", href: "tel:+94705000526" },
-                { icon: Mail, label: "Email", value: "info@slgotravel.com", href: "mailto:info@slgotravel.com" },
+                { icon: Mail, label: "Email", value: "hi.lktaxi@gmail.com", href: "mailto:hi.lktaxi@gmail.com" },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">

@@ -8,7 +8,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { calculateRideFare, tourPricing, locations, vehicles, generateWhatsAppURL } from "@/data/pricing";
+import { calculateRideFare, tourPricing, pickupLocations, dropLocations, vehicles, generateWhatsAppURL } from "@/data/pricing";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -88,8 +88,8 @@ function BookRideForm() {
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <SelectField label="Pickup Location" icon={<MapPin className="w-4 h-4" />} value={pickup} onValueChange={setPickup} options={locations} />
-        <SelectField label="Drop Location" icon={<MapPin className="w-4 h-4" />} value={drop} onValueChange={setDrop} options={locations} />
+        <SelectField label="Pickup Location" icon={<MapPin className="w-4 h-4" />} value={pickup} onValueChange={setPickup} options={pickupLocations} />
+        <SelectField label="Drop Location" icon={<MapPin className="w-4 h-4" />} value={drop} onValueChange={setDrop} options={dropLocations} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <DatePickerField date={date} setDate={setDate} />
@@ -107,7 +107,6 @@ function BookRideForm() {
         <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
           <p className="text-sm text-muted-foreground">Estimated Price</p>
           <p className="text-2xl font-bold text-primary mt-1">LKR {fare.price.toLocaleString()}</p>
-          <p className="text-xs text-muted-foreground mt-2">Price can be negotiable.</p>
         </div>
       )}
 
@@ -152,7 +151,7 @@ function CustomRideForm() {
 function BookTourForm() {
   const [startDate, setStartDate] = useState<Date>(new Date());
   const [endDate, setEndDate] = useState<Date>(new Date());
-  const [vehicle, setVehicle] = useState("");
+  const vehicle = "SEDAN";
 
   const days = useMemo(() => {
     const diff = Math.max(1, Math.ceil((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)));
@@ -173,11 +172,14 @@ function BookTourForm() {
         <DatePickerField label="Start Date" date={startDate} setDate={setStartDate} />
         <DatePickerField label="End Date" date={endDate} setDate={setEndDate} />
       </div>
-      <SelectField label="Vehicle Type" icon={<Car className="w-4 h-4" />} value={vehicle} onValueChange={setVehicle} options={Object.keys(tourPricing)} />
+      <div>
+        <label className="text-xs font-medium text-muted-foreground mb-1 block">Vehicle Type</label>
+        <Input value="Sedan" readOnly />
+      </div>
 
       {totalPrice !== null && (
         <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
-          <p className="text-sm text-muted-foreground">LKR {pricePerDay!.toLocaleString()} / day × {days} days</p>
+          <p className="text-sm text-muted-foreground">LKR {pricePerDay!.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} / day × {days} days</p>
           <p className="text-2xl font-bold text-primary">LKR {totalPrice.toLocaleString()}</p>
         </div>
       )}
