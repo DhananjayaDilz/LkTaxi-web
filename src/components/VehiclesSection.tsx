@@ -1,6 +1,6 @@
-import miniCarImg from "@/assets/mini-car.jpg";
+import miniCarImg from "@/assets/mini-car.webp";
 import sedanImg from "@/assets/sedan.jpg";
-import kdhImg from "@/assets/kdh.jpg";
+import kdhImg from "@/assets/kdh.webp";
 import kdhHighroofImg from "@/assets/kdh-highroof.jpg";
 
 const vehiclesData = [

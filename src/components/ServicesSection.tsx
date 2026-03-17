@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import airportImg from "@/assets/airport-transfer.jpg";
+import airportImg from "@/assets/airport-transfer.webp";
 import dayToursImg from "@/assets/day-tours.jpg";
-import longToursImg from "@/assets/long-tours.jpg";
+import longToursImg from "@/assets/long-tours.webp";
 import hotelImg from "@/assets/hotel-transfer.jpg";
 
 const services = [
