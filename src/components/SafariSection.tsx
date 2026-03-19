@@ -64,8 +64,8 @@ const SafariSection = () => {
 function FullDaySafari() {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
-  const [country, setCountry] = useState("");
   const [date, setDate] = useState<Date>(new Date());
+  const [jeepType, setJeepType] = useState<"bolero" | "hilux">("bolero");
   const [breakfast, setBreakfast] = useState(true);
   const [lunch, setLunch] = useState(true);
   const [water, setWater] = useState(true);
@@ -73,20 +73,18 @@ function FullDaySafari() {
   const totalPeople = adults + children;
   const mealCost = useMemo(() => {
     let cost = 0;
-    if (breakfast) cost += 10 * totalPeople;
-    if (lunch) cost += 15 * totalPeople;
-    if (water) cost += 5 * totalPeople;
+    if (breakfast) cost += 7 * totalPeople;
+    if (lunch) cost += 7 * totalPeople;
+    if (water) cost += 3 * totalPeople;
     return cost;
   }, [breakfast, lunch, water, totalPeople]);
 
-  // Base price per person (example)
-  const basePricePerAdult = 45;
-  const basePricePerChild = 25;
-  const totalPrice = (adults * basePricePerAdult) + (children * basePricePerChild) + mealCost;
+  const jeepPrice = jeepType === "bolero" ? 30000 : 32000;
+  const totalPrice = jeepPrice + mealCost; // Request implies Jeep price is flat and meals are per person
 
   const handleBook = () => {
     const meals = [breakfast && "Breakfast Box", lunch && "Packed Lunch", water && "Bottled Water"].filter(Boolean).join(", ");
-    const msg = `🦁 *Full Day Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\n⏰ Time: 5:30 AM – 6:00 PM\n👥 Adults: ${adults}\n👶 Children: ${children}\n🌍 Country: ${country}\n🍽️ Meals: ${meals || "None"}\n💰 Total: $${totalPrice}\n\n✅ Includes: Private 4x4 safari jeep, Park entrance fees`;
+    const msg = `🦁 *Full Day Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\n⏰ Time: 5:30 AM – 6:00 PM\n👥 Adults: ${adults}\n👶 Children: ${children}\n🚙 Jeep: ${jeepType === "bolero" ? "Bolero Jeep" : "Hilux Jeep"}\n🍽️ Meals: ${meals || "None"}\n💰 Total: Rs. ${jeepPrice} + $${mealCost} (Meals)\n\n✅ Includes: Private 4x4 safari jeep, Park entrance guidance`;
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 
@@ -98,7 +96,7 @@ function FullDaySafari() {
       <div className="space-y-2">
         <h4 className="font-semibold text-foreground text-sm">Includes:</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {["Private 4x4 safari jeep", "Park entrance fees", "Breakfast box", "Packed lunch", "Bottled water"].map((i) => (
+          {["Private 4x4 safari jeep", "Park entrance guidance", "Driver as Guide"].map((i) => (
             <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
               <Check className="w-4 h-4 text-primary" /> {i}
             </div>
@@ -106,24 +104,37 @@ function FullDaySafari() {
         </div>
       </div>
 
+      <div className="space-y-2">
+        <label className="text-xs font-medium text-muted-foreground mb-1 block">Select Jeep Type</label>
+        <Select value={jeepType} onValueChange={(v: "bolero" | "hilux") => setJeepType(v)}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select Jeep" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="bolero">Bolero Jeep (Full Day: Rs. 30,000)</SelectItem>
+            <SelectItem value="hilux">Hilux Jeep (Full Day: Rs. 32,000)</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <NumberField label="Adults" value={adults} onChange={setAdults} min={1} />
         <NumberField label="Children" value={children} onChange={setChildren} min={0} />
       </div>
 
-      <CountrySelect value={country} onChange={setCountry} />
       <SafariDatePicker date={date} setDate={setDate} />
 
       <div className="space-y-3">
-        <h4 className="font-semibold text-foreground text-sm">Meal Options:</h4>
-        <MealCheckbox label="Breakfast Box" price={10} checked={breakfast} onChange={setBreakfast} />
-        <MealCheckbox label="Packed Lunch" price={15} checked={lunch} onChange={setLunch} />
-        <MealCheckbox label="Bottled Water 1.5L" price={5} checked={water} onChange={setWater} />
+        <h4 className="font-semibold text-foreground text-sm">Add-ons:</h4>
+        <MealCheckbox label="Half Day Breakfast" price={7} checked={breakfast} onChange={setBreakfast} />
+        <MealCheckbox label="Full Day Lunch" price={7} checked={lunch} onChange={setLunch} />
+        <MealCheckbox label="Water Bottle" price={3} checked={water} onChange={setWater} />
       </div>
 
       <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
         <p className="text-sm text-muted-foreground">Total Price</p>
-        <p className="text-3xl font-bold text-primary">${totalPrice}</p>
+        <p className="text-3xl font-bold text-primary">Rs. {jeepPrice} + ${mealCost}</p>
+        <p className="text-xs text-muted-foreground mt-1">(Jeep in LKR, Add-ons in USD)</p>
       </div>
 
       <Button onClick={handleBook} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-12">
@@ -136,26 +147,24 @@ function FullDaySafari() {
 function HalfDaySafari() {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
-  const [country, setCountry] = useState("");
   const [date, setDate] = useState<Date>(new Date());
+  const [jeepType, setJeepType] = useState<"bolero" | "hilux">("bolero");
   const [breakfast, setBreakfast] = useState(false);
   const [water, setWater] = useState(false);
 
   const totalPeople = adults + children;
   const mealCost = useMemo(() => {
     let cost = 0;
-    if (breakfast) cost += 10 * totalPeople;
-    if (water) cost += 5 * totalPeople;
+    if (breakfast) cost += 7 * totalPeople;
+    if (water) cost += 3 * totalPeople;
     return cost;
   }, [breakfast, water, totalPeople]);
 
-  const basePricePerAdult = 35;
-  const basePricePerChild = 20;
-  const totalPrice = (adults * basePricePerAdult) + (children * basePricePerChild) + mealCost;
+  const jeepPrice = jeepType === "bolero" ? 15000 : 16000;
 
   const handleBook = () => {
     const meals = [breakfast && "Breakfast Box", water && "Bottled Water"].filter(Boolean).join(", ");
-    const msg = `🦁 *Half Day Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\n👥 Adults: ${adults}\n👶 Children: ${children}\n🌍 Country: ${country}\n🍽️ Meals: ${meals || "None"}\n💰 Total: $${totalPrice}\n\n✅ Includes: Private 4x4 safari jeep, Park entrance fees`;
+    const msg = `🦁 *Half Day Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\n👥 Adults: ${adults}\n👶 Children: ${children}\n🚙 Jeep: ${jeepType === "bolero" ? "Bolero Jeep" : "Hilux Jeep"}\n🍽️ Meals: ${meals || "None"}\n💰 Total: Rs. ${jeepPrice} + $${mealCost} (Meals)\n\n✅ Includes: Private 4x4 safari jeep, Park entrance guidance`;
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 
@@ -164,7 +173,7 @@ function HalfDaySafari() {
       <div className="space-y-2">
         <h4 className="font-semibold text-foreground text-sm">Includes:</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {["Private 4x4 safari jeep", "Park entrance fees"].map((i) => (
+          {["Private 4x4 safari jeep", "Park entrance guidance", "Driver as Guide"].map((i) => (
             <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
               <Check className="w-4 h-4 text-primary" /> {i}
             </div>
@@ -172,23 +181,36 @@ function HalfDaySafari() {
         </div>
       </div>
 
+      <div className="space-y-2">
+        <label className="text-xs font-medium text-muted-foreground mb-1 block">Select Jeep Type</label>
+        <Select value={jeepType} onValueChange={(v: "bolero" | "hilux") => setJeepType(v)}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select Jeep" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="bolero">Bolero Jeep (Half Day: Rs. 15,000)</SelectItem>
+            <SelectItem value="hilux">Hilux Jeep (Half Day: Rs. 16,000)</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <NumberField label="Adults" value={adults} onChange={setAdults} min={1} />
         <NumberField label="Children" value={children} onChange={setChildren} min={0} />
       </div>
 
-      <CountrySelect value={country} onChange={setCountry} />
       <SafariDatePicker date={date} setDate={setDate} />
 
       <div className="space-y-3">
         <h4 className="font-semibold text-foreground text-sm">Add-ons:</h4>
-        <MealCheckbox label="Breakfast Box" price={10} checked={breakfast} onChange={setBreakfast} />
-        <MealCheckbox label="Bottled Water 1.5L" price={5} checked={water} onChange={setWater} />
+        <MealCheckbox label="Breakfast" price={7} checked={breakfast} onChange={setBreakfast} />
+        <MealCheckbox label="Water Bottle" price={3} checked={water} onChange={setWater} />
       </div>
 
       <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
         <p className="text-sm text-muted-foreground">Total Price</p>
-        <p className="text-3xl font-bold text-primary">${totalPrice}</p>
+        <p className="text-3xl font-bold text-primary">Rs. {jeepPrice} + ${mealCost}</p>
+        <p className="text-xs text-muted-foreground mt-1">(Jeep in LKR, Add-ons in USD)</p>
       </div>
 
       <Button onClick={handleBook} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-12">
@@ -201,27 +223,49 @@ function HalfDaySafari() {
 function SharedSafari() {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
-  const [country, setCountry] = useState("");
   const [date, setDate] = useState<Date>(new Date());
+  const [safariType, setSafariType] = useState<"half" | "full">("half");
 
   const totalPeople = adults + children;
+  const pricePerPerson = safariType === "half" ? 60 : 76;
+  const totalPrice = totalPeople * pricePerPerson;
 
   const handleBook = () => {
-    const msg = `🦁 *Shared Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\n👥 Adults: ${adults}\n👶 Children: ${children}\n👤 Total Guests: ${totalPeople}\n🌍 Country: ${country}\n\n✅ Option: Shared Safari Jeep\n\nPlease confirm seat availability and final price.`;
+    const msg = `🦁 *Shared Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\nType: ${safariType === "half" ? "Half Day" : "Full Day"}\n👥 Adults: ${adults}\n👶 Children: ${children}\n👤 Total Guests: ${totalPeople}\n💰 Total: $${totalPrice}\n\n✅ Includes: Entrance ticket, Water, Breakfast, ${safariType === "full" ? "Lunch, " : ""}Driver as Guide`;
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 
   return (
     <div className="space-y-6 shared-safari-panel">
       <div className="shared-safari-spotlight rounded-xl p-4">
-        <p className="text-xs uppercase tracking-[0.16em] text-primary font-semibold">Popular Choice</p>
-        <p className="text-sm text-foreground/80 mt-1">Join other travelers and enjoy a lively shared safari experience.</p>
+        <p className="text-xs uppercase tracking-[0.16em] text-primary font-semibold">Shared Safari (Jeep cannot be selected)</p>
+        <p className="text-sm text-foreground/80 mt-1">Join other travelers for a budget-friendly experience.</p>
+      </div>
+
+      <div className="space-y-2">
+        <label className="text-xs font-medium text-muted-foreground mb-1 block">Safari Type</label>
+        <div className="flex gap-2">
+          <Button 
+            variant={safariType === "half" ? "default" : "outline"}
+            onClick={() => setSafariType("half")}
+            className="flex-1"
+          >
+            Half Day ($60/pp)
+          </Button>
+          <Button 
+            variant={safariType === "full" ? "default" : "outline"}
+            onClick={() => setSafariType("full")}
+            className="flex-1"
+          >
+            Full Day ($76/pp)
+          </Button>
+        </div>
       </div>
 
       <div className="space-y-2">
         <h4 className="font-semibold text-foreground text-sm">Includes:</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {["Shared safari jeep seat", "Park entrance guidance", "Pickup coordination"].map((i) => (
+          {["Entrance ticket", "Water Bottle", "Breakfast", safariType === "full" ? "Lunch" : null, "Driver with Guide"].filter(Boolean).map((i) => (
             <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
               <Check className="w-4 h-4 text-primary" /> {i}
             </div>
@@ -232,14 +276,14 @@ function SharedSafari() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <NumberField label="Adults" value={adults} onChange={setAdults} min={1} />
         <NumberField label="Children" value={children} onChange={setChildren} min={0} />
-      </div> shared-safari-price-glow
+      </div>
 
-      <CountrySelect value={country} onChange={setCountry} />
       <SafariDatePicker date={date} setDate={setDate} />
 
       <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
-        <p className="text-sm text-muted-foreground">Shared Safari Request</p>
-        <p className="text-lg font-bold text-primary">Seat availability and price on confirmation</p>
+        <p className="text-sm text-muted-foreground">Total Price</p>
+        <p className="text-3xl font-bold text-primary">${totalPrice}</p>
+        <p className="text-xs text-muted-foreground mt-1">Prices are per person (USD)</p>
       </div>
 
       <Button onClick={handleBook} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-12">
@@ -269,24 +313,6 @@ function MealCheckbox({ label, price, checked, onChange }: { label: string; pric
       <label htmlFor={label} className="text-sm text-foreground cursor-pointer">
         {label} – <span className="text-primary font-semibold">${price}/person</span>
       </label>
-    </div>
-  );
-}
-
-function CountrySelect({ value, onChange }: { value: string; onChange: (v: string) => void }) {
-  return (
-    <div>
-      <label className="text-xs font-medium text-muted-foreground mb-1 block">Country</label>
-      <Select value={value} onValueChange={onChange}>
-        <SelectTrigger>
-          <SelectValue placeholder="Select your country" />
-        </SelectTrigger>
-        <SelectContent>
-          {countries.map((c) => (
-            <SelectItem key={c} value={c}>{c}</SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
     </div>
   );
 }
