@@ -12,36 +12,50 @@ import Typewriter from "typewriter-effect";
 import { calculateRideFare, tourPricing, pickupLocations, dropLocations, vehicles, generateWhatsAppURL } from "@/data/pricing";
 import heroBg from "@/assets/hero-bg.jpg";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  title?: string;
+  subtitle?: string;
+}
+
+const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
   const [activeTab, setActiveTab] = useState(0);
   const tabs = ["Book Ride", "Custom Ride Request", "Book Tour"];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="Sri Lanka coastal road" className="w-full h-full object-cover" />
+        <img 
+          src={heroBg} 
+          alt={title ? `${title} Background` : "Sri Lanka coastal road"} 
+          className="w-full h-full object-cover" 
+          loading="eager"
+        />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsla(216,16%,9%,0.85), hsla(216,16%,9%,0.55))" }} />
       </div>
       <div className="relative container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-2xl mb-8 md:mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground mb-4 leading-tight min-h-[120px] md:min-h-[160px]">
-            <Typewriter
-              options={{
-                strings: [
-                  'Your Trusted <span class="text-primary">Taxi Service</span> in Sri Lanka',
-                  'Book Your <span class="text-primary">Tour</span>',
-                  'Book Your Private <span class="text-primary">Safari</span>',
-                  'Book Your Shared <span class="text-primary">Safari</span>'
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 50,
-                deleteSpeed: 30,
-              }}
-            />
+            {title ? (
+              title
+            ) : (
+              <Typewriter
+                options={{
+                  strings: [
+                    'Your Trusted <span class="text-primary">Taxi Service</span> in Sri Lanka',
+                    'Book Your <span class="text-primary">Tour</span>',
+                    'Book Your Private <span class="text-primary">Safari</span>',
+                    'Book Your Shared <span class="text-primary">Safari</span>'
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 50,
+                  deleteSpeed: 30,
+                }}
+              />
+            )}
           </h1>
           <p className="text-lg text-secondary-foreground/70">
-            Safe, reliable and affordable transportation across Sri Lanka. Airport transfers, day tours, and long distance travel.
+            {subtitle || "Safe, reliable and affordable transportation across Sri Lanka. Airport transfers, day tours, and long distance travel."}
           </p>
         </div>
 
