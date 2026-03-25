@@ -36,3 +36,18 @@ export const generateRouteKeywords = (from: Location, to: Location): SEOKeywords
     ],
   };
 };
+
+export const safariKeywords = {
+  primary: "Yala Safari Jeep Service Sri Lanka",
+  variations: [
+    "mahindra bolero safari jeep yala",
+    "toyota hilux safari yala",
+    "yala national park safari jeep booking",
+    "best safari jeep service in tissamaharama",
+    "private safari jeep yala",
+    "luxury safari jeep sri lanka",
+    "affordable yala safari jeep",
+    "safari jeep hire with driver yala",
+  ],
+};
+

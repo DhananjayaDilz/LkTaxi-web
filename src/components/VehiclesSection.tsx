@@ -2,9 +2,6 @@ import miniCarImg from "@/assets/mini-car.webp";
 import sedanImg from "@/assets/sedan.jpg";
 import kdhImg from "@/assets/kdh.webp";
 import kdhHighroofImg from "@/assets/kdh-highroof.jpg";
-// Note: bolero.jpg and hilux.jpg need to be added to assets folder
-// import boleroImg from "@/assets/bolero.jpg";
-// import hiluxImg from "@/assets/hilux.jpg";
 
 const vehiclesData = [
   { name: "MINI CAR", image: miniCarImg, desc: "Compact and economical, perfect for short city rides and airport transfers for solo travelers or couples.", passengers: "1-3" },
@@ -14,8 +11,20 @@ const vehiclesData = [
 ];
 
 const safariJeeps = [
-  { name: "MAHINDRA BOLERO", image: null, desc: "Reliable and comfortable 4x4 safari jeep, perfectly suited for the rugged terrain of Yala National Park.", passengers: "1-6" },
-  { name: "TOYOTA HILUX", image: null, desc: "Premium 4x4 safari experience with extra comfort and elevated seating for superior wildlife viewing.", passengers: "1-6" },
+  { 
+    name: "MAHINDRA BOLERO", 
+    image: "/bolero.png", 
+    desc: "Reliable and comfortable 4x4 safari jeep, perfectly suited for the rugged terrain of Yala National Park.", 
+    passengers: "1-6",
+    alt: "Mahindra Bolero Safari Jeep Yala Sri Lanka"
+  },
+  { 
+    name: "TOYOTA HILUX", 
+    image: "/hilux.png", 
+    desc: "Premium 4x4 safari experience with extra comfort and elevated seating for superior wildlife viewing.", 
+    passengers: "1-6",
+    alt: "Toyota Hilux Safari Jeep Tissamaharama Sri Lanka"
+  },
 ];
 
 const VehiclesSection = () => (
@@ -50,13 +59,12 @@ const VehiclesSection = () => (
         {safariJeeps.map((j) => (
           <div key={j.name} className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group border border-border">
             <div className="h-56 bg-muted relative overflow-hidden">
-              {j.image ? (
-                <img src={j.image} alt={j.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground italic text-sm">
-                  {j.name} Photo Coming Soon
-                </div>
-              )}
+              <img 
+                src={j.image} 
+                alt={j.alt} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                loading="lazy" 
+              />
             </div>
             <div className="p-6">
               <h3 className="font-bold text-xl text-foreground mb-2">{j.name}</h3>
