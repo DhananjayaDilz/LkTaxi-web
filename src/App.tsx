@@ -8,6 +8,8 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import LocationPage from "./pages/LocationPage.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
+import Blogs from "./pages/Blogs.tsx";
+import BlogDetail from "./pages/BlogDetail.tsx";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/taxi/:location" element={<LocationPage />} />
           <Route path="/taxi/:routeSlug" element={<RoutePage />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

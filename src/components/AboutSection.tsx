@@ -56,9 +56,35 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
-          <p className="text-center text-muted-foreground mt-8 max-w-2xl mx-auto">
+          <p className="text-center text-muted-foreground mt-8 max-w-2xl mx-auto mb-16">
             Our team has strong experience in Sri Lanka tourism and provides comfortable vehicles with friendly drivers.
           </p>
+
+          {/* Sri Lanka Tour Image Section */}
+          <div className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 group">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-10 pointer-events-none" />
+            
+            {/* Desktop Image */}
+            <img 
+              src="/srilanaka_tour.png" 
+              alt="Sri Lanka Tour Map & Highlights" 
+              className="hidden md:block w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-[1.02]"
+              loading="lazy"
+            />
+            
+            {/* Mobile Image */}
+            <img 
+              src="/srilanka_tour_mo.png" 
+              alt="Sri Lanka Tour Map & Highlights Mobile" 
+              className="block md:hidden w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-[1.02]"
+              loading="lazy"
+            />
+
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 z-20 pointer-events-none text-white hidden md:block">
+              <h4 className="text-2xl font-bold mb-2 text-white">Explore Sri Lanka</h4>
+              <p className="text-gray-200">Discover top destinations and ultimate routes tailored for your perfect journey.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
