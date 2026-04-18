@@ -104,5 +104,112 @@ export const blogsData: BlogPost[] = [
     date: "2026-04-13",
     readTime: "6 min read",
     tags: ["Culture", "History", "Sigiriya", "UNESCO"]
-  }
-];
+  },
+ {
+  id: "2",
+  title: "Yala National Park – Complete Safari Guide for Travelers",
+  slug: "yala-national-park-safari-guide",
+  excerpt: "Discover Yala National Park, Sri Lanka’s top wildlife destination near Tissamaharama. Learn about safari options, best animals to see, and travel tips.",
+  content: `
+    <h2>Explore Yala National Park</h2>
+    <p><strong>Yala National Park</strong> is one of the most famous wildlife destinations in Asia, located near <strong>Tissamaharama</strong>. It is a must-visit place for both foreign travelers and locals who love nature, wildlife, and adventure.</p>
+    
+    <p>Yala offers a unique safari experience where animals live freely in their natural habitat. Unlike zoos, you can witness real wildlife behavior in the wild, making your journey exciting and unforgettable.</p>
+      <figure>
+        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/09/55/dd/5f.jpg" alt="Yala National Park jeep safari exploring wildlife in Sri Lanka" />
+        <figcaption>Yala National Park jeep safari exploring wildlife in Sri Lanka</figcaption>
+      </figure>
+    <h2>Why Visit Yala National Park?</h2>
+    <p>Yala is popular because of its rich biodiversity and high chances of spotting rare animals. It is especially famous for having one of the highest densities of leopards in the world.</p>
+
+    <p>Most foreign tourists visit Yala to experience:</p>
+    <ul>
+      <li>Real jungle safari experience</li>
+      <li>Wild animals living freely</li>
+      <li>Beautiful landscapes and lagoons</li>
+      <li>Bird watching and photography</li>
+    </ul>
+
+    <h2>Top Animals to See in Yala</h2>
+    <p>During your safari, you can spot many amazing animals. Here are the top wildlife attractions:</p>
+    <ul>
+      <li><strong>Leopard</strong> – The most famous animal in Yala</li>
+      <li><strong>Elephant</strong> – Large herds can be seen</li>
+      <li><strong>Sloth Bear</strong> – Rare but exciting to spot</li>
+      <li><strong>Peacock</strong> – Beautiful and commonly seen</li>
+      <li><strong>Crocodile</strong> – Found near lakes and lagoons</li>
+    </ul>
+    <figure>
+      <img src="https://www.bestofceylon.com/images/sri-lanka-travel-regions/yala-and-leopards/03.jpg" alt="Sri Lankan leopard resting on a tree in Yala National Park" />
+      <figcaption>Sri Lankan leopard resting on a tree in Yala National Park</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://cdn.atrsafari.com/cdn/05explore/locations-and-lodges/asia/srilanka/yala/0/stills/00page/01.jpg" alt="A herd of wild elephants near a water source in Yala National Park" />
+      <figcaption>A herd of wild elephants near a water source in Yala National Park</figcaption>
+    </figure>
+    <h2>Best Time to Visit Yala</h2>
+    <p>The best time to visit Yala National Park is from February to July when water levels are low, and animals gather near water sources, making them easier to spot.</p>
+
+    <figure>
+      <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/15/7c/e9/4f.jpg" alt="Tourists enjoying a 4x4 wildlife safari in Yala Tissamaharama" />
+      <figcaption>Tourists enjoying a 4x4 wildlife safari in Yala Tissamaharama</figcaption>
+    </figure>
+
+    <h2>Safari Options & Travel Tips</h2>
+    
+    <h3>Half Day Safari (Recommended for Families)</h3>
+    <p>If you are traveling with babies or small children, it is better to choose a half-day safari. Full-day safaris can be tiring and not comfortable for kids.</p>
+    
+    <p><strong>Includes:</strong></p>
+    <ul>
+      <li>Private 4x4 safari jeep</li>
+      <li>Park entrance guidance</li>
+      <li>Experienced driver as your guide</li>
+    </ul>
+
+    <div style="margin: 25px 0; text-align: center;">
+      <a href="/?safariTab=half#safari" style="background-color: #eab308; color: #1f2937; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">🚙 Book your Half Day Safari here</a>
+    </div>
+
+    <h3>Full Day Safari (Complete Experience)</h3>
+    <p>If you want the full wildlife experience, a full-day safari is the best option.</p>
+
+    <p><strong>Time:</strong> 5:30 AM – 6:00 PM</p>
+    <p><strong>Includes:</strong></p>
+    <ul>
+      <li>Private 4x4 safari jeep</li>
+      <li>Park entrance guidance</li>
+      <li>Driver as guide</li>
+    </ul>
+
+    <div style="margin: 25px 0; text-align: center;">
+      <a href="/?safariTab=full#safari" style="background-color: #eab308; color: #1f2937; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">🦁 Book your Full Day Safari here</a>
+    </div>
+
+    <h3>Budget Shared Safari</h3>
+    <p>If you are looking for a budget-friendly option, you can choose a shared safari. You will share the jeep with other travelers and save money.</p>
+    
+    <p><strong>Includes:</strong></p>
+    <ul>
+      <li>Entrance ticket</li>
+      <li>Water bottle</li>
+      <li>Breakfast</li>
+    </ul>
+
+    <div style="margin: 25px 0; text-align: center;">
+      <a href="/?safariTab=shared#safari" style="background-color: #eab308; color: #1f2937; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">📅 Book a Budget Shared Safari</a>
+    </div>
+
+    <h2>Final Thoughts</h2>
+    <p>Yala National Park is a must-visit destination in Sri Lanka. Whether you are looking for adventure, wildlife photography, or a peaceful nature experience, Yala offers everything in one place.</p>
+  `,
+  coverImage: "https://c8.alamy.com/comp/PFT117/horizontal-view-of-the-entrance-gate-at-yala-national-park-sri-lanka-PFT117.jpg",
+  gallery: [
+    "https://c8.alamy.com/comp/PFT117/horizontal-view-of-the-entrance-gate-at-yala-national-park-sri-lanka-PFT117.jpg"
+  ],
+  author: "LKTaxi Travel Team",
+  date: "2026-04-18",
+  readTime: "4 min read",
+  tags: ["Yala National Park", "Safari Sri Lanka", "Wildlife", "Things to do in Yala"]
+}];

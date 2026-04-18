@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { blogsData } from "../data/blogs";
 import { ImageGallery } from "../components/blog/ImageGallery";
+import { BlogSidebarAd } from "../components/blog/BlogSidebarAd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -190,6 +191,7 @@ export default function BlogDetail() {
         </article>
       </main>
 
+      <BlogSidebarAd />
       <Footer />
     </div>
   );

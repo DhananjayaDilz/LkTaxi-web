@@ -1,5 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { format } from "date-fns";
+import { useSearchParams } from "react-router-dom";
 import { CalendarIcon, Send, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,7 +13,16 @@ import { countries, generateWhatsAppURL } from "@/data/pricing";
 import safariBg from "@/assets/safari-bg.jpg";
 
 const SafariSection = () => {
-  const [activeTab, setActiveTab] = useState<"full" | "half" | "shared">("full");
+  const [searchParams] = useSearchParams();
+  const initialTab = (searchParams.get("safariTab") as "full" | "half" | "shared") || "full";
+  const [activeTab, setActiveTab] = useState<"full" | "half" | "shared">(initialTab);
+
+  useEffect(() => {
+    const tab = searchParams.get("safariTab");
+    if (tab && ["full", "half", "shared"].includes(tab)) {
+      setActiveTab(tab as "full" | "half" | "shared");
+    }
+  }, [searchParams]);
 
   return (
     <section id="safari" className="section-padding relative">
