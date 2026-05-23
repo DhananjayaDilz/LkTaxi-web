@@ -1,45 +1,30 @@
-export const WHATSAPP_NUMBER = "94705000526";
-
-const TISSAMAHARAMA_PICKUP = "Tissamaharama";
-
+﻿export const WHATSAPP_NUMBER = "94705000526";
 export const tourPricing: Record<string, number> = {
-  "Wagon R": 15000,
-  "Sedan": 20000,
-  "KDH Flatroof": 25000,
-  "KDH Highroof": 30000,
+  "MINI CAR": 15000,
+  "SEDAN": 20000,
+  "KDH FLAT ROOF": 25000,
+  "KDH HIGH ROOF": 30000,
 };
-
-export const pickupLocations = [TISSAMAHARAMA_PICKUP];
-
+export const vehicles = ["MINI CAR", "SEDAN", "MINI VAN", "KDH FLAT ROOF", "KDH HIGH ROOF"] as const;
+export type VehicleType = (typeof vehicles)[number];
+export const pickupLocations = ["Colombo Airport (BIA)", "Ella", "Tissamaharama"];
 export const dropLocations = [
-  "Udawalawa",
-  "Ella",
-  "Haputhale",
-  "Sinharaja",
-  "Nuwara Eliya",
-  "Kandy",
-  "Sigiriya",
-  "Dambulla",
-  "Rekawa",
-  "Tangalle / Beliatta",
-  "Hiriketiya / Dikwella",
-  "Talalla",
-  "Polhena / Mirissa",
-  "Weligama / Ahangama",
-  "Unawatuna / Galle",
-  "Hikkaduwa",
-  "Bentota / Beruwala",
-  "Colombo",
-  "Colombo Airport",
-  "Negombo",
-  "Arugam Bay",
-  "Trincomalee",
-  "Batticaloa",
-  "Anuradhapura",
+  "Colombo", "Negombo", "Sigiriya", "Dambulla", "Mount Lavinia / Dehivala", "Rathmalana", 
+  "Panadura", "Moratuwa", "Kalutara", "Beruwala", "Bentota", "Ahungalla", "Balapitiya", 
+  "Ambalangoda", "Hikkaduwa", "Galle", "Unawatuna", "Thalpe", "Habaraduwa", "Ahangama", 
+  "Weligama", "Mirissa", "Polhena", "Matara", "Thalalla", "Dikwella", "Hiriketiya", 
+  "Nilwella", "Tangalle", "Kalamatiya", "Hambantota", "Bundala", "Tissamaharama", 
+  "Kirinda", "Yala", "Kataragama", "Debarawewa", "Weerawila", "Kurunegala", "Kandalama", 
+  "Kandy", "Nuwara Eliya", "Adams Peak", "Awissawella", "Rathnapura", "Nanu Oya", 
+  "Ambewela", "Haputale", "Ella", "Nilaveli", "Trincomalee", "Polonnaruwa", "Anuradhapura", 
+  "Puttalam", "Wilpattu", "Sinharaja", "Embilipitiya", "Udawalawe", "Mattala", 
+  "Bandarawela", "Buttala", "Monaragala", "Potuvil", "Arugam Bay", "Ampara", 
+  "Akkaraipattu", "Kalmunai", "Batticaloa", "Eravur", "Kinniya", "Mutur", "Vavuniya", 
+  "Kilinochchi", "Jaffna", "Mannar", "Matale", "Balangoda", "Pelmadulla", "Godakawela", 
+  "Deniyaya", "Gal Oya", "Habarana", "Maduru Oya", "Badulla", "Bibile", "Kamburugamuwa", 
+  "Midigama", "Koggala", "Galle Fort", "Colombo Airport (BIA)"
 ];
-
-export const locations = [TISSAMAHARAMA_PICKUP, ...dropLocations];
-
+export const locations = Array.from(new Set([...pickupLocations, ...dropLocations]));
 export const countries = [
   "Afghanistan", "Albania", "Algeria", "Argentina", "Australia", "Austria", "Bangladesh",
   "Belgium", "Brazil", "Canada", "China", "Colombia", "Czech Republic", "Denmark",
@@ -50,62 +35,169 @@ export const countries = [
   "Spain", "Sri Lanka", "Sweden", "Switzerland", "Thailand", "Turkey", "UAE", "UK",
   "Ukraine", "USA", "Vietnam",
 ];
-
-export const vehicles = ["Nano Alto", "Wagon R", "Sedan", "KDH Flatroof", "KDH Highroof"] as const;
-export type VehicleType = (typeof vehicles)[number];
-
-const ridePricing: Record<string, Record<VehicleType, number>> = {
-  "Udawalawa": { "Nano Alto": 7000, "Wagon R": 8000, "Sedan": 9000, "KDH Flatroof": 11000, "KDH Highroof": 13000 },
-  "Ella": { "Nano Alto": 9000, "Wagon R": 10000, "Sedan": 11000, "KDH Flatroof": 14000, "KDH Highroof": 16000 },
-  "Haputhale": { "Nano Alto": 12000, "Wagon R": 14000, "Sedan": 16000, "KDH Flatroof": 18000, "KDH Highroof": 22000 },
-  "Sinharaja": { "Nano Alto": 15000, "Wagon R": 16000, "Sedan": 18000, "KDH Flatroof": 22000, "KDH Highroof": 26000 },
-  "Nuwara Eliya": { "Nano Alto": 17000, "Wagon R": 18000, "Sedan": 22000, "KDH Flatroof": 25000, "KDH Highroof": 28000 },
-  "Kandy": { "Nano Alto": 26000, "Wagon R": 30000, "Sedan": 35000, "KDH Flatroof": 38000, "KDH Highroof": 42000 },
-  "Sigiriya": { "Nano Alto": 32000, "Wagon R": 37000, "Sedan": 42000, "KDH Flatroof": 45000, "KDH Highroof": 50000 },
-  "Dambulla": { "Nano Alto": 30000, "Wagon R": 36000, "Sedan": 40000, "KDH Flatroof": 45000, "KDH Highroof": 50000 },
-  "Rekawa": { "Nano Alto": 7000, "Wagon R": 8000, "Sedan": 9000, "KDH Flatroof": 12000, "KDH Highroof": 15000 },
-  "Tangalle / Beliatta": { "Nano Alto": 8000, "Wagon R": 9000, "Sedan": 10000, "KDH Flatroof": 13000, "KDH Highroof": 16000 },
-  "Hiriketiya / Dikwella": { "Nano Alto": 9000, "Wagon R": 10000, "Sedan": 11000, "KDH Flatroof": 14000, "KDH Highroof": 17000 },
-  "Talalla": { "Nano Alto": 11000, "Wagon R": 12000, "Sedan": 13000, "KDH Flatroof": 17000, "KDH Highroof": 20000 },
-  "Polhena / Mirissa": { "Nano Alto": 13000, "Wagon R": 14000, "Sedan": 15000, "KDH Flatroof": 21000, "KDH Highroof": 25000 },
-  "Weligama / Ahangama": { "Nano Alto": 15000, "Wagon R": 16000, "Sedan": 17000, "KDH Flatroof": 23000, "KDH Highroof": 26000 },
-  "Unawatuna / Galle": { "Nano Alto": 16000, "Wagon R": 17000, "Sedan": 18000, "KDH Flatroof": 26000, "KDH Highroof": 30000 },
-  "Hikkaduwa": { "Nano Alto": 18000, "Wagon R": 19000, "Sedan": 20000, "KDH Flatroof": 28000, "KDH Highroof": 32000 },
-  "Bentota / Beruwala": { "Nano Alto": 24000, "Wagon R": 25000, "Sedan": 26000, "KDH Flatroof": 36000, "KDH Highroof": 40000 },
-  "Colombo": { "Nano Alto": 28000, "Wagon R": 30000, "Sedan": 33000, "KDH Flatroof": 40000, "KDH Highroof": 45000 },
-  "Colombo Airport": { "Nano Alto": 30000, "Wagon R": 33000, "Sedan": 35000, "KDH Flatroof": 45000, "KDH Highroof": 50000 },
-  "Negombo": { "Nano Alto": 35000, "Wagon R": 39000, "Sedan": 41000, "KDH Flatroof": 47000, "KDH Highroof": 52000 },
-  "Arugam Bay": { "Nano Alto": 16000, "Wagon R": 17000, "Sedan": 18000, "KDH Flatroof": 26000, "KDH Highroof": 30000 },
-  "Trincomalee": { "Nano Alto": 38000, "Wagon R": 39000, "Sedan": 40000, "KDH Flatroof": 56000, "KDH Highroof": 60000 },
-  "Batticaloa": { "Nano Alto": 28000, "Wagon R": 29000, "Sedan": 30000, "KDH Flatroof": 40000, "KDH Highroof": 45000 },
-  "Anuradhapura": { "Nano Alto": 38000, "Wagon R": 39000, "Sedan": 40000, "KDH Flatroof": 55000, "KDH Highroof": 60000 },
+const ridePricing: Record<string, Record<string, Partial<Record<VehicleType, number>>>> = {
+  "Colombo Airport (BIA)": {
+    "Colombo": { "MINI CAR": 5000, "SEDAN": 6000, "MINI VAN": 8000, "KDH FLAT ROOF": 10000, "KDH HIGH ROOF": 14000 },
+    "Negombo": { "MINI CAR": 3000, "SEDAN": 4000, "MINI VAN": 6000, "KDH FLAT ROOF": 8000, "KDH HIGH ROOF": 10000 },
+    "Sigiriya": { "MINI CAR": 15000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 25000, "KDH HIGH ROOF": 30000 },
+    "Dambulla": { "MINI CAR": 13000, "SEDAN": 15000, "MINI VAN": 17000, "KDH FLAT ROOF": 22000, "KDH HIGH ROOF": 26000 },
+    "Mount Lavinia / Dehivala": { "MINI CAR": 5000, "SEDAN": 6000, "MINI VAN": 7000, "KDH FLAT ROOF": 9000, "KDH HIGH ROOF": 12000 },
+    "Rathmalana": { "MINI CAR": 5500, "SEDAN": 6500, "MINI VAN": 7000, "KDH FLAT ROOF": 9000, "KDH HIGH ROOF": 12000 },
+    "Panadura": { "MINI CAR": 8000, "SEDAN": 9000, "MINI VAN": 10000, "KDH FLAT ROOF": 15000, "KDH HIGH ROOF": 18000 },
+    "Moratuwa": { "MINI CAR": 6000, "SEDAN": 7000, "MINI VAN": 8000, "KDH FLAT ROOF": 10000, "KDH HIGH ROOF": 14000 },
+    "Kalutara": { "MINI CAR": 9000, "SEDAN": 10000, "MINI VAN": 11000, "KDH FLAT ROOF": 16000, "KDH HIGH ROOF": 20000 },
+    "Beruwala": { "MINI CAR": 10000, "SEDAN": 12000, "MINI VAN": 13000, "KDH FLAT ROOF": 18000, "KDH HIGH ROOF": 22000 },
+    "Bentota": { "MINI CAR": 11000, "SEDAN": 12000, "MINI VAN": 14000, "KDH FLAT ROOF": 19000, "KDH HIGH ROOF": 23000 },
+    "Ahungalla": { "MINI CAR": 13000, "SEDAN": 14000, "MINI VAN": 16000, "KDH FLAT ROOF": 22000, "KDH HIGH ROOF": 26000 },
+    "Balapitiya": { "MINI CAR": 13000, "SEDAN": 16000, "MINI VAN": 17000, "KDH FLAT ROOF": 24000, "KDH HIGH ROOF": 28000 },
+    "Ambalangoda": { "MINI CAR": 13000, "SEDAN": 15000, "MINI VAN": 17000, "KDH FLAT ROOF": 23000, "KDH HIGH ROOF": 27000 },
+    "Hikkaduwa": { "MINI CAR": 14000, "SEDAN": 16000, "MINI VAN": 18000, "KDH FLAT ROOF": 25000, "KDH HIGH ROOF": 29000 },
+    "Galle": { "MINI CAR": 15000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 26000, "KDH HIGH ROOF": 30000 },
+    "Unawatuna": { "MINI CAR": 15000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 26000, "KDH HIGH ROOF": 30000 },
+    "Thalpe": { "MINI CAR": 15000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 26000, "KDH HIGH ROOF": 30000 },
+    "Habaraduwa": { "MINI CAR": 16000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 28000, "KDH HIGH ROOF": 32000 },
+    "Ahangama": { "MINI CAR": 18000, "SEDAN": 20000, "MINI VAN": 22000, "KDH FLAT ROOF": 29000, "KDH HIGH ROOF": 33000 },
+    "Weligama": { "MINI CAR": 18000, "SEDAN": 20000, "MINI VAN": 22000, "KDH FLAT ROOF": 30000, "KDH HIGH ROOF": 34000 },
+    "Mirissa": { "MINI CAR": 18000, "SEDAN": 20000, "MINI VAN": 22000, "KDH FLAT ROOF": 30000, "KDH HIGH ROOF": 34000 },
+    "Polhena": { "MINI CAR": 20000, "SEDAN": 24000, "MINI VAN": 25000, "KDH FLAT ROOF": 32000, "KDH HIGH ROOF": 36000 },
+    "Matara": { "MINI CAR": 20000, "SEDAN": 24000, "MINI VAN": 25000, "KDH FLAT ROOF": 32000, "KDH HIGH ROOF": 36000 },
+    "Thalalla": { "MINI CAR": 23000, "SEDAN": 25000, "MINI VAN": 26000, "KDH FLAT ROOF": 34000, "KDH HIGH ROOF": 38000 },
+    "Dikwella": { "MINI CAR": 26000, "SEDAN": 28000, "MINI VAN": 29000, "KDH FLAT ROOF": 36000, "KDH HIGH ROOF": 40000 },
+    "Hiriketiya": { "MINI CAR": 26000, "SEDAN": 28000, "MINI VAN": 29000, "KDH FLAT ROOF": 36000, "KDH HIGH ROOF": 40000 },
+    "Nilwella": { "MINI CAR": 26000, "SEDAN": 28000, "MINI VAN": 29000, "KDH FLAT ROOF": 36000, "KDH HIGH ROOF": 40000 },
+    "Tangalle": { "MINI CAR": 26000, "SEDAN": 30000, "MINI VAN": 31000, "KDH FLAT ROOF": 37000, "KDH HIGH ROOF": 40000 },
+    "Kalamatiya": { "MINI CAR": 30000, "SEDAN": 34000, "MINI VAN": 35000, "KDH FLAT ROOF": 40000, "KDH HIGH ROOF": 44000 },
+    "Hambantota": { "MINI CAR": 38000, "SEDAN": 40000, "MINI VAN": 41000, "KDH FLAT ROOF": 46000, "KDH HIGH ROOF": 50000 },
+    "Bundala": { "MINI CAR": 40000, "SEDAN": 45000, "MINI VAN": 46000, "KDH FLAT ROOF": 50000, "KDH HIGH ROOF": 54000 },
+    "Tissamaharama": { "MINI CAR": 40000, "SEDAN": 45000, "MINI VAN": 46000, "KDH FLAT ROOF": 50000, "KDH HIGH ROOF": 54000 },
+    "Kirinda": { "MINI CAR": 44000, "SEDAN": 46000, "MINI VAN": 47000, "KDH FLAT ROOF": 50000, "KDH HIGH ROOF": 54000 },
+    "Yala": { "MINI CAR": 45000, "SEDAN": 48000, "MINI VAN": 50000, "KDH FLAT ROOF": 52000, "KDH HIGH ROOF": 56000 },
+    "Kataragama": { "MINI CAR": 40000, "SEDAN": 44000, "MINI VAN": 45000, "KDH FLAT ROOF": 48000, "KDH HIGH ROOF": 52000 },
+    "Debarawewa": { "MINI CAR": 38000, "SEDAN": 40000, "MINI VAN": 41000, "KDH FLAT ROOF": 48000, "KDH HIGH ROOF": 50000 },
+    "Weerawila": { "MINI CAR": 40000, "SEDAN": 42000, "MINI VAN": 43000, "KDH FLAT ROOF": 45000, "KDH HIGH ROOF": 50000 },
+    "Kurunegala": { "MINI CAR": 8000, "SEDAN": 9000, "MINI VAN": 10000, "KDH FLAT ROOF": 12000, "KDH HIGH ROOF": 16000 },
+    "Kandalama": { "MINI CAR": 14000, "SEDAN": 16000, "MINI VAN": 18000, "KDH FLAT ROOF": 24000, "KDH HIGH ROOF": 28000 },
+    "Kandy": { "MINI CAR": 10000, "SEDAN": 12000, "MINI VAN": 14000, "KDH FLAT ROOF": 18000, "KDH HIGH ROOF": 22000 },
+    "Nuwara Eliya": { "MINI CAR": 15000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 26000, "KDH HIGH ROOF": 30000 },
+    "Adams Peak": { "MINI CAR": 14000, "SEDAN": 16000, "MINI VAN": 18000, "KDH FLAT ROOF": 23000, "KDH HIGH ROOF": 27000 },
+    "Awissawella": { "MINI CAR": 6000, "SEDAN": 8000, "MINI VAN": 9000, "KDH FLAT ROOF": 10000, "KDH HIGH ROOF": 14000 },
+    "Rathnapura": { "MINI CAR": 12000, "SEDAN": 14000, "MINI VAN": 16000, "KDH FLAT ROOF": 20000, "KDH HIGH ROOF": 24000 },
+    "Nanu Oya": { "MINI CAR": 15000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 25000, "KDH HIGH ROOF": 30000 },
+    "Ambewela": { "MINI CAR": 17000, "SEDAN": 20000, "MINI VAN": 22000, "KDH FLAT ROOF": 30000, "KDH HIGH ROOF": 34000 },
+    "Haputale": { "MINI CAR": 26000, "SEDAN": 30000, "MINI VAN": 31000, "KDH FLAT ROOF": 38000, "KDH HIGH ROOF": 42000 },
+    "Ella": { "MINI CAR": 50000, "SEDAN": 55000, "MINI VAN": 56000, "KDH FLAT ROOF": 60000, "KDH HIGH ROOF": 64000 },
+    "Nilaveli": { "MINI CAR": 34000, "SEDAN": 38000, "MINI VAN": 39000, "KDH FLAT ROOF": 43000, "KDH HIGH ROOF": 47000 },
+    "Trincomalee": { "MINI CAR": 31000, "SEDAN": 35000, "MINI VAN": 36000, "KDH FLAT ROOF": 40000, "KDH HIGH ROOF": 45000 },
+    "Polonnaruwa": { "MINI CAR": 22000, "SEDAN": 25000, "MINI VAN": 26000, "KDH FLAT ROOF": 34000, "KDH HIGH ROOF": 38000 },
+    "Anuradhapura": { "MINI CAR": 20000, "SEDAN": 22000, "MINI VAN": 23000, "KDH FLAT ROOF": 30000, "KDH HIGH ROOF": 35000 },
+    "Puttalam": { "MINI CAR": 14000, "SEDAN": 16000, "MINI VAN": 18000, "KDH FLAT ROOF": 24000, "KDH HIGH ROOF": 30000 },
+    "Wilpattu": { "MINI CAR": 20000, "SEDAN": 23000, "MINI VAN": 24000, "KDH FLAT ROOF": 31000, "KDH HIGH ROOF": 35000 },
+    "Sinharaja": { "MINI CAR": 15000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 28000, "KDH HIGH ROOF": 32000 },
+    "Embilipitiya": { "MINI CAR": 34000, "SEDAN": 38000, "MINI VAN": 39000, "KDH FLAT ROOF": 43000, "KDH HIGH ROOF": 47000 },
+    "Udawalawe": { "MINI CAR": 38000, "SEDAN": 43000, "MINI VAN": 44000, "KDH FLAT ROOF": 48000, "KDH HIGH ROOF": 52000 },
+    "Mattala": { "MINI CAR": 35000, "SEDAN": 39000, "MINI VAN": 40000, "KDH FLAT ROOF": 45000, "KDH HIGH ROOF": 50000 },
+    "Bandarawela": { "MINI CAR": 28000, "SEDAN": 30000, "MINI VAN": 31000, "KDH FLAT ROOF": 38000, "KDH HIGH ROOF": 42000 },
+    "Buttala": { "MINI CAR": 52000, "SEDAN": 55000, "MINI VAN": 56000, "KDH FLAT ROOF": 58000, "KDH HIGH ROOF": 62000 },
+    "Monaragala": { "MINI CAR": 54000, "SEDAN": 58000, "MINI VAN": 59000, "KDH FLAT ROOF": 60000, "KDH HIGH ROOF": 65000 },
+    "Potuvil": { "MINI CAR": 65000, "SEDAN": 70000, "MINI VAN": 71000, "KDH FLAT ROOF": 76000, "KDH HIGH ROOF": 80000 },
+    "Arugam Bay": { "MINI CAR": 70000, "SEDAN": 75000, "MINI VAN": 76000, "KDH FLAT ROOF": 78000, "KDH HIGH ROOF": 80000 },
+    "Ampara": { "MINI CAR": 48000, "SEDAN": 54000, "MINI VAN": 55000, "KDH FLAT ROOF": 57000, "KDH HIGH ROOF": 60000 },
+    "Akkaraipattu": { "MINI CAR": 55000, "SEDAN": 60000, "MINI VAN": 61000, "KDH FLAT ROOF": 62000, "KDH HIGH ROOF": 66000 },
+    "Kalmunai": { "MINI CAR": 53000, "SEDAN": 58000, "MINI VAN": 60000, "KDH FLAT ROOF": 62000, "KDH HIGH ROOF": 66000 },
+    "Batticaloa": { "MINI CAR": 46000, "SEDAN": 50000, "MINI VAN": 51000, "KDH FLAT ROOF": 56000, "KDH HIGH ROOF": 60000 },
+    "Eravur": { "MINI CAR": 40000, "SEDAN": 45000, "MINI VAN": 46000, "KDH FLAT ROOF": 48000, "KDH HIGH ROOF": 52000 },
+    "Kinniya": { "MINI CAR": 30000, "SEDAN": 35000, "MINI VAN": 36000, "KDH FLAT ROOF": 40000, "KDH HIGH ROOF": 44000 },
+    "Mutur": { "MINI CAR": 36000, "SEDAN": 40000, "MINI VAN": 41000, "KDH FLAT ROOF": 46000, "KDH HIGH ROOF": 48000 },
+    "Vavuniya": { "MINI CAR": 30000, "SEDAN": 35000, "MINI VAN": 36000, "KDH FLAT ROOF": 40000, "KDH HIGH ROOF": 48000 },
+    "Kilinochchi": { "MINI CAR": 46000, "SEDAN": 50000, "MINI VAN": 51000, "KDH FLAT ROOF": 55000, "KDH HIGH ROOF": 60000 },
+    "Jaffna": { "MINI CAR": 60000, "SEDAN": 65000, "MINI VAN": 66000, "KDH FLAT ROOF": 68000, "KDH HIGH ROOF": 70000 },
+    "Mannar": { "MINI CAR": 44000, "SEDAN": 48000, "MINI VAN": 49000, "KDH FLAT ROOF": 50000, "KDH HIGH ROOF": 55000 },
+    "Matale": { "MINI CAR": 12000, "SEDAN": 14000, "MINI VAN": 16000, "KDH FLAT ROOF": 20000, "KDH HIGH ROOF": 24000 },
+    "Balangoda": { "MINI CAR": 18000, "SEDAN": 20000, "MINI VAN": 22000, "KDH FLAT ROOF": 28000, "KDH HIGH ROOF": 32000 },
+    "Pelmadulla": { "MINI CAR": 14000, "SEDAN": 16000, "MINI VAN": 18000, "KDH FLAT ROOF": 24000, "KDH HIGH ROOF": 28000 },
+    "Godakawela": { "MINI CAR": 16000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 28000, "KDH HIGH ROOF": 32000 },
+    "Deniyaya": { "MINI CAR": 20000, "SEDAN": 24000, "MINI VAN": 26000, "KDH FLAT ROOF": 32000, "KDH HIGH ROOF": 36000 },
+    "Gal Oya": { "MINI CAR": 20000, "SEDAN": 24000, "MINI VAN": 25000, "KDH FLAT ROOF": 32000, "KDH HIGH ROOF": 36000 },
+    "Habarana": { "MINI CAR": 15000, "SEDAN": 18000, "MINI VAN": 20000, "KDH FLAT ROOF": 26000, "KDH HIGH ROOF": 30000 },
+    "Maduru Oya": { "MINI CAR": 35000, "SEDAN": 38000, "MINI VAN": 39000, "KDH FLAT ROOF": 44000, "KDH HIGH ROOF": 48000 },
+    "Badulla": { "MINI CAR": 50000, "SEDAN": 58000, "MINI VAN": 59000, "KDH FLAT ROOF": 60000, "KDH HIGH ROOF": 64000 },
+    "Bibile": { "MINI CAR": 36000, "SEDAN": 40000, "MINI VAN": 41000, "KDH FLAT ROOF": 45000, "KDH HIGH ROOF": 50000 },
+  },
+  "Ella": {
+    "Tissamaharama": { "MINI CAR": 13000, "SEDAN": 15000, "MINI VAN": 16000, "KDH FLAT ROOF": 18000, "KDH HIGH ROOF": 22000 },
+    "Kirinda": { "MINI CAR": 16000, "SEDAN": 17000, "MINI VAN": 18000, "KDH FLAT ROOF": 20000, "KDH HIGH ROOF": 24000 },
+    "Yala": { "MINI CAR": 17000, "SEDAN": 18000, "MINI VAN": 19000, "KDH FLAT ROOF": 20000, "KDH HIGH ROOF": 26000 },
+    "Debarawewa": { "MINI CAR": 13000, "SEDAN": 15000, "MINI VAN": 16000, "KDH FLAT ROOF": 18000, "KDH HIGH ROOF": 22000 },
+    "Kataragama": { "MINI CAR": 14000, "SEDAN": 15000, "MINI VAN": 16000, "KDH FLAT ROOF": 18000, "KDH HIGH ROOF": 22000 },
+    "Bundala": { "MINI CAR": 15000, "SEDAN": 16000, "MINI VAN": 17000, "KDH FLAT ROOF": 18000, "KDH HIGH ROOF": 22000 },
+    "Udawalawe": { "MINI CAR": 18000, "SEDAN": 20000, "MINI VAN": 21000, "KDH FLAT ROOF": 23000, "KDH HIGH ROOF": 27000 },
+    "Potuvil": { "MINI CAR": 20000, "SEDAN": 22000, "MINI VAN": 23000, "KDH FLAT ROOF": 24000, "KDH HIGH ROOF": 28000 },
+    "Arugam Bay": { "MINI CAR": 20000, "SEDAN": 22000, "MINI VAN": 23000, "KDH FLAT ROOF": 25000, "KDH HIGH ROOF": 30000 },
+    "Kalamatiya": { "MINI CAR": 20000, "SEDAN": 22000, "MINI VAN": 23000, "KDH FLAT ROOF": 25000, "KDH HIGH ROOF": 30000 },
+    "Tangalle": { "MINI CAR": 22000, "SEDAN": 24000, "MINI VAN": 25000, "KDH FLAT ROOF": 27000, "KDH HIGH ROOF": 30000 },
+    "Nilwella": { "MINI CAR": 24000, "SEDAN": 26000, "MINI VAN": 27000, "KDH FLAT ROOF": 30000, "KDH HIGH ROOF": 34000 },
+    "Hiriketiya": { "MINI CAR": 23000, "SEDAN": 25000, "MINI VAN": 26000, "KDH FLAT ROOF": 30000, "KDH HIGH ROOF": 34000 },
+    "Dikwella": { "MINI CAR": 23000, "SEDAN": 25000, "MINI VAN": 26000, "KDH FLAT ROOF": 30000, "KDH HIGH ROOF": 34000 },
+    "Talalla": { "MINI CAR": 25000, "SEDAN": 28000, "MINI VAN": 29000, "KDH FLAT ROOF": 30000, "KDH HIGH ROOF": 34000 },
+    "Matara": { "MINI CAR": 27000, "SEDAN": 28000, "MINI VAN": 29000, "KDH FLAT ROOF": 31000, "KDH HIGH ROOF": 35000 },
+    "Polhena": { "MINI CAR": 28000, "SEDAN": 30000, "MINI VAN": 31000, "KDH FLAT ROOF": 33000, "KDH HIGH ROOF": 37000 },
+    "Kamburugamuwa": { "MINI CAR": 27000, "SEDAN": 29000, "MINI VAN": 30000, "KDH FLAT ROOF": 32000, "KDH HIGH ROOF": 36000 },
+    "Mirissa": { "MINI CAR": 28000, "SEDAN": 30000, "MINI VAN": 31000, "KDH FLAT ROOF": 33000, "KDH HIGH ROOF": 37000 },
+    "Weligama": { "MINI CAR": 28000, "SEDAN": 30000, "MINI VAN": 31000, "KDH FLAT ROOF": 33000, "KDH HIGH ROOF": 37000 },
+    "Ahangama": { "MINI CAR": 29000, "SEDAN": 31000, "MINI VAN": 32000, "KDH FLAT ROOF": 34000, "KDH HIGH ROOF": 38000 },
+    "Midigama": { "MINI CAR": 29000, "SEDAN": 31000, "MINI VAN": 32000, "KDH FLAT ROOF": 34000, "KDH HIGH ROOF": 38000 },
+    "Thalpe": { "MINI CAR": 30000, "SEDAN": 32000, "MINI VAN": 33000, "KDH FLAT ROOF": 35000, "KDH HIGH ROOF": 40000 },
+    "Koggala": { "MINI CAR": 30000, "SEDAN": 32000, "MINI VAN": 33000, "KDH FLAT ROOF": 35000, "KDH HIGH ROOF": 40000 },
+    "Unawatuna": { "MINI CAR": 32000, "SEDAN": 34000, "MINI VAN": 35000, "KDH FLAT ROOF": 37000, "KDH HIGH ROOF": 42000 },
+    "Galle Fort": { "MINI CAR": 32000, "SEDAN": 34000, "MINI VAN": 35000, "KDH FLAT ROOF": 37000, "KDH HIGH ROOF": 42000 },
+    "Colombo": { "MINI CAR": 50000, "SEDAN": 52000, "MINI VAN": 53000, "KDH FLAT ROOF": 56000, "KDH HIGH ROOF": 60000 },
+    "Negombo": { "MINI CAR": 56000, "SEDAN": 58000, "MINI VAN": 59000, "KDH FLAT ROOF": 63000, "KDH HIGH ROOF": 67000 },
+    "Colombo Airport (BIA)": { "MINI CAR": 56000, "SEDAN": 58000, "MINI VAN": 59000, "KDH FLAT ROOF": 60000, "KDH HIGH ROOF": 64000 }
+  },
+  "Tissamaharama": {
+    "Udawalawe": { "MINI CAR": 8000, "SEDAN": 9000, "KDH FLAT ROOF": 11000, "KDH HIGH ROOF": 13000 },
+    "Ella": { "MINI CAR": 10000, "SEDAN": 11000, "KDH FLAT ROOF": 14000, "KDH HIGH ROOF": 16000 },
+    "Haputale": { "MINI CAR": 14000, "SEDAN": 16000, "KDH FLAT ROOF": 18000, "KDH HIGH ROOF": 22000 },
+    "Sinharaja": { "MINI CAR": 16000, "SEDAN": 18000, "KDH FLAT ROOF": 22000, "KDH HIGH ROOF": 26000 },
+    "Nuwara Eliya": { "MINI CAR": 18000, "SEDAN": 22000, "KDH FLAT ROOF": 25000, "KDH HIGH ROOF": 28000 },
+    "Kandy": { "MINI CAR": 30000, "SEDAN": 35000, "KDH FLAT ROOF": 38000, "KDH HIGH ROOF": 42000 },
+    "Sigiriya": { "MINI CAR": 37000, "SEDAN": 42000, "KDH FLAT ROOF": 45000, "KDH HIGH ROOF": 50000 },
+    "Dambulla": { "MINI CAR": 36000, "SEDAN": 40000, "KDH FLAT ROOF": 45000, "KDH HIGH ROOF": 50000 },
+    "Tangalle": { "MINI CAR": 9000, "SEDAN": 10000, "KDH FLAT ROOF": 13000, "KDH HIGH ROOF": 16000 },
+    "Dikwella": { "MINI CAR": 10000, "SEDAN": 11000, "KDH FLAT ROOF": 14000, "KDH HIGH ROOF": 17000 },
+    "Talalla": { "MINI CAR": 12000, "SEDAN": 13000, "KDH FLAT ROOF": 17000, "KDH HIGH ROOF": 20000 },
+    "Mirissa": { "MINI CAR": 14000, "SEDAN": 15000, "KDH FLAT ROOF": 21000, "KDH HIGH ROOF": 25000 },
+    "Weligama": { "MINI CAR": 16000, "SEDAN": 17000, "KDH FLAT ROOF": 23000, "KDH HIGH ROOF": 26000 },
+    "Galle": { "MINI CAR": 17000, "SEDAN": 18000, "KDH FLAT ROOF": 26000, "KDH HIGH ROOF": 30000 },
+    "Hikkaduwa": { "MINI CAR": 19000, "SEDAN": 20000, "KDH FLAT ROOF": 28000, "KDH HIGH ROOF": 32000 },
+    "Bentota": { "MINI CAR": 25000, "SEDAN": 26000, "KDH FLAT ROOF": 36000, "KDH HIGH ROOF": 40000 },
+    "Colombo": { "MINI CAR": 30000, "SEDAN": 33000, "KDH FLAT ROOF": 40000, "KDH HIGH ROOF": 45000 },
+    "Colombo Airport (BIA)": { "MINI CAR": 33000, "SEDAN": 35000, "KDH FLAT ROOF": 45000, "KDH HIGH ROOF": 50000 },
+    "Negombo": { "MINI CAR": 39000, "SEDAN": 41000, "KDH FLAT ROOF": 47000, "KDH HIGH ROOF": 52000 },
+    "Arugam Bay": { "MINI CAR": 17000, "SEDAN": 18000, "KDH FLAT ROOF": 26000, "KDH HIGH ROOF": 30000 },
+    "Trincomalee": { "MINI CAR": 39000, "SEDAN": 40000, "KDH FLAT ROOF": 56000, "KDH HIGH ROOF": 60000 },
+    "Batticaloa": { "MINI CAR": 29000, "SEDAN": 30000, "KDH FLAT ROOF": 40000, "KDH HIGH ROOF": 45000 },
+    "Anuradhapura": { "MINI CAR": 39000, "SEDAN": 40000, "KDH FLAT ROOF": 55000, "KDH HIGH ROOF": 60000 },
+  }
 };
-
 export type RideFare = {
   distanceKm: null;
   ratePerKm: null;
   price: number;
 };
-
 export function calculateRideFare(pickup: string, drop: string, vehicle: string): RideFare | null {
-  const normalizedPickup = pickup.trim().toLowerCase();
-  if (normalizedPickup !== "tissamaharama" && normalizedPickup !== "thissamaharama" && normalizedPickup !== "thissmaharana") {
-    return null;
-  }
-
-  const destinationPricing = ridePricing[drop];
+  const pickupPricing = ridePricing[pickup];
+  if (!pickupPricing) return null;
+  const destinationPricing = pickupPricing[drop];
   if (!destinationPricing) return null;
-
   const price = destinationPricing[vehicle as VehicleType];
   if (!price) return null;
-
   return {
     distanceKm: null,
     ratePerKm: null,
     price,
   };
 }
-
 export function generateWhatsAppURL(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }

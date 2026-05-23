@@ -6,8 +6,9 @@ import kdhHighroofImg from "@/assets/kdh-highroof.jpg";
 const vehiclesData = [
   { name: "MINI CAR", image: miniCarImg, desc: "Compact and economical, perfect for short city rides and airport transfers for solo travelers or couples.", passengers: "1-3" },
   { name: "SEDAN", image: sedanImg, desc: "Comfortable sedan ideal for families and small groups. Spacious trunk for luggage and smooth ride quality.", passengers: "1-4" },
-  { name: "KDH VAN", image: kdhImg, desc: "Spacious van for group travel and long tours. Air-conditioned with ample luggage space for comfortable journeys.", passengers: "5-9" },
-  { name: "KDH HIGHROOF", image: kdhHighroofImg, desc: "Extra spacious high-roof van, perfect for large groups and extended tours with maximum comfort and headroom.", passengers: "7-12" },
+  { name: "MINI VAN", image: kdhImg, desc: "Spacious van for group travel and long tours. Air-conditioned with ample luggage space for comfortable journeys.", passengers: "4-6" },
+  { name: "KDH FLAT ROOF", image: kdhImg, desc: "Standard KDH van, perfect for group travel and long tours with ample luggage space.", passengers: "5-9" },
+  { name: "KDH HIGH ROOF", image: kdhHighroofImg, desc: "Extra spacious high-roof van, perfect for large groups and extended tours with maximum comfort and headroom.", passengers: "7-12" },
 ];
 
 const safariJeeps = [
