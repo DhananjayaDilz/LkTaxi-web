@@ -2,8 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://lktaxi.com/sitemap.xml
-
-Allow: /
-
-User-agent: *
-Allow: /
