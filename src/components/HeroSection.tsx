@@ -26,7 +26,7 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
       <div className="absolute inset-0">
         <img 
           src={heroBg} 
-          alt={title ? `${title} Background` : "Sri Lanka coastal road"} 
+          alt={title ? `${title} Background` : "Sri Lanka private taxi service — airport transfers and tours for foreign tourists"} 
           className="w-full h-full object-cover" 
           loading="eager"
         />

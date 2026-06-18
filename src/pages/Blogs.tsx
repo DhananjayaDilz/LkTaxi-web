@@ -9,15 +9,19 @@ export default function Blogs() {
   // Set SEO metadata and scroll on mount
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    
-    document.title = "Travel Blogs | LKTaxi Safari & Tours";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute(
-        "content",
-        "Explore Sri Lanka's best travel experiences, from wild safaris in Yala to ancient cities and lush tea plantations. Read our expert travel blogs."
-      );
-    }
+
+    document.title = "Sri Lanka Travel Blog — Safari Tips, Taxi Guides & Destination Guides | LKTaxi";
+
+    const setMeta = (selector: string, content: string) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute("content", content);
+    };
+    setMeta(
+      'meta[name="description"]',
+      "Expert Sri Lanka travel guides: Yala safari tips, Colombo airport taxi, leopard spotting, hill country tours and more. Plan your Sri Lanka trip with LKTaxi's local knowledge."
+    );
+    setMeta('meta[property="og:title"]', "Sri Lanka Travel Blog — Safari & Taxi Tips | LKTaxi");
+    setMeta('meta[property="og:description"]', "Expert guides for foreign tourists: Yala safari, airport transfers, Sri Lanka itineraries and wildlife tips from LKTaxi.");
   }, []);
 
   return (
