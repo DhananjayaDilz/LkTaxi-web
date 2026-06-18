@@ -107,9 +107,9 @@ export const blogsData: BlogPost[] = [
   },
  {
   id: "2",
-  title: "Yala National Park Safari Guide 2025 — Booking, Costs & Insider Tips",
+  title: "Yala National Park Safari Guide 2026 — Booking, Costs & Insider Tips",
   slug: "yala-national-park-safari-guide",
-  excerpt: "Everything you need to know about booking a Yala safari in Sri Lanka — best time to visit, wildlife, costs, and how to get there from Colombo. Updated June 2025.",
+  excerpt: "Everything you need to know about booking a Yala safari in Sri Lanka — best time to visit, wildlife, costs, and how to get there from Colombo. Updated June 2026.",
   content: `
     <h2>Yala National Park — Sri Lanka's #1 Wildlife Destination</h2>
     <p><strong>Yala National Park</strong> holds the world record for the highest density of <strong>leopards per square kilometre</strong>. Located in <strong>southern Sri Lanka near Tissamaharama</strong>, it is the top wildlife destination on the island — and right now (February–July) is <strong>peak dry season</strong>, meaning your chances of spotting a leopard are at their highest.</p>
@@ -142,7 +142,7 @@ export const blogsData: BlogPost[] = [
       <figcaption>Sri Lankan leopard — the most visible leopard population on Earth</figcaption>
     </figure>
 
-    <h2>Yala Safari Costs for Foreign Tourists (2025)</h2>
+    <h2>Yala Safari Costs for Foreign Tourists (2026)</h2>
     <table>
       <thead><tr><th>Item</th><th>Approx. Cost</th></tr></thead>
       <tbody>
@@ -217,7 +217,7 @@ export const blogsData: BlogPost[] = [
     <h2>Frequently Asked Questions About Yala Safari</h2>
 
     <h3>Is Yala National Park open now?</h3>
-    <p>Yes. As of June 2025, Yala is in <strong>peak season</strong>. Blocks 1, 4, 5 and 6 are fully open. Always confirm at wildlife.gov.lk before travelling.</p>
+    <p>Yes. As of June 2026, Yala is in <strong>peak season</strong>. Blocks 1, 4, 5 and 6 are fully open. Always confirm at wildlife.gov.lk before travelling.</p>
 
     <h3>What is the best way to get to Yala from Colombo?</h3>
     <p>A <strong>private taxi transfer</strong> is the most comfortable option — door to door, air-conditioned, no transfers. <a href="https://wa.me/94705000526">WhatsApp LKTaxi</a> for a quote on the Colombo–Yala route.</p>
@@ -244,11 +244,11 @@ export const blogsData: BlogPost[] = [
   author: "LKTaxi Travel Team",
   date: "2026-06-18",
   readTime: "5 min read",
-  tags: ["Yala Safari", "Sri Lanka Wildlife", "Leopard Spotting", "Safari Guide 2025", "Colombo to Yala", "Things to do in Yala"]
+  tags: ["Yala Safari", "Sri Lanka Wildlife", "Leopard Spotting", "Safari Guide 2026", "Colombo to Yala", "Things to do in Yala"]
   },
   {
     id: "3",
-    title: "Best Places to Visit in Sri Lanka 2025 — Ultimate Travel Guide",
+    title: "Best Places to Visit in Sri Lanka 2026 — Ultimate Travel Guide",
     slug: "best-places-to-visit-sri-lanka",
     excerpt: "Discover the top destinations in Sri Lanka for your holiday. From the ancient Sigiriya rock fortress and Kandy temples to Ella's tea country and Mirissa's pristine beaches.",
     content: `
@@ -325,6 +325,6 @@ export const blogsData: BlogPost[] = [
     author: "LKTaxi Travel Team",
     date: "2026-06-18",
     readTime: "7 min read",
-    tags: ["Sri Lanka Itinerary", "Places to Visit", "Travel Guide 2025", "Sigiriya", "Ella", "Galle"]
+    tags: ["Sri Lanka Itinerary", "Places to Visit", "Travel Guide 2026", "Sigiriya", "Ella", "Galle"]
   }
 ];
