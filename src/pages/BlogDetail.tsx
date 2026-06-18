@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { WHATSAPP_NUMBER } from "@/data/pricing";
+import { generateBlogPostSchema } from "@/lib/seo-utils";
 
 export default function BlogDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -24,15 +25,53 @@ export default function BlogDetail() {
       const foundPost = blogsData.find((b) => b.slug === slug);
       if (foundPost) {
         setPost(foundPost);
-        document.title = `${foundPost.title} | LKTaxi Safari & Tours`;
+        // SEO: Title
+        document.title = `${foundPost.title} | LKTaxi Sri Lanka`;
+
+        // SEO: Meta description
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (!metaDesc) {
+          metaDesc = document.createElement('meta');
+          (metaDesc as HTMLMetaElement).name = 'description';
+          document.head.appendChild(metaDesc);
+        }
+        metaDesc.setAttribute('content', foundPost.excerpt);
+
+        // SEO: Open Graph
+        const setMeta = (prop: string, val: string, attr = 'property') => {
+          let el = document.querySelector(`meta[${attr}="${prop}"]`);
+          if (!el) { el = document.createElement('meta'); el.setAttribute(attr, prop); document.head.appendChild(el); }
+          el.setAttribute('content', val);
+        };
+        setMeta('og:title', foundPost.title);
+        setMeta('og:description', foundPost.excerpt);
+        setMeta('og:image', foundPost.coverImage);
+        setMeta('og:url', window.location.href);
+        setMeta('og:type', 'article');
+        setMeta('twitter:title', foundPost.title, 'name');
+        setMeta('twitter:description', foundPost.excerpt, 'name');
+        setMeta('twitter:image', foundPost.coverImage, 'name');
+
+        // SEO: BlogPosting JSON-LD
+        const existingSchema = document.getElementById('blog-post-schema');
+        if (existingSchema) existingSchema.remove();
+        const schemaScript = document.createElement('script');
+        schemaScript.id = 'blog-post-schema';
+        schemaScript.type = 'application/ld+json';
+        schemaScript.innerHTML = generateBlogPostSchema(foundPost);
+        document.head.appendChild(schemaScript);
       } else {
         setNotFound(true);
       }
       setIsLoading(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 800); // 800ms loading effect
+    }, 800);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      const schemaToRemove = document.getElementById('blog-post-schema');
+      if (schemaToRemove) schemaToRemove.remove();
+    };
   }, [slug]);
 
   if (notFound) {

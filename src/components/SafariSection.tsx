@@ -27,7 +27,7 @@ const SafariSection = () => {
   return (
     <section id="safari" className="section-padding relative">
       <div className="absolute inset-0">
-        <img src={safariBg} alt="Yala Safari" className="w-full h-full object-cover" />
+        <img src={safariBg} alt="Yala National Park private jeep safari — wildlife tours Sri Lanka for foreign tourists" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsla(216,16%,9%,0.92), hsla(216,16%,9%,0.85))" }} />
       </div>
       <div className="relative container mx-auto">
