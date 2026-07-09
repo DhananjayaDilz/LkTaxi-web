@@ -9,6 +9,7 @@ import LocationPage from "./pages/LocationPage.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
 import Blogs from "./pages/Blogs.tsx";
 import BlogDetail from "./pages/BlogDetail.tsx";
+import TaxiPageRouter from "./pages/TaxiPageRouter.tsx";
 
 const queryClient = new QueryClient();
 
@@ -20,8 +21,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/taxi/:location" element={<LocationPage />} />
-          <Route path="/taxi/:routeSlug" element={<RoutePage />} />
+          <Route path="/taxi/:slug" element={<TaxiPageRouter />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

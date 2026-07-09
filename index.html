@@ -30,39 +30,169 @@
     <meta name="twitter:description" content="Book safe, affordable taxis and Yala safari jeeps in Sri Lanka. Airport transfers, day tours &amp; wildlife packages. WhatsApp us for an instant quote." />
     <meta name="twitter:image" content="https://www.lktaxi.com/srilanaka_tour.png" />
 
-    <!-- TaxiService Structured Data (JSON-LD) -->
+    <!-- Structured Data (JSON-LD) — Organization, TaxiService, WebSite, FAQPage -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TaxiService",
-      "name": "LKTaxi",
-      "url": "https://www.lktaxi.com",
-      "logo": "https://www.lktaxi.com/LOGO.png",
-      "image": "https://www.lktaxi.com/srilanaka_tour.png",
-      "telephone": "+94705000526",
-      "description": "Safe and reliable taxi and Yala safari booking service in Sri Lanka for foreign tourists. Airport transfers, private tours, and wildlife safaris island-wide.",
-      "priceRange": "$$",
-      "areaServed": "Sri Lanka",
-      "serviceType": ["Airport Transfer", "Yala Safari Booking", "Private Tours", "Hotel Transfers"],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tissamaharama",
-        "addressRegion": "Southern Province",
-        "addressCountry": "LK"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.lktaxi.com/#organization",
+        "name": "LKTaxi",
+        "url": "https://www.lktaxi.com",
+        "logo": "https://www.lktaxi.com/LOGO.png",
+        "image": "https://www.lktaxi.com/srilanaka_tour.png",
+        "description": "Sri Lanka's trusted private taxi and safari booking service for foreign tourists. Airport transfers, private tours, and Yala safari bookings island-wide.",
         "telephone": "+94705000526",
-        "contactType": "reservations",
-        "availableLanguage": ["English", "Sinhala"]
+        "email": "hi.lktaxi@gmail.com",
+        "foundingDate": "2024",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "379 Jayasirimawatha",
+          "addressLocality": "Tissamaharama",
+          "addressRegion": "Southern Province",
+          "addressCountry": "LK"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+94705000526",
+            "contactType": "reservations",
+            "availableLanguage": ["English", "Sinhala"]
+          }
+        ],
+        "sameAs": [
+          "https://www.tripadvisor.com/UserReviewEdit-g1102395-d34281680-Lktaxi-Tissamaharama_Southern_Province.html"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Sri Lanka"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "TaxiService",
+        "@id": "https://www.lktaxi.com/#taxiservice",
+        "name": "LKTaxi",
+        "provider": { "@id": "https://www.lktaxi.com/#organization" },
+        "url": "https://www.lktaxi.com",
+        "telephone": "+94705000526",
+        "description": "Safe and reliable taxi and Yala safari booking service in Sri Lanka for foreign tourists. Airport transfers, private tours, and wildlife safaris island-wide.",
+        "priceRange": "$$",
+        "serviceType": ["Airport Transfer", "Yala Safari Booking", "Private Tours", "Hotel Transfers", "Day Tours", "Multi-Day Tours"],
+        "areaServed": { "@type": "Country", "name": "Sri Lanka" },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Taxi & Safari Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Colombo Airport Transfer",
+                "description": "Private taxi from Bandaranaike International Airport to any destination in Sri Lanka"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Yala Safari Booking",
+                "description": "Private and shared 4x4 jeep safari tours in Yala National Park"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Private Day Tours",
+                "description": "Customized private day tours across Sri Lanka with experienced drivers"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://www.lktaxi.com/#website",
+        "name": "LKTaxi",
+        "url": "https://www.lktaxi.com",
+        "publisher": { "@id": "https://www.lktaxi.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.lktaxi.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is LKTaxi available 24/7?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, LKTaxi operates 24 hours a day, 7 days a week to ensure travelers can get reliable transportation at any time in Sri Lanka. Whether it is airport pickup, late night travel, or early morning tours, our drivers are available to serve you safely and comfortably."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to pay an advance for a taxi booking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For normal taxi rides no advance payment is required. However for long tours or special bookings we may request a small 25% advance to confirm the reservation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are your drivers English speaking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our drivers are professional and experienced in working with international travelers. Most drivers speak English and are friendly, helpful, and knowledgeable about Sri Lanka's destinations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does a taxi cost from Colombo Airport?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A private taxi from Colombo Bandaranaike International Airport costs approximately LKR 3,500-5,000 to Negombo (15 minutes), LKR 8,000-12,000 to Colombo city center (45-60 minutes), and LKR 25,000-35,000 to Kandy (3.5-4 hours). Pre-booked taxis include meet-and-greet service at arrivals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I book a taxi with LKTaxi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can book a taxi with LKTaxi via WhatsApp (+94 70 5000 526) or through the booking form on our website. Simply select your pickup and drop location, choose a vehicle type, and confirm your booking. We respond within minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What vehicles does LKTaxi offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LKTaxi offers a range of vehicles including comfortable sedans for couples, spacious SUVs for families, and large vans for groups. For Yala safaris, we provide 4x4 Bolero and Hilux jeeps. All vehicles are air-conditioned and well-maintained."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does a Yala safari cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A half-day private Yala safari costs approximately Rs. 15,000-16,000 for the jeep, plus park entrance fees. A full-day safari costs Rs. 30,000-32,000. Shared safaris start from $60 per person including entrance tickets, water, and breakfast."
+            }
+          }
+        ]
       }
-    }
+    ]
     </script>
 
     <!-- Google tag (gtag.js) -->

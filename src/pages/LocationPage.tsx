@@ -11,7 +11,7 @@ import FAQSection from "../components/FAQSection";
 import ContactSection from "../components/ContactSection";
 
 const LocationPage = () => {
-  const { location } = useParams<{ location: string }>();
+  const { slug: location } = useParams<{ slug: string }>();
 
   if (!location || !locations.includes(location as Location)) {
     return <Navigate to="/404" replace />;

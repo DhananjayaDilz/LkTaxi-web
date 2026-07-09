@@ -34,17 +34,24 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
       </div>
       <div className="relative container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-2xl mb-8 md:mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground mb-4 leading-tight min-h-[120px] md:min-h-[160px]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground mb-4 leading-tight">
             {title ? (
               title
             ) : (
+              <>
+                Your Trusted <span className="text-primary">Taxi Service</span> in Sri Lanka
+              </>
+            )}
+          </h1>
+          {!title && (
+            <div className="text-2xl md:text-3xl font-semibold text-secondary-foreground/80 mb-4 min-h-[48px] md:min-h-[56px]" aria-hidden="true">
               <Typewriter
                 options={{
                   strings: [
-                    'Your Trusted <span class="text-primary">Taxi Service</span> in Sri Lanka',
                     'Book Your <span class="text-primary">Tour</span>',
                     'Book Your Private <span class="text-primary">Safari</span>',
-                    'Book Your Shared <span class="text-primary">Safari</span>'
+                    'Book Your Shared <span class="text-primary">Safari</span>',
+                    '<span class="text-primary">Airport Transfer</span> Experts'
                   ],
                   autoStart: true,
                   loop: true,
@@ -52,8 +59,8 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
                   deleteSpeed: 30,
                 }}
               />
-            )}
-          </h1>
+            </div>
+          )}
           <p className="text-lg text-secondary-foreground/70">
             {subtitle || "Safe, reliable and affordable transportation across Sri Lanka. Airport transfers, day tours, and long distance travel."}
           </p>
