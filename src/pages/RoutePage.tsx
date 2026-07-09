@@ -12,7 +12,7 @@ import FAQSection from "../components/FAQSection";
 import ContactSection from "../components/ContactSection";
 
 const RoutePage = () => {
-  const { routeSlug } = useParams<{ routeSlug: string }>();
+  const { slug: routeSlug } = useParams<{ slug: string }>();
 
   const parsedRoute = routeSlug ? parseRouteSlug(routeSlug) : null;
 

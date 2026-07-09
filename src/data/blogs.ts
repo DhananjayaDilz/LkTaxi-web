@@ -88,10 +88,6 @@ export const blogsData: BlogPost[] = [
       <h2>Conclusion</h2>
       <p>Sigiriya Rock Fortress is an absolute must-visit destination for anyone traveling to Sri Lanka. It remains a powerful symbol of the island's rich ancient history, showcasing an extraordinary mix of culture, engineering, and raw natural beauty.</p>
       <p>Make sure to add Sigiriya to your travel itinerary for an unforgettable experience!</p>
-      
-      <div style="display: none;">
-        <p>SEO Keywords: Sigiriya Sri Lanka, Sigiriya Rock Fortress, Lion Rock Sri Lanka, Sigiriya travel guide, things to do in Sigiriya, Sri Lanka tourist places, Sigiriya history, visit Sigiriya Sri Lanka</p>
-      </div>
     `,
     coverImage: "/places-sigiriya-rock.webp",
     gallery: [
