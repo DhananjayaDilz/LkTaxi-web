@@ -1,6 +1,11 @@
-import { CarFront, CarTaxiFront, TramFront } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { VehicleType } from "@/types/booking";
+
+import wagonrImg from "@/assets/taxi-wagonr.webp";
+import sedanImg from "@/assets/taxi-sedan.webp";
+import miniVanImg from "@/assets/taxi-mini_van.webp";
+import kdhImg from "@/assets/taxi-kdh.webp";
+import kdhHighRoofImg from "@/assets/taxi-kdh-highroof.webp";
 
 interface VehicleSelectorProps {
   value: VehicleType | null;
@@ -11,70 +16,70 @@ interface VehicleSelectorProps {
 const vehicleOptions: Array<{
   type: VehicleType;
   label: string;
-  icon: typeof CarFront;
-  description: string;
+  image: string;
 }> = [
   {
     type: "Wagonr",
-    label: "Wagonr",
-    icon: CarTaxiFront,
-    description: "Compact and economical for short city rides.",
+    label: "WagonR (Hatchback)",
+    image: wagonrImg,
   },
   {
     type: "Sedan",
     label: "Sedan",
-    icon: CarFront,
-    description: "Comfortable for couples and small families.",
+    image: sedanImg,
   },
   {
     type: "Mini van",
-    label: "Mini van",
-    icon: TramFront,
-    description: "Spacious option for families and luggage.",
+    label: "Mini Van",
+    image: miniVanImg,
   },
   {
     type: "KDH",
-    label: "KDH",
-    icon: CarFront,
-    description: "Reliable group travel for longer journeys.",
+    label: "KDH Van",
+    image: kdhImg,
   },
   {
     type: "KDH High roof",
-    label: "KDH High roof",
-    icon: TramFront,
-    description: "Extra headroom and comfort for larger groups.",
+    label: "KDH High Roof",
+    image: kdhHighRoofImg,
   },
 ];
 
 export function VehicleSelector({ value, onChange, error }: VehicleSelectorProps) {
+  const selectedVehicle = vehicleOptions.find((v) => v.type === value);
+
   return (
     <div className="space-y-2">
-      <label className="block text-xs font-medium text-muted-foreground">Vehicle Type</label>
-      <div className="grid gap-3 sm:grid-cols-3">
+      <div className="flex items-center justify-between">
+        <label className="block text-xs font-medium text-muted-foreground">Vehicle Type</label>
+        {selectedVehicle ? (
+          <span className="text-xs font-semibold text-primary">{selectedVehicle.label}</span>
+        ) : null}
+      </div>
+
+      <div className="grid grid-cols-5 gap-2 sm:gap-3">
         {vehicleOptions.map((option) => {
-          const Icon = option.icon;
+          const isSelected = value === option.type;
 
           return (
             <button
               key={option.type}
               type="button"
+              title={option.label}
+              aria-label={option.label}
               onClick={() => onChange(option.type)}
               className={cn(
-                "rounded-xl border p-4 text-left transition-all hover:-translate-y-0.5 hover:shadow-md sm:p-4",
-                value === option.type
-                  ? "border-primary bg-primary/10 ring-2 ring-primary/20"
-                  : "border-border bg-background",
+                "group relative flex aspect-square items-center justify-center rounded-2xl border p-1.5 text-center transition-all duration-200 hover:border-primary/60 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40",
+                isSelected
+                  ? "border-primary bg-primary/10 shadow-md ring-2 ring-primary/30"
+                  : "border-border bg-card hover:border-primary/40"
               )}
             >
-              <div className="flex items-start gap-3">
-                <span className="rounded-lg bg-muted p-2 text-foreground">
-                  <Icon className="h-4 w-4" />
-                </span>
-                <div className="min-w-0">
-                  <p className="font-semibold text-foreground">{option.label}</p>
-                </div>
-              </div>
-              <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:mt-3">{option.description}</p>
+              <img
+                src={option.image}
+                alt={option.label}
+                className="h-full w-full object-contain transition-transform duration-200 group-hover:scale-105"
+              />
             </button>
           );
         })}

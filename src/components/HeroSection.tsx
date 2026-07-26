@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { format } from "date-fns";
-import { CalendarIcon, Car, MapPin, User, MessageSquare, Send } from "lucide-react";
+import { CalendarIcon, Car, MapPin, User, MessageSquare, Send, Calculator, Compass, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,9 +18,14 @@ interface HeroSectionProps {
   subtitle?: string;
 }
 
+const tabs = [
+  { id: 0, label: "Fare Calculator", shortLabel: "Fare Calculator", icon: Calculator },
+  { id: 1, label: "Custom Ride Request", shortLabel: "Custom Ride", icon: Compass },
+  { id: 2, label: "Book Tour", shortLabel: "Book Tour", icon: Map },
+];
+
 const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
   const [activeTab, setActiveTab] = useState(0);
-  const tabs = ["Fare Calculator", "Custom Ride Request", "Book Tour"];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20">
@@ -68,22 +73,32 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
         </div>
 
         <div className="max-w-4xl rounded-2xl bg-card shadow-2xl overflow-hidden sm:rounded-[1.5rem]">
-          {/* Tabs */}
-          <div className="flex overflow-x-auto border-b border-border bg-muted/30">
-            {tabs.map((tab, i) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(i)}
-                className={cn(
-                  "min-w-[136px] flex-1 py-3 px-3 text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap",
-                  activeTab === i
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {tab}
-              </button>
-            ))}
+          {/* User-friendly Segmented Tab Navigation */}
+          <div className="p-1.5 sm:p-2.5 bg-muted/40 border-b border-border">
+            <div className="grid grid-cols-3 gap-1 sm:gap-2">
+              {tabs.map((tab) => {
+                const Icon = tab.icon;
+                const isActive = activeTab === tab.id;
+
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setActiveTab(tab.id)}
+                    className={cn(
+                      "flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:py-3.5 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 focus:outline-none",
+                      isActive
+                        ? "bg-primary text-primary-foreground shadow-md ring-1 ring-primary/30"
+                        : "text-muted-foreground hover:text-foreground hover:bg-background/60"
+                    )}
+                  >
+                    <Icon className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                    <span className="hidden sm:inline">{tab.label}</span>
+                    <span className="inline sm:hidden text-[11px] truncate">{tab.shortLabel}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           <div className="p-4 sm:p-5 md:p-6 lg:p-7">
@@ -214,55 +229,6 @@ function DatePickerField({ date, setDate, label = "Pickup Date" }: { date: Date;
           <Calendar mode="single" selected={date} onSelect={(d) => d && setDate(d)} initialFocus className="p-3 pointer-events-auto" />
         </PopoverContent>
       </Popover>
-    </div>
-  );
-}
-
-function TimePickerField({ hour, setHour, minute, setMinute, ampm, setAmpm }: { hour: string; setHour: (h: string) => void; minute: string; setMinute: (m: string) => void; ampm: string; setAmpm: (a: string) => void }) {
-  const hours = Array.from({ length: 12 }, (_, i) => (i + 1).toString());
-  const minutes = Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, "0"));
-
-  return (
-    <div>
-      <label className="mb-1 block text-xs font-medium text-muted-foreground">Pickup Time</label>
-      <div className="flex items-end gap-2">
-        <div className="flex-1">
-          <Select value={hour} onValueChange={setHour}>
-            <SelectTrigger className="h-11 rounded-xl">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {hours.map((h) => (
-                <SelectItem key={h} value={h}>{h}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        <span className="mb-2 text-lg font-semibold text-foreground">:</span>
-        <div className="flex-1">
-          <Select value={minute} onValueChange={setMinute}>
-            <SelectTrigger className="h-11 rounded-xl">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {minutes.map((m) => (
-                <SelectItem key={m} value={m}>{m}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="flex-1">
-          <Select value={ampm} onValueChange={setAmpm}>
-            <SelectTrigger className="h-11 rounded-xl">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="AM">AM</SelectItem>
-              <SelectItem value="PM">PM</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
     </div>
   );
 }
