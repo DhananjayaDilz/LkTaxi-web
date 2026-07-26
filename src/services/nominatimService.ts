@@ -158,3 +158,37 @@ export async function searchLocation(query: string): Promise<Location[]> {
 
   return results;
 }
+
+export async function reverseGeocode(latitude: number, longitude: number): Promise<Location> {
+  try {
+    const url = new URL("https://nominatim.openstreetmap.org/reverse");
+    url.searchParams.set("format", "jsonv2");
+    url.searchParams.set("lat", latitude.toString());
+    url.searchParams.set("lon", longitude.toString());
+    url.searchParams.set("addressdetails", "1");
+    url.searchParams.set("accept-language", "en");
+
+    const response = await fetch(url.toString(), {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      const data = (await response.json()) as Record<string, unknown>;
+      const loc = toLocation(data);
+      if (loc) {
+        return loc;
+      }
+    }
+  } catch (error) {
+    console.error("Reverse geocoding error:", error);
+  }
+
+  return {
+    name: "Current Location",
+    displayName: `Current Location (${latitude.toFixed(4)}, ${longitude.toFixed(4)})`,
+    latitude,
+    longitude,
+  };
+}

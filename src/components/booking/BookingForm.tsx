@@ -65,7 +65,6 @@ export function BookingForm() {
   const [fareResult, setFareResult] = useState<FareResultType | null>(defaultFareResult);
   const [route, setRoute] = useState<RouteResult | null>(null);
   const [isCalculating, setIsCalculating] = useState(false);
-  const [activeStep, setActiveStep] = useState(0);
   const [errors, setErrors] = useState<BookingErrors>({});
 
   useEffect(() => {
@@ -89,80 +88,39 @@ export function BookingForm() {
     return `${formattedDate} at ${pickupHour}:${pickupMinute} ${pickupAmPm}`;
   }, [pickupDate, pickupHour, pickupMinute, pickupAmPm]);
 
-  const getStepErrors = (step: number) => {
+  const validateForm = () => {
     const nextErrors: BookingErrors = {};
 
-    if ((step === 0 || step === 3) && !pickup) {
+    if (!pickup) {
       nextErrors.pickup = "Select a pickup location.";
     }
 
-    if ((step === 0 || step === 3) && !drop) {
+    if (!drop) {
       nextErrors.drop = "Select a drop location.";
     }
 
-    if ((step === 2 || step === 3) && !vehicle) {
+    if (!vehicle) {
       nextErrors.vehicle = "Choose a vehicle type.";
     }
 
-    if ((step === 1 || step === 3) && !pickupDate) {
+    if (!pickupDate) {
       nextErrors.date = "Select a pickup date.";
     }
 
-    if ((step === 1 || step === 3) && (!pickupHour || !pickupMinute || !pickupAmPm)) {
+    if (!pickupHour || !pickupMinute || !pickupAmPm) {
       nextErrors.time = "Select a pickup time.";
     }
 
-    if ((step === 0 || step === 3) && pickup && drop && pickup.latitude === drop.latitude && pickup.longitude === drop.longitude) {
+    if (pickup && drop && pickup.latitude === drop.latitude && pickup.longitude === drop.longitude) {
       nextErrors.drop = "Pickup and drop locations must be different.";
     }
 
-    return nextErrors;
-  };
-
-  const validateStep = (step: number) => {
-    const nextErrors = getStepErrors(step);
-
     setErrors(nextErrors);
-
     return Object.keys(nextErrors).length === 0;
   };
 
-  const validateAll = () => {
-    const nextErrors = getStepErrors(3);
-    setErrors(nextErrors);
-
-    if (nextErrors.pickup || nextErrors.drop) {
-      setActiveStep(0);
-      return false;
-    }
-
-    if (nextErrors.date || nextErrors.time) {
-      setActiveStep(1);
-      return false;
-    }
-
-    if (nextErrors.vehicle) {
-      setActiveStep(2);
-      return false;
-    }
-
-    return true;
-  };
-
-  const goNext = () => {
-    if (!validateStep(activeStep)) {
-      return;
-    }
-
-    setActiveStep((current) => Math.min(current + 1, 3));
-  };
-
-  const goBack = () => {
-    setActiveStep((current) => Math.max(current - 1, 0));
-  };
-
   const handleCalculate = async () => {
-    if (!validateAll() || !pickup || !drop || !vehicle) {
+    if (!validateForm() || !pickup || !drop || !vehicle) {
       return;
     }
 
@@ -183,7 +141,6 @@ export function BookingForm() {
         price,
         routeGeometry: routeResult.geometry,
       });
-      setActiveStep(3);
     } catch (error) {
       setErrors({
         general: error instanceof Error ? error.message : "Something went wrong while calculating the fare.",
@@ -205,215 +162,91 @@ export function BookingForm() {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="rounded-2xl border border-border bg-card p-4 shadow-sm lg:hidden">
-        <div className="mb-4 flex items-center justify-between gap-3">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Booking Flow</p>
-            <h2 className="text-lg font-bold text-foreground">Step {activeStep + 1} of 4</h2>
-          </div>
-          <div className="flex gap-1.5">
-            {[0, 1, 2, 3].map((step) => (
-              <span
-                key={step}
-                className={step <= activeStep ? "h-2.5 w-2.5 rounded-full bg-primary" : "h-2.5 w-2.5 rounded-full bg-muted"}
-                aria-hidden="true"
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="space-y-5">
-          {activeStep === 0 ? (
-            <div className="space-y-4">
-              <LocationSearch
-                label="Pickup Location"
-                placeholder="Search location"
-                value={pickup}
-                onChange={(location) => {
-                  setPickup(location);
-                  setErrors((current) => ({ ...current, pickup: undefined, general: undefined }));
-                }}
-                error={errors.pickup}
-              />
-              <LocationSearch
-                label="Drop Location"
-                placeholder="Search location"
-                value={drop}
-                onChange={(location) => {
-                  setDrop(location);
-                  setErrors((current) => ({ ...current, drop: undefined, general: undefined }));
-                }}
-                error={errors.drop}
-              />
-            </div>
-          ) : null}
-
-          {activeStep === 1 ? (
-            <div className="space-y-4">
-              <DatePickerField label="Pickup Date" date={pickupDate} setDate={setPickupDate} error={errors.date} />
-              <TimePickerField
-                hour={pickupHour}
-                setHour={setPickupHour}
-                minute={pickupMinute}
-                setMinute={setPickupMinute}
-                ampm={pickupAmPm}
-                setAmpm={setPickupAmPm}
-                error={errors.time}
-              />
-            </div>
-          ) : null}
-
-          {activeStep === 2 ? (
-            <VehicleSelector
-              value={vehicle}
-              onChange={(nextVehicle) => {
-                setVehicle(nextVehicle);
-                setErrors((current) => ({ ...current, vehicle: undefined, general: undefined }));
-              }}
-              error={errors.vehicle}
-            />
-          ) : null}
-
-          {activeStep === 3 ? (
-            <div className="space-y-4">
-              <div className="rounded-2xl border border-border bg-muted/40 p-4 text-sm text-muted-foreground">
-                <p className="font-medium text-foreground">Review your booking</p>
-                <p className="mt-1 leading-6">Tap Calculate Fare to get distance, duration, and price based on the route.</p>
-              </div>
-              <FareResult result={fareResult} pickupTimeLabel={pickupDateTimeLabel} />
-              <TaxiMap pickup={fareResult?.pickup ?? pickup} drop={fareResult?.drop ?? drop} route={route} />
-            </div>
-          ) : null}
-
-          <div className="flex gap-3">
-            <Button
-              type="button"
-              variant="outline"
-              onClick={goBack}
-              disabled={activeStep === 0}
-              className="h-12 flex-1 rounded-xl"
-            >
-              Back
-            </Button>
-
-            {activeStep < 3 ? (
-              <Button type="button" onClick={goNext} className="h-12 flex-1 rounded-xl bg-primary font-semibold text-primary-foreground hover:bg-primary/90">
-                Next
-              </Button>
-            ) : (
-              <Button
-                type="button"
-                onClick={handleCalculate}
-                disabled={isCalculating}
-                className="h-12 flex-1 rounded-xl bg-primary font-semibold text-primary-foreground hover:bg-primary/90"
-              >
-                {isCalculating ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-                Calculate Fare
-              </Button>
-            )}
-          </div>
-
-          {fareResult ? (
-            <Button
-              onClick={handleWhatsAppBooking}
-              className="h-12 w-full rounded-xl border border-[#25D366] bg-[#25D366] text-white shadow-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              <Send className="mr-2 h-4 w-4" />
-              Book via WhatsApp
-            </Button>
-          ) : null}
-
-          {errors.general ? (
-            <div className="flex items-start gap-3 rounded-2xl border border-destructive/20 bg-destructive/5 p-4 text-sm text-destructive">
-              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-              <p>{errors.general}</p>
-            </div>
-          ) : null}
-        </div>
+    <div className="space-y-5">
+      {/* Locations */}
+      <div className="grid gap-4 md:grid-cols-2">
+        <LocationSearch
+          label="Pickup Location"
+          placeholder="Search location"
+          value={pickup}
+          onChange={(location) => {
+            setPickup(location);
+            setErrors((current) => ({ ...current, pickup: undefined, general: undefined }));
+          }}
+          error={errors.pickup}
+        />
+        <LocationSearch
+          label="Drop Location"
+          placeholder="Search location"
+          value={drop}
+          onChange={(location) => {
+            setDrop(location);
+            setErrors((current) => ({ ...current, drop: undefined, general: undefined }));
+          }}
+          error={errors.drop}
+        />
       </div>
 
-      <div className="hidden lg:block">
-        <div className="grid gap-4 lg:grid-cols-2">
-          <LocationSearch
-            label="Pickup Location"
-            placeholder="Search location"
-            value={pickup}
-            onChange={(location) => {
-              setPickup(location);
-              setErrors((current) => ({ ...current, pickup: undefined, general: undefined }));
-            }}
-            error={errors.pickup}
-          />
-          <LocationSearch
-            label="Drop Location"
-            placeholder="Search location"
-            value={drop}
-            onChange={(location) => {
-              setDrop(location);
-              setErrors((current) => ({ ...current, drop: undefined, general: undefined }));
-            }}
-            error={errors.drop}
-          />
-        </div>
+      {/* Date and Time */}
+      <div className="grid gap-4 sm:grid-cols-2">
+        <DatePickerField label="Pickup Date" date={pickupDate} setDate={setPickupDate} error={errors.date} />
+        <TimePickerField
+          hour={pickupHour}
+          setHour={setPickupHour}
+          minute={pickupMinute}
+          setMinute={setPickupMinute}
+          ampm={pickupAmPm}
+          setAmpm={setPickupAmPm}
+          error={errors.time}
+        />
+      </div>
 
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <DatePickerField label="Pickup Date" date={pickupDate} setDate={setPickupDate} error={errors.date} />
-          <TimePickerField
-            hour={pickupHour}
-            setHour={setPickupHour}
-            minute={pickupMinute}
-            setMinute={setPickupMinute}
-            ampm={pickupAmPm}
-            setAmpm={setPickupAmPm}
-            error={errors.time}
-          />
-        </div>
+      {/* Vehicle Type */}
+      <VehicleSelector
+        value={vehicle}
+        onChange={(nextVehicle) => {
+          setVehicle(nextVehicle);
+          setErrors((current) => ({ ...current, vehicle: undefined, general: undefined }));
+        }}
+        error={errors.vehicle}
+      />
 
-        <div className="mt-4">
-          <VehicleSelector
-            value={vehicle}
-            onChange={(nextVehicle) => {
-              setVehicle(nextVehicle);
-              setErrors((current) => ({ ...current, vehicle: undefined, general: undefined }));
-            }}
-            error={errors.vehicle}
-          />
-        </div>
-
-        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+      {/* Action Buttons */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <Button
+          type="button"
+          onClick={handleCalculate}
+          disabled={isCalculating}
+          className="h-12 flex-1 rounded-xl bg-primary font-semibold text-primary-foreground hover:bg-primary/90"
+        >
+          {isCalculating ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+          Calculate Fare
+        </Button>
+        {fareResult ? (
           <Button
-            onClick={handleCalculate}
-            disabled={isCalculating}
-            className="h-12 flex-1 bg-primary font-semibold text-primary-foreground hover:bg-primary/90"
+            type="button"
+            onClick={handleWhatsAppBooking}
+            className="h-12 flex-1 rounded-xl border border-[#25D366] bg-[#25D366] text-white shadow-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
           >
-            {isCalculating ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-            Calculate Fare
+            <Send className="mr-2 h-4 w-4" />
+            Book via WhatsApp
           </Button>
-          {fareResult ? (
-            <Button
-              onClick={handleWhatsAppBooking}
-              className="h-12 flex-1 rounded-xl border border-[#25D366] bg-[#25D366] text-white shadow-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              <Send className="mr-2 h-4 w-4" />
-              Book via WhatsApp
-            </Button>
-          ) : null}
-        </div>
-
-        {errors.general ? (
-          <div className="mt-4 flex items-start gap-3 rounded-2xl border border-destructive/20 bg-destructive/5 p-4 text-sm text-destructive">
-            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-            <p>{errors.general}</p>
-          </div>
         ) : null}
-
-        <div ref={resultsRef} className="mt-4 grid gap-4 scroll-mt-24 xl:grid-cols-[1fr_1.1fr]">
-          <FareResult result={fareResult} pickupTimeLabel={pickupDateTimeLabel} />
-          <TaxiMap pickup={fareResult?.pickup ?? pickup} drop={fareResult?.drop ?? drop} route={route} />
-        </div>
       </div>
 
+      {/* General Error Banner */}
+      {errors.general ? (
+        <div className="flex items-start gap-3 rounded-2xl border border-destructive/20 bg-destructive/5 p-4 text-sm text-destructive">
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+          <p>{errors.general}</p>
+        </div>
+      ) : null}
+
+      {/* Fare Result and Map */}
+      <div ref={resultsRef} className="grid gap-4 scroll-mt-24 xl:grid-cols-[1fr_1.1fr]">
+        <FareResult result={fareResult} pickupTimeLabel={pickupDateTimeLabel} />
+        <TaxiMap pickup={fareResult?.pickup ?? pickup} drop={fareResult?.drop ?? drop} route={route} />
+      </div>
     </div>
   );
 }
