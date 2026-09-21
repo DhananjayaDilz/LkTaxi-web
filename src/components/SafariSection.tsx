@@ -1,3 +1,4 @@
+import { trackContact } from "@/lib/analytics";
 import { useState, useMemo, useEffect } from "react";
 import { format } from "date-fns";
 import { useSearchParams } from "react-router-dom";
@@ -27,7 +28,7 @@ const SafariSection = () => {
   return (
     <section id="safari" className="section-padding relative">
       <div className="absolute inset-0">
-        <img src={safariBg} alt="Yala National Park private jeep safari — wildlife tours Sri Lanka for foreign tourists" className="w-full h-full object-cover" />
+        <img loading="lazy" src={safariBg} alt="Yala National Park private jeep safari — wildlife tours Sri Lanka for foreign tourists" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsla(216,16%,9%,0.92), hsla(216,16%,9%,0.85))" }} />
       </div>
       <div className="relative container mx-auto">
@@ -95,6 +96,7 @@ function FullDaySafari() {
   const handleBook = () => {
     const meals = [breakfast && "Breakfast Box", lunch && "Packed Lunch", water && "Bottled Water"].filter(Boolean).join(", ");
     const msg = `🦁 *Full Day Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\n⏰ Time: 5:30 AM – 6:00 PM\n👥 Adults: ${adults}\n👶 Children: ${children}\n🚙 Jeep: ${jeepType === "bolero" ? "Bolero Jeep" : "Hilux Jeep"}\n🍽️ Meals: ${meals || "None"}\n💰 Total: Rs. ${jeepPrice} + $${mealCost} (Meals)\n\n✅ Includes: Private 4x4 safari jeep, Park entrance guidance`;
+    trackContact("whatsapp", "SafariSection");
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 
@@ -175,6 +177,7 @@ function HalfDaySafari() {
   const handleBook = () => {
     const meals = [breakfast && "Breakfast Box", water && "Bottled Water"].filter(Boolean).join(", ");
     const msg = `🦁 *Half Day Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\n👥 Adults: ${adults}\n👶 Children: ${children}\n🚙 Jeep: ${jeepType === "bolero" ? "Bolero Jeep" : "Hilux Jeep"}\n🍽️ Meals: ${meals || "None"}\n💰 Total: Rs. ${jeepPrice} + $${mealCost} (Meals)\n\n✅ Includes: Private 4x4 safari jeep, Park entrance guidance`;
+    trackContact("whatsapp", "SafariSection");
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 
@@ -242,6 +245,7 @@ function SharedSafari() {
 
   const handleBook = () => {
     const msg = `🦁 *Shared Yala Safari - LKTaxi*\n\n📅 Date: ${format(date, "PPP")}\nType: ${safariType === "half" ? "Half Day" : "Full Day"}\n👥 Adults: ${adults}\n👶 Children: ${children}\n👤 Total Guests: ${totalPeople}\n💰 Total: $${totalPrice}\n\n✅ Includes: Entrance ticket, Water, Breakfast, ${safariType === "full" ? "Lunch, " : ""}Driver as Guide`;
+    trackContact("whatsapp", "SafariSection");
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 

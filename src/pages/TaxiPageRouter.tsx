@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom";
+import { publicPaths } from "@/lib/page-seo";
+import NotFound from "./NotFound";
 import LocationPage from "./LocationPage";
 import RoutePage from "./RoutePage";
 
@@ -9,6 +11,8 @@ import RoutePage from "./RoutePage";
  */
 const TaxiPageRouter = () => {
   const { slug } = useParams<{ slug: string }>();
+
+  if (!publicPaths.includes(`/taxi/${slug}`)) return <NotFound />;
 
   if (!slug) {
     return <LocationPage />;

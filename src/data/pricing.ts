@@ -1,4 +1,3 @@
-//export const WHATSAPP_NUMBER = "94705000526";
 export const WHATSAPP_NUMBER = "94784207818";
 export const tourPricing: Record<string, number> = {
   "MINI CAR": 15000,

@@ -1,0 +1,1 @@
+export const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=lktaxi+reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOek6h7-t2eGs1dOgceJuJT8AdMqURp7KzIfDuqwoxIZQCUg70U-5OSL3mVzXPvxN88maDrTx_H1Bd5fxpGHaki4HmiYl";

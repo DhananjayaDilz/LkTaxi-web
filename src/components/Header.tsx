@@ -128,9 +128,9 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:+94705000526" className="flex items-center gap-2 text-primary font-semibold text-sm">
+          <a href="tel:+94784207818" className="flex items-center gap-2 text-primary font-semibold text-sm">
             <Phone className="w-4 h-4" />
-            +94 70 5000 526
+            +94 78 420 7818
           </a>
         </div>
 
@@ -160,9 +160,9 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <a href="tel:+94705000526" className="px-4 py-3 text-primary font-semibold text-sm flex items-center gap-2">
+            <a href="tel:+94784207818" className="px-4 py-3 text-primary font-semibold text-sm flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              +94 70 5000 526
+              +94 78 420 7818
             </a>
           </nav>
         </div>

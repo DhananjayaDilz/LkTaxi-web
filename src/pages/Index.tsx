@@ -1,3 +1,4 @@
+import TransferGuide from "@/components/TransferGuide";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "@/components/Header";
@@ -34,6 +35,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <TransferGuide />
         <AboutSection />
         <ReviewsSection />
         <ServicesSection />

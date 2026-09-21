@@ -32,7 +32,7 @@ export const generateStructuredData = (location?: Location, from?: Location, to?
     "logo": "https://www.lktaxi.com/LOGO.png",
     "@id": `https://www.lktaxi.com/#${location || "main"}`,
     "url": "https://www.lktaxi.com",
-    "telephone": "+94705000526",
+    "telephone": "+94784207818",
     "description": "Safe and reliable taxi and Yala safari booking service in Sri Lanka for foreign tourists. Airport transfers, private tours, and wildlife safaris island-wide.",
     "priceRange": "$$",
     "serviceType": ["Airport Transfer", "Yala Safari Booking", "Private Tours", "Hotel Transfers"],
@@ -58,7 +58,7 @@ export const generateStructuredData = (location?: Location, from?: Location, to?
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+94705000526",
+      "telephone": "+94784207818",
       "contactType": "reservations",
       "availableLanguage": ["English", "Sinhala"]
     },

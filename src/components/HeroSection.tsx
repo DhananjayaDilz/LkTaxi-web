@@ -1,3 +1,4 @@
+import { trackContact } from "@/lib/analytics";
 import { useState, useMemo } from "react";
 import { format } from "date-fns";
 import { CalendarIcon, Car, MapPin, User, MessageSquare, Send, Calculator, Compass, Map } from "lucide-react";
@@ -8,7 +9,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import Typewriter from "typewriter-effect";
+import { GOOGLE_REVIEWS_URL } from "@/data/business";
 import { tourPricing, vehicles, generateWhatsAppURL } from "@/data/pricing";
 import BookingForm from "@/components/booking/BookingForm";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -19,8 +20,8 @@ interface HeroSectionProps {
 }
 
 const tabs = [
-  { id: 0, label: "Fare Calculator", shortLabel: "Fare Calculator", icon: Calculator },
-  { id: 1, label: "Custom Ride Request", shortLabel: "Custom Ride", icon: Compass },
+  { id: 0, label: "Fare Calculator", shortLabel: "Get Fare", icon: Calculator },
+  { id: 1, label: "Custom Ride Request", shortLabel: "Custom", icon: Compass },
   { id: 2, label: "Book Tour", shortLabel: "Book Tour", icon: Map },
 ];
 
@@ -35,6 +36,9 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
           alt={title ? `${title} Background` : "Sri Lanka private taxi service — airport transfers and tours for foreign tourists"} 
           className="w-full h-full object-cover" 
           loading="eager"
+          {...{ fetchpriority: "high" }}
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsla(216,16%,9%,0.85), hsla(216,16%,9%,0.55))" }} />
       </div>
@@ -45,31 +49,19 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
               title
             ) : (
               <>
-                Your Trusted <span className="text-primary">Taxi Service</span> in Sri Lanka
+                Sri Lanka <span className="text-primary">Private Taxi</span> &amp; Airport Transfers
               </>
             )}
           </h1>
           {!title && (
-            <div className="text-lg sm:text-2xl md:text-3xl font-semibold text-secondary-foreground/80 mb-4 min-h-[40px] sm:min-h-[48px] md:min-h-[56px]" aria-hidden="true">
-              <Typewriter
-                options={{
-                  strings: [
-                    'Book Your <span class="text-primary">Tour</span>',
-                    'Book Your Private <span class="text-primary">Safari</span>',
-                    'Book Your Shared <span class="text-primary">Safari</span>',
-                    '<span class="text-primary">Airport Transfer</span> Experts'
-                  ],
-                  autoStart: true,
-                  loop: true,
-                  delay: 50,
-                  deleteSpeed: 30,
-                }}
-              />
+            <div className="text-lg sm:text-2xl md:text-3xl font-semibold text-secondary-foreground/80 mb-4 min-h-[40px] sm:min-h-[48px] md:min-h-[56px]">
+              Airport transfers, private tours &amp; Yala safaris
             </div>
           )}
           <p className="max-w-xl text-sm sm:text-base lg:text-lg text-secondary-foreground/70">
-            {subtitle || "Safe, reliable and affordable transportation across Sri Lanka. Airport transfers, day tours, and long distance travel."}
+            {subtitle || "Travel from Colombo Airport to your hotel, plan a private tour, or arrange a transfer between destinations. Get a fare estimate and confirm your trip with LKTaxi on WhatsApp."}
           </p>
+          {!title && <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-primary underline underline-offset-4">Read traveler reviews on Google</a>}
         </div>
 
         <div className="max-w-4xl rounded-2xl bg-card shadow-2xl overflow-hidden sm:rounded-[1.5rem]">
@@ -121,6 +113,7 @@ function CustomRideForm() {
 
   const handleSend = () => {
     const msg = `🚕 *Custom Ride Request - LKTaxi*\n\n👤 Name: ${name}\n📍 Pickup: ${pickup}\n📍 Destination: ${destination}\n🚗 Vehicle: ${vehicle}\n💬 Message: ${message}`;
+    trackContact("whatsapp", "HeroSection");
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 
@@ -158,6 +151,7 @@ function BookTourForm() {
 
   const handleBook = () => {
     const msg = `🗺️ *Book Tour - LKTaxi*\n\n📅 Start: ${format(startDate, "PPP")}\n📅 End: ${format(endDate, "PPP")}\n📆 Days: ${days}\n🚗 Vehicle: ${vehicle}${pricePerDay ? `\n💰 Price/Day: LKR ${pricePerDay.toLocaleString()}\n💰 Total: LKR ${totalPrice?.toLocaleString()}` : ""}`;
+    trackContact("whatsapp", "HeroSection");
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 

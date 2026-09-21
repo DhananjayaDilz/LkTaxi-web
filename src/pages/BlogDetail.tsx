@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Clock, Calendar, User, Share2 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -8,75 +8,14 @@ import { ImageGallery } from "../components/blog/ImageGallery";
 import { BlogSidebarAd } from "../components/blog/BlogSidebarAd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import { WHATSAPP_NUMBER } from "@/data/pricing";
-import { generateBlogPostSchema } from "@/lib/seo-utils";
+import NotFound from "./NotFound";
 
 export default function BlogDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const [post, setPost] = useState<typeof blogsData[0] | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
-
-  useEffect(() => {
-    // Simulate network request
-    setIsLoading(true);
-    const timer = setTimeout(() => {
-      const foundPost = blogsData.find((b) => b.slug === slug);
-      if (foundPost) {
-        setPost(foundPost);
-        // SEO: Title
-        document.title = `${foundPost.title} | LKTaxi Sri Lanka`;
-
-        // SEO: Meta description
-        let metaDesc = document.querySelector('meta[name="description"]');
-        if (!metaDesc) {
-          metaDesc = document.createElement('meta');
-          (metaDesc as HTMLMetaElement).name = 'description';
-          document.head.appendChild(metaDesc);
-        }
-        metaDesc.setAttribute('content', foundPost.excerpt);
-
-        // SEO: Open Graph
-        const setMeta = (prop: string, val: string, attr = 'property') => {
-          let el = document.querySelector(`meta[${attr}="${prop}"]`);
-          if (!el) { el = document.createElement('meta'); el.setAttribute(attr, prop); document.head.appendChild(el); }
-          el.setAttribute('content', val);
-        };
-        setMeta('og:title', foundPost.title);
-        setMeta('og:description', foundPost.excerpt);
-        setMeta('og:image', foundPost.coverImage);
-        setMeta('og:url', window.location.href);
-        setMeta('og:type', 'article');
-        setMeta('twitter:title', foundPost.title, 'name');
-        setMeta('twitter:description', foundPost.excerpt, 'name');
-        setMeta('twitter:image', foundPost.coverImage, 'name');
-
-        // SEO: BlogPosting JSON-LD
-        const existingSchema = document.getElementById('blog-post-schema');
-        if (existingSchema) existingSchema.remove();
-        const schemaScript = document.createElement('script');
-        schemaScript.id = 'blog-post-schema';
-        schemaScript.type = 'application/ld+json';
-        schemaScript.innerHTML = generateBlogPostSchema(foundPost);
-        document.head.appendChild(schemaScript);
-      } else {
-        setNotFound(true);
-      }
-      setIsLoading(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 800);
-
-    return () => {
-      clearTimeout(timer);
-      const schemaToRemove = document.getElementById('blog-post-schema');
-      if (schemaToRemove) schemaToRemove.remove();
-    };
-  }, [slug]);
-
-  if (notFound) {
-    return <Navigate to="/blogs" replace />;
-  }
+  const post = blogsData.find(b => b.slug === slug);
+  useEffect(() => { window.scrollTo({ top: 0 }); }, [slug]);
+  if (!post) return <NotFound />;
 
   const handleShare = () => {
     if (post && navigator.share) {
@@ -104,7 +43,7 @@ export default function BlogDetail() {
             <Link to="/blogs" className="hover:text-primary transition-colors">Blogs</Link>
             <span>/</span>
             <span className="text-gray-900 dark:text-gray-100 max-w-[200px] truncate">
-              {isLoading ? <Skeleton className="h-4 w-32 inline-block ml-2" /> : post?.title}
+              {post.title}
             </span>
           </nav>
 
@@ -116,37 +55,6 @@ export default function BlogDetail() {
             Back to Blogs
           </Link>
 
-          {isLoading ? (
-            // Loading Skeletons
-            <div className="animate-in fade-in duration-500">
-              <header className="mb-10">
-                <div className="flex gap-2 mb-4">
-                  <Skeleton className="h-6 w-16 rounded-full" />
-                  <Skeleton className="h-6 w-20 rounded-full" />
-                </div>
-                <Skeleton className="h-12 w-full max-w-2xl mb-6" />
-                <Skeleton className="h-12 w-3/4 mb-6" />
-                <div className="flex gap-4">
-                  <Skeleton className="h-4 w-24" />
-                  <Skeleton className="h-4 w-32" />
-                  <Skeleton className="h-4 w-20" />
-                </div>
-              </header>
-
-              <Skeleton className="w-full aspect-[16/9] rounded-2xl mb-12" />
-
-              <div className="space-y-4 mb-12">
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6" />
-                <br />
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-4/5" />
-                <Skeleton className="h-4 w-full" />
-              </div>
-            </div>
-          ) : post ? (
-            // Actual Content
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
               <header className="mb-10 text-center sm:text-left">
                 <div className="flex gap-2 mb-4 justify-center sm:justify-start flex-wrap">
@@ -226,7 +134,6 @@ export default function BlogDetail() {
                 </Button>
               </div>
             </div>
-          ) : null}
         </article>
       </main>
 

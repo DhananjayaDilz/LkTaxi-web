@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { trackContact } from "@/lib/analytics";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { format } from "date-fns";
 import { AlertCircle, CalendarIcon, Loader2, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,7 @@ import type { FareResult as FareResultType, Location, RouteResult, VehicleType }
 import { LocationSearch } from "@/components/booking/LocationSearch";
 import { VehicleSelector } from "@/components/booking/VehicleSelector";
 import { FareResult } from "@/components/booking/FareResult";
-import { TaxiMap } from "@/components/map/TaxiMap";
+const TaxiMap = lazy(() => import("@/components/map/TaxiMap"));
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -158,6 +159,7 @@ export function BookingForm() {
     }
 
     const message = `🚕 *LK TAXI*\n\n📍 Pickup: ${fareResult.pickup.name}\n📍 Drop: ${fareResult.drop.name}\n📅 Pickup Date: ${format(pickupDate, "PPP")}\n⏰ Pickup Time: ${pickupHour}:${pickupMinute} ${pickupAmPm}\n🚗 Vehicle: ${fareResult.vehicle}\n📏 Distance: ${fareResult.distanceKm.toFixed(1)} km\n⏱️ Duration: ${Math.round(fareResult.durationMinutes)} min\n💰 Price: LKR ${fareResult.price.toLocaleString()}`;
+    trackContact("whatsapp", "BookingForm");
     window.open(generateWhatsAppURL(message), "_blank", "noopener,noreferrer");
   };
 
@@ -245,7 +247,7 @@ export function BookingForm() {
       {/* Fare Result and Map */}
       <div ref={resultsRef} className="grid gap-4 scroll-mt-24 xl:grid-cols-[1fr_1.1fr]">
         <FareResult result={fareResult} pickupTimeLabel={pickupDateTimeLabel} />
-        <TaxiMap pickup={fareResult?.pickup ?? pickup} drop={fareResult?.drop ?? drop} route={route} />
+        {pickup && drop ? <Suspense fallback={<p>Loading route map...</p>}><TaxiMap pickup={fareResult?.pickup ?? pickup} drop={fareResult?.drop ?? drop} route={route} /></Suspense> : <p className="rounded-2xl border border-dashed p-6 text-sm text-muted-foreground">Select pickup and drop locations to preview your route.</p>}
       </div>
     </div>
   );

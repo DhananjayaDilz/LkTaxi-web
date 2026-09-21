@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { WHATSAPP_NUMBER } from "@/data/pricing";
 
 const faqs = [
   {
@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "How do I book a taxi with LKTaxi?",
-    a: "You can book a taxi with LKTaxi via WhatsApp (+94 70 5000 526) or through the booking form on our website. Simply select your pickup and drop location, choose a vehicle type, and confirm your booking. We respond within minutes.",
+    a: `You can request a taxi with LKTaxi via WhatsApp (+${WHATSAPP_NUMBER}) or through the booking form on our website. Share your pickup, destination, passengers and luggage. Our team will confirm availability, your final quote and booking details.`,
   },
   {
     q: "What vehicles does LKTaxi offer?",
@@ -39,18 +39,18 @@ const FAQSection = () => (
         <p className="section-subtitle">Everything you need to know about taxi services and travel in Sri Lanka.</p>
       </div>
 
-      <Accordion type="single" collapsible className="space-y-3">
+      <div className="space-y-3">
         {faqs.map((f, i) => (
-          <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-lg px-6 bg-card">
-            <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary">
+          <details key={i} className="border border-border rounded-lg px-6 bg-card">
+            <summary className="cursor-pointer py-4 text-left font-semibold text-foreground hover:text-primary">
               {f.q}
-            </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">
+            </summary>
+            <p className="text-muted-foreground pb-4">
               {f.a}
-            </AccordionContent>
-          </AccordionItem>
+            </p>
+          </details>
         ))}
-      </Accordion>
+      </div>
     </div>
   </section>
 );

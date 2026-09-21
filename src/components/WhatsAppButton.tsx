@@ -1,3 +1,4 @@
+import { trackContact } from "@/lib/analytics";
 import { WHATSAPP_NUMBER } from "@/data/pricing";
 import {
   DropdownMenu,
@@ -21,6 +22,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 const WhatsAppButton = () => {
   const handleOptionClick = (message: string) => {
     const encodedMessage = encodeURIComponent(message);
+    trackContact("whatsapp", "WhatsAppButton");
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
   };
 

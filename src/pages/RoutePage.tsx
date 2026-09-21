@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import TransferGuide from "@/components/TransferGuide";
 import { useParams, Navigate } from "react-router-dom";
 import { parseRouteSlug } from "../data/routes";
 import { formatLocationName } from "../data/locations";
-import { generateRouteMetadata, generateStructuredData } from "../lib/seo-utils";
 import HeroSection from "../components/HeroSection";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -23,36 +22,8 @@ const RoutePage = () => {
   const { from, to } = parsedRoute;
   const fromName = formatLocationName(from);
   const toName = formatLocationName(to);
-  const metadata = generateRouteMetadata(from, to);
-  const schema = generateStructuredData(undefined, from, to);
 
-  useEffect(() => {
-    document.title = metadata.title;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", metadata.description);
-    } else {
-      const newMeta = document.createElement("meta");
-      newMeta.name = "description";
-      newMeta.content = metadata.description;
-      document.head.appendChild(newMeta);
-    }
 
-    // Add JSON-LD schema
-    const existingScript = document.getElementById("json-ld-schema-route");
-    if (existingScript) existingScript.remove();
-
-    const script = document.createElement("script");
-    script.id = "json-ld-schema-route";
-    script.type = "application/ld+json";
-    script.innerHTML = schema;
-    document.head.appendChild(script);
-
-    return () => {
-      const scriptToRemove = document.getElementById("json-ld-schema-route");
-      if (scriptToRemove) scriptToRemove.remove();
-    };
-  }, [metadata, schema]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -60,8 +31,9 @@ const RoutePage = () => {
       <main>
         <HeroSection 
           title={`Taxi from ${fromName} to ${toName}`}
-          subtitle={`Book the most reliable private transport between ${fromName} and ${toName} at guaranteed low prices.`}
+          subtitle={`Arrange a private transfer from ${fromName} to ${toName}. Confirm your pickup, vehicle and price with our team.`}
         />
+        <TransferGuide route={routeSlug} />
         <ServicesSection />
         <section className="container py-16">
           <h2 className="text-3xl font-bold mb-6 text-center">Transfer from {fromName} to {toName}</h2>
@@ -82,7 +54,7 @@ const RoutePage = () => {
               <li>Direct door-to-door transfer</li>
               <li>Optional stops for photo opportunities or refreshments</li>
               <li>Fully air-conditioned modern vehicles</li>
-              <li>Competitive, all-inclusive pricing</li>
+              <li>Confirm tolls, parking and waiting charges in your quote</li>
               <li>Available 24 hours a day, 7 days a week</li>
             </ul>
           </div>

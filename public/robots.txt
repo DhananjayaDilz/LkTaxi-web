@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lktaxi.com/sitemap.xml
+Sitemap: https://www.lktaxi.com/sitemap.xml

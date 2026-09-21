@@ -1,10 +1,11 @@
+import { trackContact } from "@/lib/analytics";
 import { useState } from "react";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { generateWhatsAppURL } from "@/data/pricing";
+import { generateWhatsAppURL, WHATSAPP_NUMBER } from "@/data/pricing";
 
 const serviceOptions = ["Airport Transfer", "Day Tours", "Long Tours", "Hotel Transfer", "Yala Safari", "Custom Ride"];
 
@@ -16,6 +17,7 @@ const ContactSection = () => {
 
   const handleSend = () => {
     const msg = `📩 *Contact Inquiry - LKTaxi*\n\n👤 Name: ${name}\n📧 Email: ${email}\n🛎️ Service: ${service}\n💬 Message: ${message}`;
+    trackContact("whatsapp", "ContactSection");
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 
@@ -32,8 +34,9 @@ const ContactSection = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               {[
-                { icon: MapPin, label: "Address", value: "379 Jayasirimawatha, Thissamaharama, Sri Lanka" },
-                { icon: Phone, label: "Phone", value: "+94 70 5000 526", href: "tel:+94705000526" },
+                { icon: MapPin, label: "Address", value: "379 Jayasirimawatha, Tissamaharama, Sri Lanka" },
+                { icon: Phone, label: "Phone", value: "+94 78 420 7818", href: "tel:+94784207818" },
+                { icon: Phone, label: "WhatsApp bookings", value: `+${WHATSAPP_NUMBER}`, href: `https://wa.me/${WHATSAPP_NUMBER}` },
                 { icon: Mail, label: "Email", value: "hi.lktaxi@gmail.com", href: "mailto:hi.lktaxi@gmail.com" },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
@@ -54,14 +57,14 @@ const ContactSection = () => {
 
             <div className="rounded-xl overflow-hidden h-64 border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.5!2d81.2878!3d6.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTcnMDAuMCJOIDgxwrAxNyczMC4wIkU!5e0!3m2!1sen!2slk!4v1234567890"
+                src="https://www.google.com/maps?q=Tissamaharama%2C%20Sri%20Lanka&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="LKTaxi Location"
+                title="Tissamaharama, Sri Lanka ? our home town"
               />
             </div>
           </div>

@@ -10,18 +10,6 @@ export default function Blogs() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 
-    document.title = "Sri Lanka Travel Blog — Safari Tips, Taxi Guides & Destination Guides | LKTaxi";
-
-    const setMeta = (selector: string, content: string) => {
-      const el = document.querySelector(selector);
-      if (el) el.setAttribute("content", content);
-    };
-    setMeta(
-      'meta[name="description"]',
-      "Expert Sri Lanka travel guides: Yala safari tips, Colombo airport taxi, leopard spotting, hill country tours and more. Plan your Sri Lanka trip with LKTaxi's local knowledge."
-    );
-    setMeta('meta[property="og:title"]', "Sri Lanka Travel Blog — Safari & Taxi Tips | LKTaxi");
-    setMeta('meta[property="og:description"]', "Expert guides for foreign tourists: Yala safari, airport transfers, Sri Lanka itineraries and wildlife tips from LKTaxi.");
   }, []);
 
   return (
@@ -30,6 +18,7 @@ export default function Blogs() {
       
       <main className="flex-grow pt-24 pb-20 md:pt-32">
         <section className="container mx-auto px-4 md:px-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">Sri Lanka Travel Guides</h1>
           <SectionTitle
             title="Travel Blogs"
             subtitle="Discover Sri Lanka's hidden gems, ultimate travel guides, wildlife wonders, and insider tips from local experts."

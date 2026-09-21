@@ -193,7 +193,7 @@ export const blogsData: BlogPost[] = [
       <li><strong>Public Bus:</strong> Budget option, 7–9 hours with transfers. Not recommended for tight itineraries.</li>
     </ul>
     <div style="margin: 25px 0; text-align: center;">
-      <a href="https://wa.me/94705000526" target="_blank" style="background-color: #25D366; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">WhatsApp to Book Colombo → Yala Transfer</a>
+      <a href="https://wa.me/94784207818" target="_blank" style="background-color: #25D366; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">WhatsApp to Book Colombo → Yala Transfer</a>
     </div>
 
     <figure>
@@ -216,7 +216,7 @@ export const blogsData: BlogPost[] = [
     <p>Yes. As of June 2026, Yala is in <strong>peak season</strong>. Blocks 1, 4, 5 and 6 are fully open. Always confirm at wildlife.gov.lk before travelling.</p>
 
     <h3>What is the best way to get to Yala from Colombo?</h3>
-    <p>A <strong>private taxi transfer</strong> is the most comfortable option — door to door, air-conditioned, no transfers. <a href="https://wa.me/94705000526">WhatsApp LKTaxi</a> for a quote on the Colombo–Yala route.</p>
+    <p>A <strong>private taxi transfer</strong> is the most comfortable option — door to door, air-conditioned, no transfers. <a href="https://wa.me/94784207818">WhatsApp LKTaxi</a> for a quote on the Colombo–Yala route.</p>
 
     <h3>Do I need to book a safari jeep in advance?</h3>
     <p>Yes — especially for weekends during peak season (February–July). Good jeep operators book up weeks in advance. We connect you with licensed operators when you book your transfer.</p>
@@ -308,7 +308,7 @@ export const blogsData: BlogPost[] = [
       </ul>
       
       <div style="margin: 25px 0; text-align: center;">
-        <a href="https://wa.me/94705000526" target="_blank" style="background-color: #25D366; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">WhatsApp Us to Plan Your Sri Lanka Tour</a>
+        <a href="https://wa.me/94784207818" target="_blank" style="background-color: #25D366; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">WhatsApp Us to Plan Your Sri Lanka Tour</a>
       </div>
     `,
     coverImage: "/top-places-sri-lanka-cover.webp",

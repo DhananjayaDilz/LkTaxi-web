@@ -35,7 +35,7 @@ export async function getRoute(
   }
 
   const route = data.routes[0];
-  const geometry = route.geometry?.coordinates?.length
+  const geometry: Array<[number, number]> = route.geometry?.coordinates?.length
     ? route.geometry.coordinates.map(([lng, lat]) => [lat, lng] as [number, number])
     : [
         [pickupLat, pickupLng],
