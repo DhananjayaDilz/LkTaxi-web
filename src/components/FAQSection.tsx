@@ -1,6 +1,6 @@
 import { WHATSAPP_NUMBER } from "@/data/pricing";
 
-const faqs = [
+const defaultFaqs = [
   {
     q: "Is LKTaxi available 24/7?",
     a: "Yes, LKTaxi operates 24 hours a day, 7 days a week to ensure travelers can get reliable transportation at any time in Sri Lanka. Whether it is airport pickup, late night travel, or early morning tours, our drivers are available to serve you safely and comfortably.",
@@ -31,28 +31,63 @@ const faqs = [
   },
 ];
 
-const FAQSection = () => (
-  <section className="section-padding bg-background">
-    <div className="container mx-auto max-w-3xl">
-      <div className="text-center mb-12">
-        <h2 className="section-title mb-4">Frequently Asked <span className="text-primary">Questions</span></h2>
-        <p className="section-subtitle">Everything you need to know about taxi services and travel in Sri Lanka.</p>
+interface FAQSectionProps {
+  customFaqs?: { q: string; a: string }[];
+  locationName?: string;
+}
+
+const FAQSection = ({ customFaqs, locationName }: FAQSectionProps) => {
+  const faqs = customFaqs && customFaqs.length > 0
+    ? [...customFaqs, ...defaultFaqs]
+    : defaultFaqs;
+
+  // Generate FAQPage JSON-LD schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a,
+      },
+    })),
+  };
+
+  return (
+    <section className="section-padding bg-background">
+      <div className="container mx-auto max-w-3xl">
+        <div className="text-center mb-12">
+          <h2 className="section-title mb-4">Frequently Asked <span className="text-primary">Questions</span></h2>
+          <p className="section-subtitle">
+            {locationName
+              ? `Common questions about ${locationName} taxi services and travel in Sri Lanka.`
+              : "Everything you need to know about taxi services and travel in Sri Lanka."}
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="border border-border rounded-lg px-6 bg-card">
+              <summary className="cursor-pointer py-4 text-left font-semibold text-foreground hover:text-primary">
+                {f.q}
+              </summary>
+              <p className="text-muted-foreground pb-4">
+                {f.a}
+              </p>
+            </details>
+          ))}
+        </div>
       </div>
 
-      <div className="space-y-3">
-        {faqs.map((f, i) => (
-          <details key={i} className="border border-border rounded-lg px-6 bg-card">
-            <summary className="cursor-pointer py-4 text-left font-semibold text-foreground hover:text-primary">
-              {f.q}
-            </summary>
-            <p className="text-muted-foreground pb-4">
-              {f.a}
-            </p>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+      {/* FAQPage structured data for Google rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+    </section>
+  );
+};
 
 export default FAQSection;
