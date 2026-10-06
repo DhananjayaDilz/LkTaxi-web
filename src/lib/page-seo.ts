@@ -30,5 +30,5 @@ export function getPageSEO(pathname: string) {
     title = "Page Not Found | LKTaxi";
     description = "This page could not be found. Browse LKTaxi's Sri Lanka taxi services and travel guides.";
   }
-  return { title, description, canonical: SITE_URL + path, noindex, image: new URL(blog?.coverImage || "/srilanaka_tour.png", SITE_URL).href, type: blog ? "article" : "website", blog };
+  return { title, description, canonical: SITE_URL + path, noindex, image: new URL(blog?.coverImage || "/srilanaka_tour.png", SITE_URL).href, type: blog ? "article" : "website", blog: blog ? { title: blog.title, excerpt: blog.excerpt, date: blog.date, author: blog.author } : undefined };
 }
