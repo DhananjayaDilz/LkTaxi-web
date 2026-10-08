@@ -1,6 +1,51 @@
 import { GOOGLE_REVIEWS_URL } from "@/data/business";
 import { Star, Quote, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from "react";
+
+const ELFSIGHT_SRC = "https://static.elfsight.com/platform/platform.js";
+
+/**
+ * Loads the Elfsight platform script only when the reviews widget is about to
+ * enter the viewport. The widget is ~470 KB of JS and ~3s of main-thread work on
+ * mobile, so loading it up-front was a major cause of poor TBT / LCP.
+ */
+const useLazyElfsight = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const load = () => {
+      if (document.querySelector(`script[src="${ELFSIGHT_SRC}"]`)) return;
+      const s = document.createElement("script");
+      s.src = ELFSIGHT_SRC;
+      s.async = true;
+      s.setAttribute("data-use-service-core", "");
+      document.body.appendChild(s);
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      load();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          load();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return ref;
+};
 
 const clientPhotos = [
   {
@@ -35,7 +80,10 @@ const clientPhotos = [
 
 const reviews = [];
 
-const ReviewsSection = () => (
+const ReviewsSection = () => {
+  const widgetRef = useLazyElfsight();
+
+  return (
   <section className="section-padding bg-muted/30 relative overflow-hidden">
     {/* Decorative background blur elements */}
     <div className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
@@ -104,7 +152,7 @@ const ReviewsSection = () => (
       </div>
 
       {/* Google Reviews Widget Container */}
-      <div className="max-w-6xl mx-auto mb-12">
+      <div ref={widgetRef} className="max-w-6xl mx-auto mb-12">
         {/* 
           STEP 1: Create a widget on https://elfsight.com/google-reviews-widget/ 
           STEP 2: Once created, they will give you a code like: <div class="elfsight-app-12345678-abcd-1234-abcd-12345678abcd" data-elfsight-app-lazy></div>
@@ -165,6 +213,7 @@ const ReviewsSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default ReviewsSection;
