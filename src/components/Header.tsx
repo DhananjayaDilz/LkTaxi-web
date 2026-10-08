@@ -108,7 +108,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-secondary">
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         <a href="/" onClick={(e) => handleNavClick(e, "/")} className="flex items-center gap-2">
-          <img src="/lktaxi-sri-lanka-taxi-booking-logo.png" alt="LKTaxi Logo" className="h-12 md:h-14 w-auto" />
+          <img src="/lktaxi-sri-lanka-taxi-booking-logo.webp" alt="LKTaxi Logo" width="200" height="56" className="h-12 md:h-14 w-auto" />
         </a>
 
         {/* Desktop nav */}
