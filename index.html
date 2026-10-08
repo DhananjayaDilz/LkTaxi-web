@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/lktaxi-sri-lanka-taxi-booking-logo.png" />
+    <link rel="icon" type="image/webp" href="/lktaxi-sri-lanka-taxi-booking-logo.webp" />
+
+    <!-- Performance: connect early to font hosts, load fonts WITHOUT blocking render -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..700&family=DM+Sans:wght@400..700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..700&family=DM+Sans:wght@400..700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..700&family=DM+Sans:wght@400..700&display=swap" /></noscript>
     <link rel="canonical" href="https://www.lktaxi.com/" />
     <link rel="alternate" hreflang="en" href="https://www.lktaxi.com/" />
     <link rel="alternate" hreflang="x-default" href="https://www.lktaxi.com/" />
@@ -41,7 +48,7 @@
     "@id": "https://www.lktaxi.com/#organization",
     "name": "LKTaxi",
     "url": "https://www.lktaxi.com",
-    "logo": "https://www.lktaxi.com/lktaxi-sri-lanka-taxi-booking-logo.png",
+    "logo": "https://www.lktaxi.com/lktaxi-sri-lanka-taxi-booking-logo.webp",
     "image": "https://www.lktaxi.com/sri-lanka-private-taxi-and-tours-hero.png",
     "description": "Sri Lanka's trusted private taxi and safari booking service for foreign tourists. Airport transfers, private tours, and Yala safari bookings island-wide.",
     "telephone": "+94784207818",
@@ -157,17 +164,40 @@
 ]
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYD871QG55"></script>
+    <!-- Google tag (gtag.js) + Elfsight reviews widget.
+         Loaded AFTER the page has finished loading so they don't compete with the
+         hero image / main JS bundle (big LCP + TBT win). Events queued in dataLayer
+         before the script loads are still sent. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-TYD871QG55');
-    </script>
 
-    <!-- Elfsight Platform Script for Google Reviews Widget -->
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+      (function () {
+        var loaded = false;
+        function addScript(src, attrs) {
+          var s = document.createElement('script');
+          s.src = src; s.async = true;
+          if (attrs) for (var k in attrs) s.setAttribute(k, attrs[k]);
+          document.head.appendChild(s);
+        }
+        function loadThirdParty() {
+          if (loaded) return; loaded = true;
+          addScript('https://www.googletagmanager.com/gtag/js?id=G-TYD871QG55');
+          // Elfsight reviews widget is lazy-loaded by ReviewsSection when scrolled into view.
+        }
+        function schedule() {
+          if ('requestIdleCallback' in window) requestIdleCallback(loadThirdParty, { timeout: 3000 });
+          else setTimeout(loadThirdParty, 1500);
+        }
+        if (document.readyState === 'complete') schedule();
+        else window.addEventListener('load', schedule, { once: true });
+        ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (e) {
+          window.addEventListener(e, loadThirdParty, { once: true, passive: true });
+        });
+      })();
+    </script>
   </head>
 
   <body>

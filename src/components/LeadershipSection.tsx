@@ -59,6 +59,8 @@ const LeadershipSection = () => {
                 >
                   <img
                     src={leader.image}
+                    loading="lazy"
+                    decoding="async"
                     alt={leader.name}
                     className="w-full h-full object-cover"
                     style={{ objectPosition: leader.imagePosition }}
