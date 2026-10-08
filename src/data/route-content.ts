@@ -5,7 +5,6 @@
 export interface RouteContent {
   distance: string;
   duration: string;
-  priceRange: string;
   description: string;
   scenicHighlights: string[];
   travelTips: string[];
@@ -16,7 +15,6 @@ export const routeContent: Record<string, RouteContent> = {
   "colombo-to-ella": {
     distance: "220 km",
     duration: "6-7 hours",
-    priceRange: "LKR 22,000-30,000",
     description:
       "The Colombo to Ella route takes you from Sri Lanka's bustling capital through the Southern Expressway before climbing into the misty central highlands. The landscape transforms dramatically — from coastal plains and rubber plantations to emerald tea fields and mountain valleys. Many travelers add stops at Kitulgala for white-water rafting or Ravana Falls near Ella.",
     scenicHighlights: [
@@ -39,7 +37,6 @@ export const routeContent: Record<string, RouteContent> = {
   "ella-to-yala": {
     distance: "130 km",
     duration: "3-3.5 hours",
-    priceRange: "LKR 12,000-16,000",
     description:
       "The Ella to Yala transfer descends from the cool highlands through winding mountain roads before reaching the dry lowlands of southern Sri Lanka. The route passes through Wellawaya and Tissamaharama — the gateway town to Yala National Park. Many travelers combine this transfer with a safari booking for the next morning.",
     scenicHighlights: [
@@ -61,7 +58,6 @@ export const routeContent: Record<string, RouteContent> = {
   "airport-to-mirissa": {
     distance: "190 km",
     duration: "3-3.5 hours",
-    priceRange: "LKR 18,000-24,000",
     description:
       "The airport to Mirissa transfer is one of the most popular routes for tourists heading straight to the southern beaches. Using the Southern Expressway, the journey bypasses Colombo traffic entirely and reaches the coast in about 3 hours. Mirissa is famous for whale watching, surfing, and beautiful sandy beaches.",
     scenicHighlights: [
@@ -83,7 +79,6 @@ export const routeContent: Record<string, RouteContent> = {
   "kandy-to-sigiriya": {
     distance: "90 km",
     duration: "2-2.5 hours",
-    priceRange: "LKR 10,000-14,000",
     description:
       "The Kandy to Sigiriya route travels through Sri Lanka's Cultural Triangle, passing through lush countryside, small villages, and agricultural landscapes. This transfer is often part of a day trip from Kandy that includes climbing Sigiriya Rock Fortress and visiting Dambulla Cave Temple before returning.",
     scenicHighlights: [
@@ -105,7 +100,6 @@ export const routeContent: Record<string, RouteContent> = {
   "galle-to-tangalle": {
     distance: "75 km",
     duration: "1.5-2 hours",
-    priceRange: "LKR 8,000-12,000",
     description:
       "The coastal road from Galle to Tangalle follows Sri Lanka's stunning southern coastline, passing through picturesque beach towns, fishing villages, and coconut groves. This is one of the most scenic coastal drives in the country, with the Indian Ocean constantly visible to your left.",
     scenicHighlights: [
@@ -127,7 +121,6 @@ export const routeContent: Record<string, RouteContent> = {
   "airport-to-kandy": {
     distance: "110 km",
     duration: "3.5-4 hours",
-    priceRange: "LKR 18,000-25,000",
     description:
       "The airport to Kandy transfer takes you from the coastal lowlands up into Sri Lanka's central highlands. The route uses the Central Expressway for a faster journey, or the scenic old Kadugannawa road that winds through mountains and rubber estates. Kandy, the cultural capital, rewards you with the Temple of the Tooth, botanical gardens, and cool mountain air.",
     scenicHighlights: [
@@ -149,7 +142,6 @@ export const routeContent: Record<string, RouteContent> = {
   "airport-to-ella": {
     distance: "250 km",
     duration: "6-7 hours",
-    priceRange: "LKR 25,000-35,000",
     description:
       "The airport to Ella transfer is a long but rewarding journey that takes you from sea level to the misty heights of Sri Lanka's hill country. The route crosses the Southern Expressway or central corridors before climbing through tea plantations and mountain passes to reach Ella at 1,041 metres. An overnight stop in Kandy or Nuwara Eliya is recommended but not required.",
     scenicHighlights: [
@@ -171,7 +163,6 @@ export const routeContent: Record<string, RouteContent> = {
   "mirissa-to-weligama": {
     distance: "7 km",
     duration: "10-15 minutes",
-    priceRange: "LKR 2,000-3,000",
     description:
       "Mirissa to Weligama is a short coastal transfer between two popular beach towns on Sri Lanka's southern coast. Weligama is known for its gentle surf waves and stilt fishermen, while Mirissa offers whale watching and a lively beach scene. Despite the short distance, a private taxi is the most comfortable option, especially with luggage.",
     scenicHighlights: [
@@ -190,7 +181,6 @@ export const routeContent: Record<string, RouteContent> = {
   "nuwara-eliya-to-ella": {
     distance: "55 km",
     duration: "1.5-2 hours",
-    priceRange: "LKR 6,000-9,000",
     description:
       "The Nuwara Eliya to Ella route is one of the most scenic drives in Sri Lanka, passing through endless tea plantations, waterfalls, and misty mountain valleys. The road winds through the heart of Sri Lanka's tea country, offering views that rival the famous scenic train journey. This transfer can also include stops at working tea factories.",
     scenicHighlights: [
@@ -212,7 +202,6 @@ export const routeContent: Record<string, RouteContent> = {
   "negombo-to-sigiriya": {
     distance: "155 km",
     duration: "3.5-4 hours",
-    priceRange: "LKR 14,000-18,000",
     description:
       "The Negombo to Sigiriya route takes you from the coast into Sri Lanka's Cultural Triangle. Starting from this popular first-night stop near the airport, the journey passes through Kurunegala and Dambulla before reaching Sigiriya Rock Fortress. It's a popular transfer for travelers starting their Sri Lanka itinerary.",
     scenicHighlights: [
@@ -234,7 +223,6 @@ export const routeContent: Record<string, RouteContent> = {
   "bentota-to-galle": {
     distance: "55 km",
     duration: "1-1.5 hours",
-    priceRange: "LKR 6,000-9,000",
     description:
       "The Bentota to Galle coastal route takes you along Sri Lanka's southwest coastline, passing through charming beach towns, fishing villages, and coconut plantations. The drive culminates at the magnificent Galle Fort — a UNESCO World Heritage Site with colonial architecture, boutique shops, and sunset fort-wall walks.",
     scenicHighlights: [
@@ -256,7 +244,6 @@ export const routeContent: Record<string, RouteContent> = {
   "unawatuna-to-mirissa": {
     distance: "35 km",
     duration: "40-50 minutes",
-    priceRange: "LKR 4,000-6,000",
     description:
       "The Unawatuna to Mirissa transfer follows the southern coastal road, passing through Weligama and several small fishing villages. Both are popular beach destinations but with different vibes — Unawatuna is quieter and more sheltered, while Mirissa is livelier with whale-watching opportunities.",
     scenicHighlights: [
@@ -275,7 +262,6 @@ export const routeContent: Record<string, RouteContent> = {
   "udawalawe-to-yala": {
     distance: "100 km",
     duration: "2-3 hours",
-    priceRange: "LKR 10,000-14,000",
     description:
       "The Udawalawe to Yala transfer takes you between Sri Lanka's two most popular national parks. After seeing elephants in Udawalawe, head east to Yala for the chance to spot leopards. The route passes through dry-zone scrubland and small towns, arriving at Tissamaharama — the base for Yala safaris.",
     scenicHighlights: [
@@ -295,7 +281,6 @@ export const routeContent: Record<string, RouteContent> = {
   "trincomalee-to-sigiriya": {
     distance: "120 km",
     duration: "3-4 hours",
-    priceRange: "LKR 12,000-16,000",
     description:
       "The Trincomalee to Sigiriya route connects the northeast coast with the Cultural Triangle. The drive passes through dry-zone forests and agricultural land, with occasional wild elephant sightings possible near Habarana. This transfer is ideal for combining east coast beaches with Cultural Triangle sightseeing.",
     scenicHighlights: [
@@ -315,7 +300,6 @@ export const routeContent: Record<string, RouteContent> = {
   "hikkaduwa-to-bentota": {
     distance: "25 km",
     duration: "30-45 minutes",
-    priceRange: "LKR 3,000-5,000",
     description:
       "A short, scenic coastal transfer between two popular west coast beach towns. Hikkaduwa is known for its coral reefs and lively atmosphere, while Bentota offers a more upscale, resort-oriented experience with water sports on the Bentota River.",
     scenicHighlights: [

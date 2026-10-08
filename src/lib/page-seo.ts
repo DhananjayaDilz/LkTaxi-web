@@ -3,7 +3,17 @@ import { locations, formatLocationName } from "../data/locations";
 import { popularRoutes, getRouteSlug } from "../data/routes";
 
 export const SITE_URL = "https://www.lktaxi.com";
-export const publicPaths = ["/", "/blogs", ...locations.map(l => `/taxi/${l}`), ...popularRoutes.map(r => `/taxi/${getRouteSlug(r)}`), ...blogsData.map(b => `/blogs/${b.slug}`)];
+export const publicPaths = [
+  "/",
+  "/blogs",
+  "/airport-transfer",
+  "/yala-safari",
+  "/private-driver-sri-lanka",
+  "/sri-lanka-tour-packages",
+  ...locations.map(l => `/taxi/${l}`),
+  ...popularRoutes.map(r => `/taxi/${getRouteSlug(r)}`),
+  ...blogsData.map(b => `/blogs/${b.slug}`)
+];
 
 export function getPageSEO(pathname: string) {
   const path = pathname.replace(/\/+$/, "") || "/";
@@ -17,6 +27,18 @@ export function getPageSEO(pathname: string) {
   if (path === "/blogs") {
     title = "Sri Lanka Travel Guides & Safari Tips | LKTaxi";
     description = "Plan your Sri Lanka trip with LKTaxi's destination guides, Yala safari information and private transfer booking advice.";
+  } else if (path === "/airport-transfer") {
+    title = "Colombo Airport Transfers | Fixed-Price Taxi from BIA";
+    description = "Pre-book your reliable private transfer from Colombo Airport to anywhere in Sri Lanka. Fixed prices, no hidden fees.";
+  } else if (path === "/yala-safari") {
+    title = "Yala Safari Booking from Tissamaharama | Private Jeep Tours";
+    description = "Book your private Yala National Park safari jeep tour. Experienced trackers, comfortable 4x4 jeeps, and leopard spotting.";
+  } else if (path === "/private-driver-sri-lanka") {
+    title = "Hire a Private Driver in Sri Lanka | Car with Driver Tours";
+    description = "Rent a car with a private English-speaking chauffeur to explore Sri Lanka at your own pace. Sedans and vans available.";
+  } else if (path === "/sri-lanka-tour-packages") {
+    title = "Sri Lanka Tour Packages | Private Round Tours & Itineraries";
+    description = "Discover the best of Sri Lanka with our carefully curated private tour itineraries. South Coast, Cultural Triangle, and more.";
   } else if (blog) {
     title = `${blog.title} | LKTaxi`;
     description = blog.excerpt;
@@ -30,5 +52,5 @@ export function getPageSEO(pathname: string) {
     title = "Page Not Found | LKTaxi";
     description = "This page could not be found. Browse LKTaxi's Sri Lanka taxi services and travel guides.";
   }
-  return { title, description, canonical: SITE_URL + path, noindex, image: new URL(blog?.coverImage || "/srilanaka_tour.png", SITE_URL).href, type: blog ? "article" : "website", blog: blog ? { title: blog.title, excerpt: blog.excerpt, date: blog.date, author: blog.author } : undefined };
+  return { title, description, canonical: SITE_URL + path, noindex, image: new URL(blog?.coverImage || "/sri-lanka-private-taxi-and-tours-hero.png", SITE_URL).href, type: blog ? "article" : "website", blog: blog ? { title: blog.title, excerpt: blog.excerpt, date: blog.date, author: blog.author } : undefined };
 }

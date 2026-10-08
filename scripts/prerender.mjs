@@ -40,6 +40,27 @@ for (const path of [...publicPaths, '/404']) {
     const b = seo.blog;
     const schema = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: b.title, description: b.excerpt, image: seo.image, datePublished: b.date, author: { '@type': 'Organization', name: b.author }, mainEntityOfPage: seo.canonical };
     html = html.replace('</head>', `<script type="application/ld+json" data-page-schema>${JSON.stringify(schema).replace(/</g, '\\u003c')}</script></head>`);
+  } else if (path.startsWith('/taxi/')) {
+    // Basic Service schema with offers
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: seo.title.split('|')[0].trim(),
+      provider: { '@type': 'Organization', name: 'LKTaxi' },
+      areaServed: { '@type': 'Country', name: 'Sri Lanka' },
+      description: seo.description,
+      offers: { '@type': 'Offer', priceCurrency: 'LKR', price: 'Contact Us', availability: 'https://schema.org/InStock' }
+    };
+    html = html.replace('</head>', `<script type="application/ld+json" data-page-schema>${JSON.stringify(schema).replace(/</g, '\\u003c')}</script></head>`);
+  } else if (path === '/sri-lanka-tour-packages') {
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'TouristTrip',
+      name: 'Sri Lanka Private Tour Packages',
+      description: seo.description,
+      provider: { '@type': 'Organization', name: 'LKTaxi' }
+    };
+    html = html.replace('</head>', `<script type="application/ld+json" data-page-schema>${JSON.stringify(schema).replace(/</g, '\\u003c')}</script></head>`);
   }
   html = html.replace('<div id="root"></div>', () => `<div id="root">${render(path)}</div>`);
   const file = path === '/' ? 'dist/index.html' : `dist${path}.html`;

@@ -4,45 +4,36 @@ import { Button } from "@/components/ui/button";
 
 const clientPhotos = [
   {
-    src: "/i.webp",
+    src: "/tourist-couple-sri-lanka-taxi-review.webp",
     title: "Happy Guests Exploring",
     subtitle: "Unforgettable Sri Lanka Tour",
     tag: "Sigiriya Trip",
+    alt: "Happy tourist couple taking a private taxi in Sri Lanka with LkTaxi",
   },
   {
-    src: "/i2.webp",
+    src: "/family-sri-lanka-airport-transfer-review.webp",
     title: "Safe & Comfortable Drives",
     subtitle: "Relaxing Journey with LKTaxi",
     tag: "Airport Transfer",
+    alt: "Family arriving for their Colombo airport taxi transfer",
   },
   {
-    src: "/i3.webp",
+    src: "/friends-yala-safari-jeep-tour-review.webp",
     title: "Island Adventures",
     subtitle: "Scenic Routes & Warm Smiles",
     tag: "Yala Safari",
+    alt: "Friends enjoying a Yala National Park safari jeep tour",
   },
   {
-    src: "/i4.webp",
+    src: "/solo-traveler-sri-lanka-private-taxi-review.webp",
     title: "Satisfied Travelers",
     subtitle: "Trusted by Visitors Worldwide",
     tag: "Ella Excursion",
+    alt: "Solo traveler reviewing their Sri Lanka private taxi experience",
   },
 ];
 
-const reviews = [
-  { 
-    name: "Teresa Griffiths", 
-    country: "Google Review", 
-    rating: 5, 
-    text: "We used this taxi service to get from Yala to Hiriketiya- the driver was so lovely and the ride was very smooth. Highly recommend" 
-  },
-  { 
-    name: "Hayley Richardson", 
-    country: "Google Review", 
-    rating: 5, 
-    text: "Really safe drive! 10/10 recommended." 
-  },
-];
+const reviews = [];
 
 const ReviewsSection = () => (
   <section className="section-padding bg-muted/30 relative overflow-hidden">
@@ -72,7 +63,7 @@ const ReviewsSection = () => (
             {/* Image with zoom micro-animation */}
             <img
               src={photo.src}
-              alt={photo.title}
+              alt={photo.alt || photo.title}
               className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               loading="lazy"
             />
@@ -112,35 +103,45 @@ const ReviewsSection = () => (
         ))}
       </div>
 
-      {/* Written Testimonials Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-        {reviews.map((r) => (
-          <div 
-            key={r.name} 
-            className="bg-card/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 border border-border/60 hover:border-primary/40 flex flex-col justify-between group relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-28 h-28 bg-primary/5 rounded-bl-full pointer-events-none transition-transform duration-500 group-hover:scale-110" />
-            <div className="absolute top-6 right-6 text-primary/10 transition-colors duration-300 group-hover:text-primary/20">
-              <Quote className="w-12 h-12" />
-            </div>
+      {/* Google Reviews Widget Container */}
+      <div className="max-w-6xl mx-auto mb-12">
+        {/* 
+          STEP 1: Create a widget on https://elfsight.com/google-reviews-widget/ 
+          STEP 2: Once created, they will give you a code like: <div class="elfsight-app-12345678-abcd-1234-abcd-12345678abcd" data-elfsight-app-lazy></div>
+          STEP 3: Replace "YOUR_WIDGET_ID_HERE" below with your actual ID!
+        */}
+        <div className="elfsight-app-165b6c29-3329-41c8-ad55-88b019a1de8a" data-elfsight-app-lazy></div>
 
-            <div className="relative z-10">
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: r.rating }).map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                ))}
+        {/* Fallback manual reviews just in case the widget hasn't been set up yet */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12 opacity-50">
+          {reviews.map((r) => (
+            <div 
+              key={r.name} 
+              className="bg-card/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-border/60 flex flex-col justify-between group relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-28 h-28 bg-primary/5 rounded-bl-full pointer-events-none" />
+              <div className="absolute top-6 right-6 text-primary/10">
+                <Quote className="w-12 h-12" />
               </div>
-              <p className="text-base text-muted-foreground mb-6 italic leading-relaxed">"{r.text}"</p>
-            </div>
-            
-            <div className="relative z-10 pt-4 border-t border-border/40">
-              <div className="flex items-center gap-2">
-                <p className="font-semibold text-foreground text-base">{r.name}</p>
+
+              <div className="relative z-10">
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: r.rating }).map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-base text-muted-foreground mb-6 italic leading-relaxed">"{r.text}"</p>
               </div>
-              <p className="text-sm text-muted-foreground mt-0.5">{r.country}</p>
+              
+              <div className="relative z-10 pt-4 border-t border-border/40">
+                <div className="flex items-center gap-2">
+                  <p className="font-semibold text-foreground text-base">{r.name}</p>
+                </div>
+                <p className="text-sm text-muted-foreground mt-0.5">{r.country}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">

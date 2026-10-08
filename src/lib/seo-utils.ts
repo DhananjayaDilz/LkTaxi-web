@@ -28,8 +28,8 @@ export const generateStructuredData = (location?: Location, from?: Location, to?
     "@context": "https://schema.org",
     "@type": "TaxiService",
     "name": "LKTaxi",
-    "image": "https://www.lktaxi.com/srilanaka_tour.png",
-    "logo": "https://www.lktaxi.com/LOGO.png",
+    "image": "https://www.lktaxi.com/sri-lanka-private-taxi-and-tours-hero.png",
+    "logo": "https://www.lktaxi.com/lktaxi-sri-lanka-taxi-booking-logo.png",
     "@id": `https://www.lktaxi.com/#${location || "main"}`,
     "url": "https://www.lktaxi.com",
     "telephone": "+94784207818",
@@ -109,7 +109,7 @@ export const generateBlogPostSchema = (post: {
       "name": "LKTaxi",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.lktaxi.com/LOGO.png"
+        "url": "https://www.lktaxi.com/lktaxi-sri-lanka-taxi-booking-logo.png"
       }
     },
     "mainEntityOfPage": {
