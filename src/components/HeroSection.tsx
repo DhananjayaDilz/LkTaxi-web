@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import { GOOGLE_REVIEWS_URL } from "@/data/business";
 import { tourPricing, vehicles, generateWhatsAppURL } from "@/data/pricing";
 import BookingForm from "@/components/booking/BookingForm";
-import heroBg from "@/assets/sri-lanka-taxi-booking-hero-background.jpg";
+import heroBg from "@/assets/sri-lanka-taxi-booking-hero-background.webp";
 
 interface HeroSectionProps {
   title?: string;

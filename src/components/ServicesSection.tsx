@@ -1,5 +1,5 @@
 import airportImg from "@/assets/sri-lanka-airport-taxi-transfer-service.webp";
-import dayToursImg from "@/assets/sri-lanka-private-day-tours-from-colombo.jpg";
+import dayToursImg from "@/assets/sri-lanka-private-day-tours-from-colombo.webp";
 import longToursImg from "@/assets/sri-lanka-private-multi-day-round-tours.webp";
 import hotelImg from "@/assets/sri-lanka-hotel-taxi-transfer-service.webp";
 
@@ -48,7 +48,7 @@ const ServicesSection = () => {
           {services.map((s) => (
             <a key={s.title} href={s.link} className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group flex flex-col">
               <div className="h-48 overflow-hidden">
-                <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <img src={s.image} alt={s.title} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
               </div>
               <div className="p-5 flex-grow flex flex-col">
                 <h3 className="font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>

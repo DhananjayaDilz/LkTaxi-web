@@ -15,14 +15,14 @@ const vehiclesData = [
 const safariJeeps = [
   { 
     name: "MAHINDRA BOLERO", 
-    image: "/mahindra-bolero-safari-jeep-yala.png", 
+    image: "/mahindra-bolero-safari-jeep-yala.webp", 
     desc: "Reliable and comfortable 4x4 safari jeep, perfectly suited for the rugged terrain of Yala National Park.", 
     passengers: "1-6",
     alt: "Mahindra Bolero 4x4 safari jeep used for Yala National Park tours"
   },
   { 
     name: "TOYOTA HILUX", 
-    image: "/toyota-hilux-safari-jeep-yala.png", 
+    image: "/toyota-hilux-safari-jeep-yala.webp", 
     desc: "Premium 4x4 safari experience with extra comfort and elevated seating for superior wildlife viewing.", 
     passengers: "1-6",
     alt: "Toyota Hilux comfortable safari jeep for Yala wildlife tours"
@@ -41,7 +41,7 @@ const VehiclesSection = () => (
         {vehiclesData.map((v) => (
           <div key={v.name} className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group border border-border">
             <div className="h-48 overflow-hidden">
-              <img src={v.image} alt={v.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src={v.image} alt={v.name} width="500" height="300" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
             <div className="p-5">
               <h3 className="font-bold text-lg text-foreground mb-1">{v.name}</h3>
@@ -64,6 +64,8 @@ const VehiclesSection = () => (
               <img 
                 src={j.image} 
                 alt={j.alt} 
+                width="600"
+                height="400"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 loading="lazy" 
               />

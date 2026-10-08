@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Logo & About */}
         <div>
-          <img src="/lktaxi-sri-lanka-taxi-booking-logo.png" alt="LKTaxi — Sri Lanka taxi booking and Yala safari service" className="h-10 mb-4" />
+          <img src="/lktaxi-sri-lanka-taxi-booking-logo.webp" alt="LKTaxi — Sri Lanka taxi booking and Yala safari service" width="200" height="56" className="h-10 mb-4" />
           <p className="text-secondary-foreground/60 text-sm">
             Your trusted taxi and travel partner in Sri Lanka. Safe, reliable, and affordable private transportation for foreign tourists since 2024.
           </p>
