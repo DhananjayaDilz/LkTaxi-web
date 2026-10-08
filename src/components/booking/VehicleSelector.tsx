@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
 import type { VehicleType } from "@/types/booking";
 
-import wagonrImg from "@/assets/taxi-wagonr.webp";
-import sedanImg from "@/assets/taxi-sedan.webp";
-import miniVanImg from "@/assets/taxi-mini_van.webp";
-import kdhImg from "@/assets/taxi-kdh.webp";
-import kdhHighRoofImg from "@/assets/taxi-kdh-highroof.webp";
+import wagonrImg from "@/assets/suzuki-wagon-r-taxi-icon.webp";
+import sedanImg from "@/assets/toyota-sedan-taxi-icon.webp";
+import miniVanImg from "@/assets/honda-mini-van-taxi-icon.webp";
+import kdhImg from "@/assets/kdh-flat-roof-taxi-icon.webp";
+import kdhHighRoofImg from "@/assets/kdh-high-roof-taxi-icon.webp";
 
 interface VehicleSelectorProps {
   value: VehicleType | null;

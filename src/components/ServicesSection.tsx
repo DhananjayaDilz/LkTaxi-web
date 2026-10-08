@@ -1,32 +1,36 @@
-import airportImg from "@/assets/airport-transfer.webp";
-import dayToursImg from "@/assets/day-tours.jpg";
-import longToursImg from "@/assets/long-tours.webp";
-import hotelImg from "@/assets/hotel-transfer.jpg";
+import airportImg from "@/assets/sri-lanka-airport-taxi-transfer-service.webp";
+import dayToursImg from "@/assets/sri-lanka-private-day-tours-from-colombo.jpg";
+import longToursImg from "@/assets/sri-lanka-private-multi-day-round-tours.webp";
+import hotelImg from "@/assets/sri-lanka-hotel-taxi-transfer-service.webp";
 
 const services = [
   {
     title: "Airport Transfer",
+    link: "/airport-transfer",
     image: airportImg,
-    short: "Reliable airport pickup and drop-off services at Bandaranaike International Airport. Comfortable vehicles with professional drivers for a stress-free start to your Sri Lanka journey.",
-    detail: "Our airport transfer service covers all major airports in Sri Lanka. We monitor flight schedules to ensure timely pickups and offer meet-and-greet services for international travelers.",
+    short: "Reliable airport pickup and drop-off services at Bandaranaike International Airport. Fixed prices, flight tracking, and meet & greet included.",
+    detail: "Our airport transfer service covers all major airports in Sri Lanka. We monitor flight schedules to ensure timely pickups.",
   },
   {
-    title: "Day Tours",
-    image: dayToursImg,
-    short: "Explore Sri Lanka's best attractions in a single day with our customized day tour packages. Visit ancient temples, wildlife parks, and scenic viewpoints with expert guidance.",
-    detail: "Popular day tours include Sigiriya & Dambulla, Kandy Temple Tour, Galle Fort & Southern Coast, and Pinnawala Elephant Orphanage visits.",
-  },
-  {
-    title: "Long Tours",
+    title: "Sri Lanka Tour Packages",
+    link: "/sri-lanka-tour-packages",
     image: longToursImg,
-    short: "Multi-day tour packages across Sri Lanka with comfortable vehicles and experienced drivers who double as guides. Discover the island's diverse landscapes and rich culture.",
-    detail: "We offer customizable 3-14 day itineraries covering the Cultural Triangle, Hill Country, Southern Coast, and Northern heritage sites with accommodation recommendations.",
+    short: "Multi-day tour packages across Sri Lanka with comfortable vehicles and experienced driver-guides. Discover the island's diverse landscapes.",
+    detail: "We offer customizable 3-14 day itineraries covering the Cultural Triangle, Hill Country, and Southern Coast beaches.",
   },
   {
-    title: "Hotel Transfer",
-    image: hotelImg,
-    short: "Seamless hotel-to-hotel transfer services across Sri Lanka. Whether you're moving between cities or heading to a remote beach resort, we ensure comfortable and timely transportation.",
-    detail: "Our hotel transfer service includes door-to-door pickup, luggage assistance, and flexible scheduling to match your travel plans perfectly.",
+    title: "Hire a Private Driver",
+    link: "/private-driver-sri-lanka",
+    image: dayToursImg,
+    short: "The most comfortable way to explore Sri Lanka. Rent a car with an experienced English-speaking chauffeur to travel at your own pace.",
+    detail: "Perfect for hotel-to-hotel transfers, daily excursions, or multi-week road trips. Comfortable sedans and vans available.",
+  },
+  {
+    title: "Yala Safari",
+    link: "/yala-safari",
+    image: hotelImg, // We can reuse an image or use a safari image if available, but for now reuse hotelImg or import a safari image
+    short: "Unforgettable wildlife adventure in Yala National Park. Private 4x4 Jeep Tours with expert local trackers from Tissamaharama.",
+    detail: "Choose from morning, afternoon, or full-day leopard safaris. Transparent pricing including jeep and park entrance fees.",
   },
 ];
 
@@ -42,16 +46,18 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
-            <div key={s.title} className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
+            <a key={s.title} href={s.link} className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group flex flex-col">
               <div className="h-48 overflow-hidden">
                 <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
               </div>
-              <div className="p-5">
-                <h3 className="font-bold text-lg text-foreground mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{s.short}</p>
-                <p className="text-sm text-muted-foreground">{s.detail}</p>
+              <div className="p-5 flex-grow flex flex-col">
+                <h3 className="font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+                <p className="text-sm text-muted-foreground mb-3 flex-grow">{s.short}</p>
+                <span className="text-primary font-medium text-sm mt-auto inline-flex items-center">
+                  Learn more &rarr;
+                </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

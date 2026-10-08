@@ -22,6 +22,24 @@ export const popularRoutes: Route[] = [
   { from: "udawalawe", to: "yala" },
   { from: "trincomalee", to: "sigiriya" },
   { from: "hikkaduwa", to: "bentota" },
+  // South coast season: airport arrivals heading to the beaches and Yala
+  { from: "airport", to: "colombo" },
+  { from: "airport", to: "negombo" },
+  { from: "airport", to: "bentota" },
+  { from: "airport", to: "hikkaduwa" },
+  { from: "airport", to: "galle" },
+  { from: "airport", to: "unawatuna" },
+  { from: "airport", to: "weligama" },
+  { from: "airport", to: "tangalle" },
+  { from: "airport", to: "yala" },
+  { from: "airport", to: "sigiriya" },
+  // Popular tourist circuit transfers
+  { from: "colombo", to: "galle" },
+  { from: "colombo", to: "mirissa" },
+  { from: "mirissa", to: "yala" },
+  { from: "galle", to: "yala" },
+  { from: "ella", to: "mirissa" },
+  { from: "kandy", to: "ella" },
 ];
 
 // Helper to generate a unique key for the route

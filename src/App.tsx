@@ -13,6 +13,10 @@ import RoutePage from "./pages/RoutePage.tsx";
 import Blogs from "./pages/Blogs.tsx";
 import BlogDetail from "./pages/BlogDetail.tsx";
 import TaxiPageRouter from "./pages/TaxiPageRouter.tsx";
+import AirportTransfer from "./pages/AirportTransfer.tsx";
+import YalaSafari from "./pages/YalaSafari.tsx";
+import PrivateDriver from "./pages/PrivateDriver.tsx";
+import TourPackages from "./pages/TourPackages.tsx";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +33,10 @@ export const AppContent = () => (
           <Route path="/taxi/:slug" element={<TaxiPageRouter />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
+          <Route path="/airport-transfer" element={<AirportTransfer />} />
+          <Route path="/yala-safari" element={<YalaSafari />} />
+          <Route path="/private-driver-sri-lanka" element={<PrivateDriver />} />
+          <Route path="/sri-lanka-tour-packages" element={<TourPackages />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

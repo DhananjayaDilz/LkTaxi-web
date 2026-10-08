@@ -22,7 +22,7 @@ function buildGoogleMapsDirectionsUrl(pickup: Location, drop: Location) {
 export function TaxiMap({ pickup, drop, route }: TaxiMapProps) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyB_vkm4MvzG3IWC9vaNrSQC1L8ynH2C5S8"
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY
   });
 
   const [map, setMap] = useState<google.maps.Map | null>(null);

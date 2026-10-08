@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { cn } from "@/lib/utils";
 import { countries, generateWhatsAppURL } from "@/data/pricing";
-import safariBg from "@/assets/safari-bg.jpg";
+import safariBg from "@/assets/yala-national-park-safari-jeep-tour.jpg";
 
 const SafariSection = () => {
   const [searchParams] = useSearchParams();

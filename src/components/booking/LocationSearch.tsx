@@ -1,12 +1,22 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Loader2, LocateFixed, MapPin, Search, X } from "lucide-react";
+import { Loader2, LocateFixed, MapPin, X } from "lucide-react";
 import { Command, CommandEmpty, CommandGroup, CommandItem, CommandList } from "@/components/ui/command";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import type { Location } from "@/types/booking";
-import { reverseGeocode, searchLocation } from "@/services/nominatimService";
 
-export const BIA_AIRPORT_LOCATION: Location = {
+type PlacePrediction = {
+  placePrediction: {
+    placeId: string;
+    text: { text: string };
+    structuredFormat: {
+      mainText: { text: string };
+      secondaryText?: { text: string };
+    };
+  };
+};
+
+const BIA_AIRPORT_LOCATION: Location = {
   name: "BIA Airport",
   displayName: "Bandaranaike International Airport (CMB), Katunayake",
   latitude: 7.1804,
@@ -14,7 +24,7 @@ export const BIA_AIRPORT_LOCATION: Location = {
   placeId: "bia-airport",
 };
 
-export const POPULAR_LOCATIONS: Location[] = [BIA_AIRPORT_LOCATION];
+const POPULAR_LOCATIONS: Location[] = [BIA_AIRPORT_LOCATION];
 
 interface LocationSearchProps {
   label: string;
@@ -36,7 +46,7 @@ export function LocationSearch({
   quickSelections = POPULAR_LOCATIONS,
 }: LocationSearchProps) {
   const [query, setQuery] = useState(value?.displayName ?? value?.name ?? "");
-  const [results, setResults] = useState<Location[]>([]);
+  const [results, setResults] = useState<PlacePrediction[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isGettingLocation, setIsGettingLocation] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -64,15 +74,28 @@ export function LocationSearch({
       setSearchError(null);
 
       try {
-        const matches = await searchLocation(trimmedQuery);
-
+        const res = await fetch("https://places.googleapis.com/v1/places:autocomplete", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Goog-Api-Key": import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+          },
+          body: JSON.stringify({ input: trimmedQuery, includedRegionCodes: ["lk"] }),
+        });
+        
+        if (!res.ok) throw new Error("Failed to fetch predictions");
+        const data = await res.json();
+        
         if (searchSequence.current === requestId) {
-          setResults(matches);
+          setResults(data.suggestions || []);
+          if (!data.suggestions || data.suggestions.length === 0) {
+            setSearchError("No matching locations found.");
+          }
         }
       } catch (error) {
         if (searchSequence.current === requestId) {
           setResults([]);
-          setSearchError(error instanceof Error ? error.message : "Location search failed.");
+          setSearchError("Location search failed.");
         }
       } finally {
         if (searchSequence.current === requestId) {
@@ -86,11 +109,40 @@ export function LocationSearch({
 
   const selectedLabel = useMemo(() => value?.displayName ?? value?.name ?? "", [value]);
 
-  const handleSelect = (location: Location) => {
-    onChange(location);
-    setQuery(location.displayName ?? location.name);
+  const handleSelect = (loc: Location) => {
+    onChange(loc);
+    setQuery(loc.displayName ?? loc.name);
     setResults([]);
     setIsOpen(false);
+  };
+
+  const handleSelectPrediction = async (prediction: PlacePrediction) => {
+    setIsLoading(true);
+    const placeId = prediction.placePrediction.placeId;
+    
+    try {
+      const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}?fields=id,displayName,formattedAddress,location`, {
+        headers: {
+          "X-Goog-Api-Key": import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+        }
+      });
+      
+      if (!res.ok) throw new Error();
+      const data = await res.json();
+      
+      const location: Location = {
+        name: prediction.placePrediction.structuredFormat.mainText.text,
+        displayName: data.formattedAddress || prediction.placePrediction.text.text,
+        latitude: data.location.latitude,
+        longitude: data.location.longitude,
+        placeId: placeId,
+      };
+      handleSelect(location);
+    } catch (err) {
+      setSearchError("Failed to fetch location details.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleClear = () => {
@@ -111,10 +163,32 @@ export function LocationSearch({
 
     navigator.geolocation.getCurrentPosition(
       async (position) => {
+        const { latitude, longitude } = position.coords;
         try {
-          const { latitude, longitude } = position.coords;
-          const location = await reverseGeocode(latitude, longitude);
-          handleSelect(location);
+          const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`);
+          const data = await res.json();
+          if (data.status === "OK" && data.results && data.results[0]) {
+            const result = data.results[0];
+            let name = result.formatted_address;
+            const route = result.address_components.find((c: any) => c.types.includes("route"));
+            const neighborhood = result.address_components.find((c: any) => c.types.includes("neighborhood"));
+            const locality = result.address_components.find((c: any) => c.types.includes("locality"));
+            
+            if (neighborhood || route || locality) {
+               name = (neighborhood?.long_name || route?.long_name || locality?.long_name) as string;
+            }
+
+            const location: Location = {
+              name: name,
+              displayName: result.formatted_address,
+              latitude: latitude,
+              longitude: longitude,
+              placeId: result.place_id,
+            };
+            handleSelect(location);
+          } else {
+            setSearchError("Failed to resolve current location.");
+          }
         } catch (err) {
           setSearchError("Failed to resolve current location.");
         } finally {
@@ -182,7 +256,10 @@ export function LocationSearch({
               setIsOpen(true);
             }}
             onFocus={() => setIsOpen(true)}
-            onBlur={() => window.setTimeout(() => setIsOpen(false), 150)}
+            onBlur={() => {
+              // Delay closing to allow onSelect/onClick to fire on dropdown items
+              setTimeout(() => setIsOpen(false), 200);
+            }}
             placeholder={placeholder}
             disabled={disabled}
             className="h-11 border-0 bg-transparent px-0 shadow-none focus-visible:ring-0"
@@ -219,21 +296,24 @@ export function LocationSearch({
         </div>
 
         {isOpen && query.trim().length >= 2 ? (
-          <div className="absolute z-30 mt-2 w-full overflow-hidden rounded-xl border border-border bg-popover shadow-xl">
+          <div 
+            className="absolute z-30 mt-2 w-full overflow-hidden rounded-xl border border-border bg-popover shadow-xl"
+            onMouseDown={(e) => e.preventDefault()}
+          >
             <Command shouldFilter={false}>
               <CommandList className="max-h-64 sm:max-h-72">
                 <CommandGroup heading="Search results">
-                  {results.map((location) => (
+                  {results.map((suggestion) => (
                     <CommandItem
-                      key={`${location.latitude}-${location.longitude}-${location.name}`}
-                      value={location.displayName ?? location.name}
-                      onSelect={() => handleSelect(location)}
+                      key={suggestion.placePrediction.placeId}
+                      value={suggestion.placePrediction.text.text}
+                      onSelect={() => handleSelectPrediction(suggestion)}
                       className="cursor-pointer px-3 py-3 sm:py-2.5"
                     >
                       <div className="flex w-full flex-col items-start gap-1 text-left">
-                        <span className="font-medium text-foreground">{location.name}</span>
+                        <span className="font-medium text-foreground">{suggestion.placePrediction.structuredFormat.mainText.text}</span>
                         <span className="text-xs text-muted-foreground">
-                          {location.displayName ?? `${location.latitude.toFixed(5)}, ${location.longitude.toFixed(5)}`}
+                          {suggestion.placePrediction.structuredFormat.secondaryText?.text || suggestion.placePrediction.text.text}
                         </span>
                       </div>
                     </CommandItem>

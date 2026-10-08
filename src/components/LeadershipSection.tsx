@@ -2,7 +2,7 @@ const leaders = [
   {
     name: "T.A Uddeepana",
     position: "Founder & Managing Director",
-    image: "/ach.webp",
+    image: "/lktaxi-founder-sri-lanka-tour-expert.webp",
     imagePosition: "center 15%",
     description:
       "T.A Uddeepana is the founder of LKTaxi and leads the company with a strong vision of providing reliable and professional taxi services across Sri Lanka. His focus is on customer satisfaction, service quality, and creating a trusted transportation experience for travelers visiting Sri Lanka.",
@@ -11,7 +11,7 @@ const leaders = [
   {
     name: "Dhanajaya Wijerathna",
     position: "Co-Founder & Operations Manager",
-    image: "/dhn.webp",
+    image: "/lktaxi-manager-sri-lanka-taxi-operations.webp",
     imagePosition: "center center",
     description:
       "Dhanajaya Wijerathna manages daily operations at LKTaxi, ensuring every ride is organized smoothly and efficiently. His experience in tourism and transport coordination helps provide customers with comfortable vehicles and friendly professional drivers.",
