@@ -37,7 +37,7 @@ const ContactSection = () => {
                 { icon: MapPin, label: "Address", value: "379 Jayasirimawatha, Tissamaharama, Sri Lanka" },
                 { icon: Phone, label: "Phone", value: "+94 78 420 7818", href: "tel:+94784207818" },
                 { icon: Phone, label: "WhatsApp bookings", value: `+${WHATSAPP_NUMBER}`, href: `https://wa.me/${WHATSAPP_NUMBER}` },
-                { icon: Mail, label: "Email", value: "hi.lktaxi@gmail.com", href: "mailto:hi.lktaxi@gmail.com" },
+                { icon: Mail, label: "Email", value: "info@lktaxi.com", href: "mailto:info@lktaxi.com" },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">

@@ -72,7 +72,7 @@ const Footer = () => (
               <a href="tel:+94784207818" className="hover:text-primary transition-colors">+94 78 420 7818</a>
             </li>
             <li>
-              <a href="mailto:hi.lktaxi@gmail.com" className="hover:text-primary transition-colors">hi.lktaxi@gmail.com</a>
+              <a href="mailto:info@lktaxi.com" className="hover:text-primary transition-colors">info@lktaxi.com</a>
             </li>
           </ul>
           <div className="flex gap-3 mt-4">
