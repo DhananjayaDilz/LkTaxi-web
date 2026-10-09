@@ -8,8 +8,6 @@ import ContactTracking from "./components/ContactTracking";
 import PageSEO from "./components/PageSEO";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import LocationPage from "./pages/LocationPage.tsx";
-import RoutePage from "./pages/RoutePage.tsx";
 import Blogs from "./pages/Blogs.tsx";
 import BlogDetail from "./pages/BlogDetail.tsx";
 import TaxiPageRouter from "./pages/TaxiPageRouter.tsx";
