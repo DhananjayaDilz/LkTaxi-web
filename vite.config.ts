@@ -18,4 +18,19 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('framer-motion')) return 'vendor-framer';
+            if (id.includes('@react-google-maps')) return 'vendor-maps';
+            if (id.includes('lucide-react')) return 'vendor-lucide';
+            if (id.includes('@radix-ui')) return 'vendor-radix';
+            return 'vendor';
+          }
+        }
+      }
+    }
+  }
 }));
