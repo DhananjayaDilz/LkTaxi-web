@@ -81,7 +81,7 @@ export default function RoutesTeaser() {
 
         {/* Prominent CTA to Dedicated Routes Page */}
         <div className="text-center px-2">
-          <Link to="/routes" className="inline-block max-w-full">
+          <Link to="/routes#routes" className="inline-block max-w-full">
             <Button
               size="lg"
               className="w-full sm:w-auto h-auto py-3.5 px-6 text-sm sm:text-base font-bold shadow-md hover:shadow-lg transition-all gap-2 group whitespace-normal text-center"

@@ -93,7 +93,7 @@ export default function RoutesExplorer() {
   const activeHubMeta = hubOptions.find((h) => h.id === selectedHub) || hubOptions[0];
 
   return (
-    <section id="routes" className="section-padding bg-muted/20 border-y border-border">
+    <section id="routes" className="section-padding bg-muted/20 border-y border-border scroll-mt-24">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">

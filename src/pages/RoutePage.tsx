@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import ServicesSection from "../components/ServicesSection";
 import AboutSection from "../components/AboutSection";
-import ReviewsSection from "../components/ReviewsSection";
 import FAQSection from "../components/FAQSection";
 import ContactSection from "../components/ContactSection";
 import { parseDistanceKm, getFareTable, formatLKR } from "@/lib/fare-estimate";
@@ -179,7 +178,6 @@ const RoutePage = () => {
         </section>
 
         <AboutSection />
-        <ReviewsSection />
 
         {/* Route-specific FAQ or generic FAQ */}
         {content?.faqs && content.faqs.length > 0 ? (
