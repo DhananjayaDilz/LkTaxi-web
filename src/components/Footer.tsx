@@ -15,16 +15,17 @@ const Footer = () => (
 
         {/* Popular Destinations */}
         <div>
-          <h4 className="font-bold text-primary mb-4">Popular Destinations</h4>
+          <h4 className="font-bold text-primary mb-4">Top Destinations</h4>
           <ul className="space-y-2">
             {[
               { label: "Colombo Taxi", to: "/taxi/colombo" },
               { label: "Ella Taxi", to: "/taxi/ella" },
               { label: "Kandy Taxi", to: "/taxi/kandy" },
-              { label: "Airport Transfer", to: "/taxi/airport" },
+              { label: "Airport Transfer (CMB)", to: "/taxi/airport" },
               { label: "Galle Taxi", to: "/taxi/galle" },
               { label: "Mirissa Taxi", to: "/taxi/mirissa" },
               { label: "Sigiriya Taxi", to: "/taxi/sigiriya" },
+              { label: "Yala Safari Base", to: "/taxi/yala" },
             ].map((link) => (
               <li key={link.to}>
                 <Link to={link.to} className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors">
@@ -37,26 +38,22 @@ const Footer = () => (
 
         {/* Services */}
         <div>
-          <h4 className="font-bold text-primary mb-4">Services</h4>
+          <h4 className="font-bold text-primary mb-4">Our Services</h4>
           <ul className="space-y-2">
             {[
-              { label: "Airport Transfer", to: "/taxi/airport" },
-              { label: "Day Tours", href: "/#services" },
-              { label: "Long Distance Taxi", href: "/#services" },
-              { label: "Hotel Transfer", href: "/#services" },
-              { label: "Yala Safari Booking", href: "/#safari" },
-              { label: "Travel Blog", to: "/blogs" },
+              { label: "Colombo Airport Transfers", to: "/airport-transfer" },
+              { label: "Sri Lanka Tour Packages", to: "/sri-lanka-tour-packages" },
+              { label: "Hire Private Driver", to: "/private-driver-sri-lanka" },
+              { label: "Yala Safari Jeep Tours", to: "/yala-safari" },
+              { label: "Sri Lanka Travel Blog", to: "/blogs" },
+              { label: "Airport to Kandy Taxi", to: "/taxi/airport-to-kandy" },
+              { label: "Airport to Mirissa Taxi", to: "/taxi/airport-to-mirissa" },
+              { label: "Colombo to Ella Taxi", to: "/taxi/colombo-to-ella" },
             ].map((s) => (
               <li key={s.label}>
-                {'to' in s && s.to ? (
-                  <Link to={s.to} className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors">
-                    {s.label}
-                  </Link>
-                ) : (
-                  <a href={s.href} className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors">
-                    {s.label}
-                  </a>
-                )}
+                <Link to={s.to} className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors">
+                  {s.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -89,8 +86,9 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-secondary-foreground/10 mt-10 pt-6 text-center">
-        <p className="text-sm text-secondary-foreground/40">© 2026 LKTaxi Sri Lanka. All rights reserved. | Private Taxi & Safari Booking Service</p>
+      <div className="border-t border-secondary-foreground/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-secondary-foreground/60 gap-3">
+        <p>Looking for a specific route? <Link to="/routes" className="text-primary hover:underline font-medium">Explore all 30+ Sri Lanka Taxi Routes &amp; 33 Destinations &rarr;</Link></p>
+        <p>© 2026 LKTaxi Sri Lanka. All rights reserved. | Private Taxi &amp; Safari Booking Service</p>
       </div>
     </div>
   </footer>

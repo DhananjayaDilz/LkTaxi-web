@@ -5,6 +5,7 @@ import { popularRoutes, getRouteSlug } from "../data/routes";
 export const SITE_URL = "https://www.lktaxi.com";
 export const publicPaths = [
   "/",
+  "/routes",
   "/blogs",
   "/airport-transfer",
   "/yala-safari",
@@ -24,7 +25,10 @@ export function getPageSEO(pathname: string) {
   const noindex = !publicPaths.includes(path);
   let title = "Sri Lanka Private Taxi & Airport Transfers | LKTaxi";
   let description = "Book a private taxi in Sri Lanka with LKTaxi. Colombo airport transfers, hotel transfers, private tours and Yala safaris. Request your quote on WhatsApp.";
-  if (path === "/blogs") {
+  if (path === "/routes") {
+    title = "Sri Lanka Taxi Routes & 33 Destination Directory | LKTaxi";
+    description = "Browse all popular private taxi routes, driving times, and 33 destination guides in Sri Lanka. Fixed rates and 24/7 WhatsApp booking.";
+  } else if (path === "/blogs") {
     title = "Sri Lanka Travel Guides & Safari Tips | LKTaxi";
     description = "Plan your Sri Lanka trip with LKTaxi's destination guides, Yala safari information and private transfer booking advice.";
   } else if (path === "/airport-transfer") {

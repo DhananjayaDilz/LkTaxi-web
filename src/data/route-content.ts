@@ -315,4 +315,295 @@ export const routeContent: Record<string, RouteContent> = {
       { q: "Is Bentota better than Hikkaduwa?", a: "They're different experiences. Hikkaduwa is more backpacker-friendly with coral reefs. Bentota is more upscale with luxury resorts and river-based water sports." },
     ],
   },
+  "airport-to-colombo": {
+    distance: "35 km",
+    duration: "45-60 minutes",
+    description:
+      "Direct private transfer from Bandaranaike International Airport (CMB) to central Colombo hotels via the Katunayake Expressway (E03). Avoid public transport queues with a meet-and-greet in arrivals and a comfortable air-conditioned ride.",
+    scenicHighlights: [
+      "Expressway drive through tropical greenery",
+      "Kelani River bridge crossing",
+      "Colombo city skyline and Lotus Tower view on approach",
+    ],
+    travelTips: [
+      "Share your flight number for free real-time flight tracking and arrivals hall meet-and-greet",
+      "Expressway tolls are included in your quote",
+      "During off-peak hours travel takes ~35 minutes; rush hour (8-9 AM, 5-7 PM) can take ~60 minutes",
+    ],
+    faqs: [
+      { q: "How long is the taxi ride from Colombo airport to the city?", a: "Via the Katunayake Expressway, it takes 45-60 minutes depending on Colombo city traffic." },
+      { q: "Where will my driver meet me at the airport?", a: "Your driver will wait in the arrivals lobby holding a name board with your name." },
+    ],
+  },
+  "airport-to-negombo": {
+    distance: "12 km",
+    duration: "20-25 minutes",
+    description:
+      "A quick, convenient private transfer from Bandaranaike International Airport to Negombo beach hotels and guest houses. The ideal first stop after a long flight to relax by the Indian Ocean before exploring Sri Lanka.",
+    scenicHighlights: [
+      "Negombo lagoon outskirts",
+      "Coastal fishing community scenes",
+      "Negombo golden beach road",
+    ],
+    travelTips: [
+      "Negombo is only 15-20 minutes from the airport — ideal for late night flight arrivals",
+      "Pre-book so your driver is ready the moment you clear customs and baggage claim",
+    ],
+    faqs: [
+      { q: "Is Negombo close to Colombo airport?", a: "Yes, Negombo is only 12 km north of Bandaranaike International Airport, making it the closest beach destination." },
+      { q: "Can I book a late-night arrival transfer to Negombo?", a: "Yes, LKTaxi operates 24/7 with flight tracking for flights landing at any hour." },
+    ],
+  },
+  "airport-to-bentota": {
+    distance: "110 km",
+    duration: "1.5-2 hours",
+    description:
+      "Direct private taxi from Colombo Airport to Bentota via the Southern Expressway (E01). Bentota is famous for golden sand beaches, luxury seaside resorts, and river water sports.",
+    scenicHighlights: [
+      "Southern Expressway crossing lush countryside",
+      "Bentota River estuary",
+      "South-west coastal palms",
+    ],
+    travelTips: [
+      "The expressway bypasses city traffic for a fast, relaxed transfer",
+      "Request a stop at the Madu River mangrove boat safari if arriving during daylight",
+    ],
+    faqs: [
+      { q: "How far is Bentota from Colombo airport?", a: "Bentota is approximately 110 km south of the airport, taking about 1.5 to 2 hours via the Southern Expressway." },
+    ],
+  },
+  "airport-to-hikkaduwa": {
+    distance: "145 km",
+    duration: "2-2.5 hours",
+    description:
+      "Private airport transfer from CMB to Hikkaduwa beach. Known for vibrant coral reefs, surfing beaches, and sea turtle sanctuaries, Hikkaduwa is easily reached via the Southern Expressway.",
+    scenicHighlights: [
+      "Southern Expressway countryside",
+      "Hikkaduwa marine sanctuary coastal approach",
+      "Coconut palm groves",
+    ],
+    travelTips: [
+      "Highway exits allow quick access directly to Hikkaduwa town and Narigama beach",
+      "Tell us if you have surfboards or extra luggage so we dispatch an appropriate van",
+    ],
+    faqs: [
+      { q: "Can LKTaxi transport surfboards to Hikkaduwa?", a: "Yes, we have spacious KDH flat-roof and high-roof vans with ample room for surfboards and luggage." },
+    ],
+  },
+  "airport-to-galle": {
+    distance: "155 km",
+    duration: "2-2.5 hours",
+    description:
+      "Seamless airport transfer from Colombo International Airport to historic Galle Fort and surrounding beach bays. The Southern Expressway ensures a smooth, high-speed journey from the airport.",
+    scenicHighlights: [
+      "Scenic southern lowlands",
+      "Distant view of Rumassala hill",
+      "UNESCO World Heritage Galle Fort entrance",
+    ],
+    travelTips: [
+      "Galle Fort has narrow pedestrian streets — inform us of your hotel name so your driver drops you at the nearest gate",
+      "Ideal starting point for exploring the south coast",
+    ],
+    faqs: [
+      { q: "How long does a taxi take from Colombo airport to Galle Fort?", a: "It takes about 2 to 2.5 hours via the Southern Expressway." },
+    ],
+  },
+  "airport-to-unawatuna": {
+    distance: "160 km",
+    duration: "2-2.5 hours",
+    description:
+      "Private door-to-door taxi from Colombo Airport to Unawatuna Bay. Unawatuna is one of Sri Lanka's most beloved beaches, featuring calm turquoise waters, beachside dining, and diving centers.",
+    scenicHighlights: [
+      "Southern Expressway route",
+      "Rumassala Sanctuary hillside",
+      "Unawatuna crescent bay",
+    ],
+    travelTips: [
+      "The highway exit at Pinnaduwa/Galle leads straight to Unawatuna in under 15 minutes from the exit",
+      "Great family beach destination with calm swimming conditions",
+    ],
+    faqs: [
+      { q: "Is the transfer to Unawatuna direct?", a: "Yes, our driver picks you up inside arrivals and drives directly to your Unawatuna hotel without shared stops." },
+    ],
+  },
+  "airport-to-weligama": {
+    distance: "175 km",
+    duration: "2.5-3 hours",
+    description:
+      "Private taxi transfer from Colombo Airport to Weligama surf bay. Weligama is world-renowned for beginner-friendly surf breaks, stilt fishermen, and relaxed beach vibes.",
+    scenicHighlights: [
+      "Southern Expressway landscapes",
+      "Weligama bay panoramic view",
+      "Taprobane Island in the bay",
+    ],
+    travelTips: [
+      "Early morning arrivals reach Weligama in time for afternoon surf sessions",
+      "Mention surfboards or group luggage for van recommendations",
+    ],
+    faqs: [
+      { q: "How much is travel time to Weligama from CMB airport?", a: "Travel time is typically 2.5 to 3 hours along the Southern Expressway." },
+    ],
+  },
+  "airport-to-tangalle": {
+    distance: "215 km",
+    duration: "3-3.5 hours",
+    description:
+      "Private transfer from Colombo Airport to Tangalle's secluded coves and luxury resorts in the deep south. The Southern Expressway extension makes Tangalle accessible directly from the airport.",
+    scenicHighlights: [
+      "Southern Expressway passing Matara",
+      "Goyambokka and Silent Beach coastal roads",
+      "Dry zone nature transitions",
+    ],
+    travelTips: [
+      "Tangalle has pristine, tranquil beaches — a great retreat to start your holiday",
+      "Driver will take the Southern Expressway all the way to the Barawakumbuka or Beliatta exit",
+    ],
+    faqs: [
+      { q: "Is the expressway open all the way to Tangalle?", a: "Yes, the Southern Expressway extension runs directly toward Tangalle/Beliatta, cutting travel time drastically." },
+    ],
+  },
+  "airport-to-yala": {
+    distance: "260 km",
+    duration: "4-4.5 hours",
+    description:
+      "Direct private taxi from Colombo Airport to Yala National Park and Tissamaharama safari hotels. Combine your arrival transfer with a pre-booked 4x4 private Yala safari.",
+    scenicHighlights: [
+      "Southern lowlands and salt pans near Hambantota",
+      "Tissa Wewa lake at sunset",
+      "Wildlife sightings near park boundaries",
+    ],
+    travelTips: [
+      "If arriving on an early morning flight, you can reach Tissa by afternoon and be ready for a next-morning safari",
+      "LKTaxi can bundle your transfer and safari jeep booking seamlessly",
+    ],
+    faqs: [
+      { q: "Can I go directly from Colombo Airport to Yala in one day?", a: "Yes, via the Southern Expressway it takes approximately 4 to 4.5 hours door-to-door." },
+    ],
+  },
+  "airport-to-sigiriya": {
+    distance: "150 km",
+    duration: "3.5-4 hours",
+    description:
+      "Private airport transfer from Colombo Airport to Sigiriya in the Cultural Triangle. Reach the iconic Lion Rock fortress and Dambulla cave temple comfortably with an experienced driver.",
+    scenicHighlights: [
+      "Central plains and coconut plantations",
+      "Kurunegala rock formations",
+      "First view of Sigiriya Rock on approach",
+    ],
+    travelTips: [
+      "The route uses the Central Expressway to Mirigama/Kurunegala, significantly reducing travel time",
+      "Consider stopping at Dambulla Cave Temple along the way",
+    ],
+    faqs: [
+      { q: "How long is the drive from the airport to Sigiriya?", a: "The drive takes roughly 3.5 to 4 hours with modern expressway connections." },
+    ],
+  },
+  "colombo-to-galle": {
+    distance: "125 km",
+    duration: "2 hours",
+    description:
+      "Fast, comfortable private transfer from Colombo hotels to Galle Fort and the southern coastline. Take the Southern Expressway for maximum convenience.",
+    scenicHighlights: [
+      "Expressway views of rubber and paddy plantations",
+      "Approach to Galle harbour and Dutch colonial ramparts",
+    ],
+    travelTips: [
+      "Door-to-door hotel pickup in Colombo avoids the chaos of Colombo Fort train station",
+      "Great for day tours or hotel relocations",
+    ],
+    faqs: [
+      { q: "How long is the taxi ride from Colombo to Galle?", a: "Via the Southern Expressway, it takes just about 1.5 to 2 hours." },
+    ],
+  },
+  "colombo-to-mirissa": {
+    distance: "150 km",
+    duration: "2-2.5 hours",
+    description:
+      "Private transfer connecting Colombo to Mirissa beach. Ideal for travelers heading to the south coast for whale watching, surfing, and beach cafes.",
+    scenicHighlights: [
+      "Southern Expressway scenery",
+      "Coconut palm groves",
+      "Mirissa bay coastline",
+    ],
+    travelTips: [
+      "Depart Colombo early to arrive in Mirissa with daylight to spare for the beach",
+      "Custom stops available upon request",
+    ],
+    faqs: [
+      { q: "Can we stop for lunch between Colombo and Mirissa?", a: "Yes, your private driver can stop at expressway service areas or scenic coastal restaurants." },
+    ],
+  },
+  "mirissa-to-yala": {
+    distance: "145 km",
+    duration: "2.5-3 hours",
+    description:
+      "Transfer from Mirissa beach to Yala National Park (Tissamaharama). The classic tourist circuit route transitioning from south coast beaches to Sri Lanka's premier leopard safari park.",
+    scenicHighlights: [
+      "Tangalle coastline",
+      "Hambantota coastal road",
+      "Tissamaharama ancient reservoirs",
+    ],
+    travelTips: [
+      "Finish your morning in Mirissa, check out around 11:00 AM, and arrive in Tissamaharama in time to rest before your morning safari",
+      "LKTaxi is based in Tissamaharama for immediate safari support",
+    ],
+    faqs: [
+      { q: "Is the road between Mirissa and Yala good?", a: "Yes, the Southern Expressway extension or coastal highway is smooth and well-maintained." },
+    ],
+  },
+  "galle-to-yala": {
+    distance: "170 km",
+    duration: "3-3.5 hours",
+    description:
+      "Private transfer from Galle Fort to Yala National Park and Tissamaharama. Travel comfortably from the colonial south coast to the wilderness of the deep south.",
+    scenicHighlights: [
+      "Scenic southern highway",
+      "Rural southern paddy fields",
+      "Birdlife around Tissa Wewa",
+    ],
+    travelTips: [
+      "Book your Yala safari jeep together with this transfer for discounted package pricing",
+      "Optional detours include Bundala National Park or Kalametiya Bird Sanctuary",
+    ],
+    faqs: [
+      { q: "How far is Yala from Galle?", a: "Galle to Yala is about 170 km and takes approximately 3 to 3.5 hours." },
+    ],
+  },
+  "ella-to-mirissa": {
+    distance: "175 km",
+    duration: "3.5-4 hours",
+    description:
+      "Scenic hill country descent from Ella to Mirissa beach on the southern coast. Enjoy dramatic mountain passes transitioning into sunny coastal highways.",
+    scenicHighlights: [
+      "Ella Gap descent and Ravana Falls",
+      "Wellawaya tea and forest scenery",
+      "Southern Expressway stretch to Weligama/Mirissa",
+    ],
+    travelTips: [
+      "Stop at Ravana Falls for photos on the way down from Ella",
+      "Take motion sickness medication if winding mountain roads affect you",
+    ],
+    faqs: [
+      { q: "Can we see Ravana Falls on the way from Ella to Mirissa?", a: "Yes, Ravana Falls is located directly along the main road descending from Ella." },
+    ],
+  },
+  "kandy-to-ella": {
+    distance: "140 km",
+    duration: "3.5-4.5 hours",
+    description:
+      "Spectacular highland transfer from Kandy to Ella via Nuwara Eliya. Pass mist-shrouded tea plantations, roaring waterfalls, and colonial hill stations.",
+    scenicHighlights: [
+      "Ramboda Falls and mountain viewpoints",
+      "Nuwara Eliya colonial architecture and Gregory Lake",
+      "Endless emerald Ceylon tea estates",
+    ],
+    travelTips: [
+      "If train tickets for the Kandy-Ella railway are sold out, a private taxi is faster and allows stops at tea factories and waterfalls",
+      "Bring a warm layer for the cooler high-altitude passes near Nuwara Eliya",
+    ],
+    faqs: [
+      { q: "Is a taxi faster than the Kandy to Ella train?", a: "Yes, a private taxi takes 3.5 to 4.5 hours door-to-door, whereas the train takes 6 to 7 hours plus station transfer time." },
+      { q: "Can we stop at a tea factory along the way?", a: "Absolutely. We recommend stops at Damro Labookellie or Pedro Tea Estate for factory tours." },
+    ],
+  },
 };

@@ -158,7 +158,7 @@ export function BookingForm() {
       return;
     }
 
-    const message = `🚕 *LK TAXI*\n\n📍 Pickup: ${fareResult.pickup.name}\n📍 Drop: ${fareResult.drop.name}\n📅 Pickup Date: ${format(pickupDate, "PPP")}\n⏰ Pickup Time: ${pickupHour}:${pickupMinute} ${pickupAmPm}\n🚗 Vehicle: ${fareResult.vehicle}\n📏 Distance: ${fareResult.distanceKm.toFixed(1)} km\n⏱️ Duration: ${Math.round(fareResult.durationMinutes)} min\n💰 Price: LKR ${fareResult.price.toLocaleString()}`;
+    const message = `🚕 *LKTAXI*\n\n📍 Pickup: ${fareResult.pickup.name}\n📍 Drop: ${fareResult.drop.name}\n📅 Pickup Date: ${format(pickupDate, "PPP")}\n⏰ Pickup Time: ${pickupHour}:${pickupMinute} ${pickupAmPm}\n🚗 Vehicle: ${fareResult.vehicle}\n📏 Distance: ${fareResult.distanceKm.toFixed(1)} km\n⏱️ Duration: ${Math.round(fareResult.durationMinutes)} min\n💰 Price: LKR ${fareResult.price.toLocaleString()}`;
     trackContact("whatsapp", "BookingForm");
     window.open(generateWhatsAppURL(message), "_blank", "noopener,noreferrer");
   };

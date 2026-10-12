@@ -15,6 +15,7 @@ import AirportTransfer from "./pages/AirportTransfer.tsx";
 import YalaSafari from "./pages/YalaSafari.tsx";
 import PrivateDriver from "./pages/PrivateDriver.tsx";
 import TourPackages from "./pages/TourPackages.tsx";
+import RoutesPage from "./pages/RoutesPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ export const AppContent = () => (
         <ContactTracking />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/routes" element={<RoutesPage />} />
           <Route path="/taxi/:slug" element={<TaxiPageRouter />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />

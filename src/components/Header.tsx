@@ -7,6 +7,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/#about" },
   { label: "Our Service", href: "/#services" },
+  { label: "Routes", href: "/routes#routes" },
   { label: "Our Vehicles", href: "/#vehicles" },
   { label: "Book Safari", href: "/#safari" },
   { label: "Blogs", href: "/blogs" },
@@ -23,18 +24,19 @@ const Header = () => {
     e.preventDefault();
     setIsOpen(false);
 
-    if (href.startsWith("/#")) {
-      const hash = href.substring(1); // gets "#about"
-      if (location.pathname === "/") {
-        // We are already on home page, just scroll smoothly
-        const id = hash.substring(1); // removes "#"
-        const element = document.getElementById(id);
+    const [targetPath, targetHash] = href.split("#");
+    const resolvedPath = targetPath || "/";
+
+    if (targetHash) {
+      if (location.pathname === resolvedPath) {
+        // We are already on the target page, scroll smoothly
+        const element = document.getElementById(targetHash);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
-          window.history.pushState(null, "", href); // update url hash manually
+          window.history.pushState(null, "", href);
         }
       } else {
-        // We are NOT on home page, Navigate to the home page WITH the hash
+        // Navigate to the target page with hash
         navigate(href);
       }
     } else {
@@ -90,6 +92,9 @@ const Header = () => {
   const isActive = (href: string) => {
     if (href === "/blogs") {
       return location.pathname.startsWith("/blogs");
+    }
+    if (href.startsWith("/routes")) {
+      return location.pathname === "/routes";
     }
     
     if (location.pathname === "/") {

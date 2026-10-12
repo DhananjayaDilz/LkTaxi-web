@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import ServicesSection from "../components/ServicesSection";
 import AboutSection from "../components/AboutSection";
-import ReviewsSection from "../components/ReviewsSection";
 import FAQSection from "../components/FAQSection";
 import ContactSection from "../components/ContactSection";
 import { parseDistanceKm, getFareTable, formatLKR } from "@/lib/fare-estimate";
@@ -139,6 +138,30 @@ const RoutePage = () => {
               </p>
             )}
 
+            {/* Destination Guides Bidirectional Silo Links */}
+            <div className="my-8 p-5 bg-muted/40 rounded-xl border border-border">
+              <h3 className="text-lg font-semibold mb-2">Explore Destination Guides</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Planning your travels beyond this transfer? Read our comprehensive local guides for area attractions, sightseeing stops, and local taxi services:
+              </p>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <Link
+                  to={`/taxi/${from}`}
+                  className="p-3 bg-card rounded-lg border border-border hover:border-primary transition-colors text-sm font-medium flex items-center justify-between"
+                >
+                  <span>{fromName} Taxi &amp; Travel Guide</span>
+                  <span className="text-primary">&rarr;</span>
+                </Link>
+                <Link
+                  to={`/taxi/${to}`}
+                  className="p-3 bg-card rounded-lg border border-border hover:border-primary transition-colors text-sm font-medium flex items-center justify-between"
+                >
+                  <span>{toName} Taxi &amp; Travel Guide</span>
+                  <span className="text-primary">&rarr;</span>
+                </Link>
+              </div>
+            </div>
+
             {relatedRoutes.length > 0 && (
               <>
                 <h3 className="text-2xl font-semibold mt-8 mb-4">Related Transfers</h3>
@@ -155,7 +178,6 @@ const RoutePage = () => {
         </section>
 
         <AboutSection />
-        <ReviewsSection />
 
         {/* Route-specific FAQ or generic FAQ */}
         {content?.faqs && content.faqs.length > 0 ? (

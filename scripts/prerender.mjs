@@ -11,10 +11,6 @@ for (const path of [...publicPaths, '/404']) {
   let html = template.replace(/<title>.*?<\/title>/s, `<title>${escape(seo.title)}</title>`)
     .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${seo.canonical}" />`);
 
-  // Update hreflang tags for each page
-  html = html.replace(/<link rel="alternate" hreflang="en"[^>]*>/, `<link rel="alternate" hreflang="en" href="${seo.canonical}" />`);
-  html = html.replace(/<link rel="alternate" hreflang="x-default"[^>]*>/, `<link rel="alternate" hreflang="x-default" href="${seo.canonical}" />`);
-
   const values = { description: seo.description, robots: seo.noindex ? 'noindex, follow' : 'index, follow', 'og:title': seo.title, 'og:description': seo.description, 'og:url': seo.canonical, 'og:image': seo.image, 'og:type': seo.type, 'twitter:title': seo.title, 'twitter:description': seo.description, 'twitter:image': seo.image };
   for (const [key, value] of Object.entries(values)) {
     html = html.replace(new RegExp(`<meta (?:name|property)="${key}"[^>]*>`), `<meta ${key.startsWith('og:') ? 'property' : 'name'}="${key}" content="${escape(value)}" />`);
@@ -23,8 +19,10 @@ for (const path of [...publicPaths, '/404']) {
   // Add BreadcrumbList schema for all pages except homepage
   if (path !== '/' && !seo.noindex) {
     const breadcrumbs = [{ name: 'Home', url: 'https://www.lktaxi.com/' }];
-    if (path.startsWith('/taxi/')) {
-      breadcrumbs.push({ name: 'Taxi Services', url: 'https://www.lktaxi.com/#services' });
+    if (path === '/routes') {
+      breadcrumbs.push({ name: 'Taxi Routes & Destinations', url: seo.canonical });
+    } else if (path.startsWith('/taxi/')) {
+      breadcrumbs.push({ name: 'Taxi Routes', url: 'https://www.lktaxi.com/routes' });
       breadcrumbs.push({ name: seo.title.replace(' | LKTaxi', ''), url: seo.canonical });
     } else if (path === '/blogs') {
       breadcrumbs.push({ name: 'Travel Blog', url: seo.canonical });
@@ -40,8 +38,19 @@ for (const path of [...publicPaths, '/404']) {
     const b = seo.blog;
     const schema = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: b.title, description: b.excerpt, image: seo.image, datePublished: b.date, author: { '@type': 'Organization', name: b.author }, mainEntityOfPage: seo.canonical };
     html = html.replace('</head>', `<script type="application/ld+json" data-page-schema>${JSON.stringify(schema).replace(/</g, '\\u003c')}</script></head>`);
+  } else if (path === '/routes') {
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Sri Lanka Private Taxi Routes & Transfers',
+      provider: { '@type': 'Organization', name: 'LKTaxi' },
+      areaServed: { '@type': 'Country', name: 'Sri Lanka' },
+      description: seo.description,
+      priceRange: '$$'
+    };
+    html = html.replace('</head>', `<script type="application/ld+json" data-page-schema>${JSON.stringify(schema).replace(/</g, '\\u003c')}</script></head>`);
   } else if (path.startsWith('/taxi/')) {
-    // Basic Service schema with offers
+    // Valid Service schema
     const schema = {
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -49,7 +58,7 @@ for (const path of [...publicPaths, '/404']) {
       provider: { '@type': 'Organization', name: 'LKTaxi' },
       areaServed: { '@type': 'Country', name: 'Sri Lanka' },
       description: seo.description,
-      offers: { '@type': 'Offer', priceCurrency: 'LKR', price: 'Contact Us', availability: 'https://schema.org/InStock' }
+      priceRange: '$$'
     };
     html = html.replace('</head>', `<script type="application/ld+json" data-page-schema>${JSON.stringify(schema).replace(/</g, '\\u003c')}</script></head>`);
   } else if (path === '/sri-lanka-tour-packages') {
@@ -86,4 +95,5 @@ ${publicPaths.map(path => {
 </urlset>
 `;
 await writeFile('dist/sitemap.xml', sitemap);
-console.log(`Prerendered ${publicPaths.length} public pages and a 404 page.`);
+await writeFile('public/sitemap.xml', sitemap);
+console.log(`Prerendered ${publicPaths.length} public pages, updated public/sitemap.xml and dist/sitemap.xml, and emitted a 404 page.`);
