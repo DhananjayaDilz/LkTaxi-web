@@ -1,10 +1,10 @@
-import TransferGuide from "@/components/TransferGuide";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
+import RoutesTeaser from "@/components/RoutesTeaser";
 import VehiclesSection from "@/components/VehiclesSection";
 import SafariSection from "@/components/SafariSection";
 import ReviewsSection from "@/components/ReviewsSection";
@@ -35,10 +35,10 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <TransferGuide />
         <AboutSection />
         <ReviewsSection />
         <ServicesSection />
+        <RoutesTeaser />
         <VehiclesSection />
         <SafariSection />
         <FAQSection />

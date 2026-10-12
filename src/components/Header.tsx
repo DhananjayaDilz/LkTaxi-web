@@ -7,6 +7,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/#about" },
   { label: "Our Service", href: "/#services" },
+  { label: "Routes", href: "/routes" },
   { label: "Our Vehicles", href: "/#vehicles" },
   { label: "Book Safari", href: "/#safari" },
   { label: "Blogs", href: "/blogs" },
@@ -90,6 +91,9 @@ const Header = () => {
   const isActive = (href: string) => {
     if (href === "/blogs") {
       return location.pathname.startsWith("/blogs");
+    }
+    if (href === "/routes") {
+      return location.pathname === "/routes";
     }
     
     if (location.pathname === "/") {

@@ -12,12 +12,6 @@ export default function PageSEO() {
     const canonical = document.querySelector('link[rel="canonical"]');
     canonical?.setAttribute("href", seo.canonical);
 
-    // Update hreflang tags
-    const hreflangEn = document.querySelector('link[hreflang="en"]');
-    hreflangEn?.setAttribute("href", seo.canonical);
-    const hreflangDefault = document.querySelector('link[hreflang="x-default"]');
-    hreflangDefault?.setAttribute("href", seo.canonical);
-
     // Update meta tags
     const values = { description: seo.description, robots: seo.noindex ? "noindex, follow" : "index, follow", "og:title": seo.title, "og:description": seo.description, "og:url": seo.canonical, "og:image": seo.image, "og:type": seo.type, "twitter:title": seo.title, "twitter:description": seo.description, "twitter:image": seo.image };
     for (const [key, value] of Object.entries(values)) {
@@ -42,8 +36,10 @@ export default function PageSEO() {
     // Add BreadcrumbList schema for non-homepage pages
     if (pathname !== "/") {
       const breadcrumbs: { name: string; url: string }[] = [{ name: "Home", url: "https://www.lktaxi.com/" }];
-      if (pathname.startsWith("/taxi/")) {
-        breadcrumbs.push({ name: "Taxi Services", url: "https://www.lktaxi.com/#services" });
+      if (pathname === "/routes") {
+        breadcrumbs.push({ name: "Taxi Routes & Destinations", url: seo.canonical });
+      } else if (pathname.startsWith("/taxi/")) {
+        breadcrumbs.push({ name: "Taxi Routes", url: "https://www.lktaxi.com/routes" });
         breadcrumbs.push({ name: seo.title.replace(" | LKTaxi", ""), url: seo.canonical });
       } else if (pathname === "/blogs") {
         breadcrumbs.push({ name: "Travel Blog", url: seo.canonical });

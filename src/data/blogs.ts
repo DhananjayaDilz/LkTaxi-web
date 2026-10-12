@@ -80,9 +80,10 @@ export const blogsData: BlogPost[] = [
       <h2>How to Visit Sigiriya with LKTaxi</h2>
       <p>Planning a trip to the Lion Rock? <strong>LKTaxi</strong> offers seamless and comfortable travel solutions with experienced local drivers:</p>
       <ul>
-        <li>Direct Airport pickups from Bandaranaike International Airport.</li>
-        <li>Comfortable private taxi vehicle hires for families, couples, and solo travelers.</li>
-        <li>Customized multi-day tour packages covering the entire cultural triangle.</li>
+        <li>Direct Airport pickups from <a href="/airport-transfer">Colombo Airport (CMB) to Sigiriya</a>.</li>
+        <li>Comfortable <a href="/taxi/sigiriya">private taxi transfers to Sigiriya</a> from Colombo, Kandy, or Negombo.</li>
+        <li>Day trips connecting Sigiriya with <a href="/taxi/dambulla">Dambulla Cave Temple</a> and the ancient kingdom of <a href="/taxi/polonnaruwa">Polonnaruwa</a>.</li>
+        <li>Customized <a href="/sri-lanka-tour-packages">multi-day tour packages</a> covering the entire cultural triangle.</li>
       </ul>
 
       <h2>Conclusion</h2>
@@ -160,7 +161,7 @@ export const blogsData: BlogPost[] = [
       <li>Experienced driver as guide</li>
     </ul>
     <div style="margin: 25px 0; text-align: center;">
-      <a href="/?safariTab=half#safari" style="background-color: #eab308; color: #1f2937; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book Half Day Safari</a>
+      <a href="/yala-safari" style="background-color: #eab308; color: #1f2937; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book Half Day Safari</a>
     </div>
 
     <h3>Full Day Safari (Complete Experience)</h3>
@@ -171,7 +172,7 @@ export const blogsData: BlogPost[] = [
       <li>Driver as guide</li>
     </ul>
     <div style="margin: 25px 0; text-align: center;">
-      <a href="/?safariTab=full#safari" style="background-color: #eab308; color: #1f2937; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book Full Day Safari</a>
+      <a href="/yala-safari" style="background-color: #eab308; color: #1f2937; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book Full Day Safari</a>
     </div>
 
     <h3>Budget Shared Safari</h3>
@@ -182,15 +183,16 @@ export const blogsData: BlogPost[] = [
       <li>Driver with guide</li>
     </ul>
     <div style="margin: 25px 0; text-align: center;">
-      <a href="/?safariTab=shared#safari" style="background-color: #eab308; color: #1f2937; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book Shared Safari</a>
+      <a href="/yala-safari" style="background-color: #eab308; color: #1f2937; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book Shared Safari</a>
     </div>
 
-    <h2>How to Get to Yala from Colombo</h2>
-    <p>Yala is approximately <strong>260–300 km from Colombo</strong> (5–6 hours by road). Options for foreign tourists:</p>
+    <h2>How to Get to Yala from Colombo and Other Cities</h2>
+    <p>Yala is approximately <strong>260–300 km from Colombo</strong> (4–4.5 hours via Southern Expressway). LKTaxi connects all major destinations to Yala:</p>
     <ul>
-      <li><strong>Private Taxi — Recommended:</strong> Door-to-door, air-conditioned, flexible. LKTaxi provides the Colombo–Yala route with drivers who know the road and safari timings.</li>
-      <li><strong>Train + Taxi:</strong> Colombo → Matara (scenic coastal train), then taxi to Tissamaharama (~1.5 hrs).</li>
-      <li><strong>Public Bus:</strong> Budget option, 7–9 hours with transfers. Not recommended for tight itineraries.</li>
+      <li><strong>Colombo Airport:</strong> Direct <a href="/taxi/airport-to-yala">Airport to Yala taxi transfer</a> (CMB) with flight tracking.</li>
+      <li><strong>From Ella:</strong> Scenic 3-hour transfer via our <a href="/taxi/ella-to-yala">Ella to Yala taxi</a>.</li>
+      <li><strong>From South Coast:</strong> Coastal transfers from Mirissa via <a href="/taxi/mirissa-to-yala">Mirissa to Yala taxi</a> or Galle via <a href="/taxi/galle-to-yala">Galle to Yala taxi</a>.</li>
+      <li><strong>Local Base:</strong> Stay in <a href="/taxi/tissamaharama">Tissamaharama</a> or browse our <a href="/taxi/yala">Yala taxi services</a> for local transport.</li>
     </ul>
     <div style="margin: 25px 0; text-align: center;">
       <a href="https://wa.me/94784207818" target="_blank" style="background-color: #25D366; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">WhatsApp to Book Colombo → Yala Transfer</a>
@@ -222,7 +224,7 @@ export const blogsData: BlogPost[] = [
     <p>Yes — especially for weekends during peak season (February–July). Good jeep operators book up weeks in advance. We connect you with licensed operators when you book your transfer.</p>
 
     <h3>How much does a Yala safari cost for foreigners?</h3>
-    <p>A <strong>half-day safari costs approximately USD 60–80 per person</strong> including park fees and jeep hire. Full-day is USD 100–130. <a href="/?safariTab=shared#safari">Shared safari</a> starts from USD 60/person.</p>
+    <p>A <strong>half-day safari costs approximately USD 60–80 per person</strong> including park fees and jeep hire. Full-day is USD 100–130. Book online via our <a href="/yala-safari">Yala Safari Booking page</a>.</p>
 
     <h3>Are there tigers in Sri Lanka?</h3>
     <p>No. Sri Lanka has no tigers. The apex predator is the <strong>Sri Lankan Leopard</strong> — and because there are no lions or tigers to compete with, these leopards are unusually bold and visible, making Yala the world's best place to see leopards in the wild.</p>
@@ -252,8 +254,9 @@ export const blogsData: BlogPost[] = [
       <p>Sri Lanka is a tropical paradise that offers an incredible variety of experiences within a relatively small island. Whether you are looking for ancient history, wildlife safaris, misty mountains, or pristine beaches, Sri Lanka has it all. Here is our curated list of the absolute best places to visit in Sri Lanka for your upcoming holiday.</p>
       
       <br/>
+      <br/>
       <h3><strong>1. Sigiriya Rock Fortress</strong></h3>
-      <p>Often referred to as the Eighth Wonder of the World, Sigiriya is an ancient rock fortress and palace ruin located in the central Matale District. Climbing to the top offers breathtaking panoramic views of the surrounding jungle. It is a UNESCO World Heritage site and a must-visit for history and architecture enthusiasts.</p>
+      <p>Often referred to as the Eighth Wonder of the World, Sigiriya is an ancient rock fortress and palace ruin located in the central Matale District. Climbing to the top offers breathtaking panoramic views of the surrounding jungle. It is a UNESCO World Heritage site and a must-visit for history and architecture enthusiasts. Pre-book your <a href="/taxi/sigiriya">Sigiriya private taxi</a> from Colombo, Kandy, or the airport for a hassle-free trip.</p>
       <figure>
         <img src="/places-sigiriya-rock.webp" alt="Sigiriya Rock Fortress — ancient palace and UNESCO World Heritage site in Sri Lanka" />
         <figcaption>The majestic Sigiriya Rock Fortress rising above the jungle</figcaption>
@@ -261,7 +264,7 @@ export const blogsData: BlogPost[] = [
 
       <br/>
       <h3><strong>2. Ella and the Nine Arch Bridge</strong></h3>
-      <p>Nestled in the central highlands, Ella is a small town surrounded by the beautiful greens of tea. The iconic Nine Arch Bridge is an engineering marvel and a highly photographed spot. Visitors can also hike up Little Adam's Peak or Ella Rock for stunning sunrise views.</p>
+      <p>Nestled in the central highlands, Ella is a small town surrounded by the beautiful greens of tea. The iconic Nine Arch Bridge is an engineering marvel and a highly photographed spot. Visitors can also hike up <a href="/taxi/little-adams-peak">Little Adam's Peak</a> or <a href="/taxi/ella-rock">Ella Rock</a> for stunning sunrise views. Check our <a href="/taxi/ella">Ella taxi and transfer guide</a> to connect with Nuwara Eliya, Yala, or Colombo.</p>
       <figure>
         <img src="/places-ella-nine-arch.webp" alt="Nine Arch Bridge in Ella — famous train route in Sri Lanka's tea country" />
         <figcaption>The famous blue train passing over the Nine Arch Bridge in Ella</figcaption>
@@ -269,7 +272,7 @@ export const blogsData: BlogPost[] = [
 
       <br/>
       <h3><strong>3. Yala National Park</strong></h3>
-      <p>For wildlife lovers, Yala National Park is the premier destination in Sri Lanka. Renowned for having the highest density of leopards in the world, a jeep safari here offers the chance to see elephants, sloth bears, crocodiles, and a massive variety of bird species in their natural habitat.</p>
+      <p>For wildlife lovers, Yala National Park is the premier destination in Sri Lanka. Renowned for having the highest density of leopards in the world, a jeep safari here offers the chance to see elephants, sloth bears, crocodiles, and a massive variety of bird species in their natural habitat. Explore our <a href="/yala-safari">Yala safari jeep tours</a> and private <a href="/taxi/yala">Yala taxi transfers</a>.</p>
       <figure>
         <img src="/places-yala-safari.webp" alt="Wild elephant in Yala National Park Sri Lanka" />
         <figcaption>Wildlife spotting during a safari in Yala National Park</figcaption>
@@ -277,7 +280,7 @@ export const blogsData: BlogPost[] = [
 
       <br/>
       <h3><strong>4. Mirissa Beach and Whale Watching</strong></h3>
-      <p>Located on the southern coast, Mirissa is famous for its beautiful sandy beaches, vibrant nightlife, and excellent surfing spots. It is also one of the best places in the world for whale watching, particularly to spot the magnificent Blue Whales between November and April.</p>
+      <p>Located on the southern coast, Mirissa is famous for its beautiful sandy beaches, vibrant nightlife, and excellent surfing spots. It is also one of the best places in the world for whale watching, particularly to spot the magnificent Blue Whales between November and April. Arrange your <a href="/taxi/mirissa">Mirissa taxi</a> or explore neighboring <a href="/taxi/weligama">Weligama surf transfers</a>.</p>
       <figure>
         <img src="/places-mirissa-beach.webp" alt="Mirissa beach and palm tree rope swing in southern Sri Lanka" />
         <figcaption>The pristine palm-lined beaches of Mirissa</figcaption>
@@ -285,7 +288,7 @@ export const blogsData: BlogPost[] = [
 
       <br/>
       <h3><strong>5. Kandy and the Temple of the Sacred Tooth Relic</strong></h3>
-      <p>Kandy is the cultural capital of Sri Lanka, surrounded by mountains and a scenic lake. The Temple of the Sacred Tooth Relic is a crucial Buddhist site. A stroll through the Royal Botanical Gardens in Peradeniya is also highly recommended.</p>
+      <p>Kandy is the cultural capital of Sri Lanka, surrounded by mountains and a scenic lake. The Temple of the Sacred Tooth Relic is a crucial Buddhist site. A stroll through the Royal Botanical Gardens in Peradeniya is also highly recommended. Book your <a href="/taxi/kandy">Kandy taxi transfers</a> from the airport or Cultural Triangle.</p>
       <figure>
         <img src="/places-kandy-temple.webp" alt="Temple of the Sacred Tooth Relic in Kandy Sri Lanka" />
         <figcaption>The Temple of the Sacred Tooth Relic, a deeply revered Buddhist shrine in Kandy</figcaption>
@@ -293,14 +296,14 @@ export const blogsData: BlogPost[] = [
 
       <br/>
       <h3><strong>6. Galle Fort</strong></h3>
-      <p>Galle Fort is a historic gem on the southwest coast. Built by the Portuguese and later fortified by the Dutch, the fort is filled with colonial architecture, boutique shops, cafes, and art galleries. Walking along the fort walls at sunset is an unforgettable experience.</p>
+      <p>Galle Fort is a historic gem on the southwest coast. Built by the Portuguese and later fortified by the Dutch, the fort is filled with colonial architecture, boutique shops, cafes, and art galleries. Walking along the fort walls at sunset is an unforgettable experience. Discover our <a href="/taxi/galle">Galle Fort taxi service</a> for south coast journeys.</p>
       <figure>
         <img src="/places-galle-fort.webp" alt="Historic Galle Fort lighthouse on the southwest coast of Sri Lanka" />
         <figcaption>The iconic lighthouse at the historic Galle Fort</figcaption>
       </figure>
 
       <h2>Planning Your Sri Lanka Itinerary</h2>
-      <p>Travelling between these incredible locations requires reliable transportation. Due to the varied terrain and driving conditions, hiring a private taxi with an experienced local driver is the most comfortable and efficient way to explore Sri Lanka.</p>
+      <p>Travelling between these incredible locations requires reliable transportation. Due to the varied terrain and driving conditions, <a href="/private-driver-sri-lanka">hiring a private driver in Sri Lanka</a> or booking curated <a href="/sri-lanka-tour-packages">Sri Lanka tour packages</a> is the most comfortable and efficient way to explore the island, starting directly from our <a href="/airport-transfer">Colombo airport transfer service</a>.</p>
       <ul>
         <li><strong>Comfort and Safety:</strong> Air-conditioned vehicles with professional drivers.</li>
         <li><strong>Flexibility:</strong> Stop wherever you want for photos, meals, or rest.</li>
