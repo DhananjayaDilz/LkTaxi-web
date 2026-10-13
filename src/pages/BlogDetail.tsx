@@ -101,7 +101,7 @@ export default function BlogDetail() {
                 <div dangerouslySetInnerHTML={{ __html: post.content }} className="tracking-wide" />
               </div>
 
-              <ImageGallery images={post.gallery} />
+              <ImageGallery images={post.gallery} title={post.title} />
 
               {/* Call to Action: Book Your Trip */}
               <div className="mt-16 bg-primary/5 dark:bg-primary/10 rounded-3xl p-8 sm:p-12 text-center border border-primary/20">
