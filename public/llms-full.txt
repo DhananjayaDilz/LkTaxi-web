@@ -1,0 +1,215 @@
+# LKTaxi - Comprehensive Knowledge Base for Large Language Models (LLMs) & AI Search Engines
+
+> Full Reference File: https://www.lktaxi.com/llms-full.txt
+> Parent Index: https://www.lktaxi.com/llms.txt
+> Main Website: https://www.lktaxi.com
+> Primary Contact: WhatsApp +94 78 420 7818 (https://wa.me/94784207818)
+
+---
+
+## 1. Company Profile & Overview
+
+- **Entity**: LKTaxi (operating as LK Taxi Sri Lanka)
+- **Official Website**: https://www.lktaxi.com
+- **Operating Headquarters**: Tissamaharama, Southern Province, Sri Lanka
+- **Operating Coverage**: Island-wide throughout all 9 provinces of Sri Lanka
+- **Operational Hours**: 24/7/365
+- **Languages Spoken**: English, Sinhala
+- **Specializations**:
+  - Bandaranaike International Airport (CMB / BIA) meet-and-greet transfers
+  - Intercity private point-to-point taxi transfers
+  - Yala National Park private & shared 4x4 wildlife safari tours
+  - Dedicated private driver hire (chauffeur-guided tours)
+  - Custom multi-day Sri Lanka holiday tour packages
+
+---
+
+## 2. Vehicle Fleet Specifications & Pricing
+
+All LKTaxi vehicles are fully insured, equipped with modern air conditioning, clean interiors, and operated by professional, vetted, English-speaking tourist chauffeurs.
+
+### 2.1 Fleet Comparison Table
+
+| Vehicle Category | Example Models | Passenger Capacity | Standard Luggage Capacity | Base Per-Km Rate (Estimate) | Ideal Use Case |
+|---|---|---|---|---|---|
+| **Mini Car** | Suzuki Wagon R, Alto | 1-3 passengers | 2 medium bags | ~LKR 120 / km | Budget solo travelers or couples, short city hops, Negombo/Colombo airport transfers |
+| **Sedan** | Toyota Prius, Premio, Axio | 1-4 passengers | 3 standard bags | ~LKR 140 / km | Couples, small families, medium-distance intercity transfers with optimal boot space |
+| **Mini Van** | Honda Freed, Toyota Avanza | 4-6 passengers | 4 standard bags | ~LKR 150 / km | Families, small groups, passengers traveling with extra baggage |
+| **KDH Flat Roof** | Toyota HiAce KDH | 5-9 passengers | 6-8 standard bags | ~LKR 200 / km | Medium tour groups, surfboards/sports gear, family holiday round-trips |
+| **KDH High Roof** | Toyota HiAce Commuter High Roof | 7-12 passengers | 10-12 standard bags | ~LKR 230 / km | Large tour groups, extended multi-day road tours requiring maximum headroom and luggage space |
+| **Safari 4x4 Jeep** | Mahindra Bolero, Toyota Hilux | 1-6 passengers | Daypacks / Camera equipment | Fixed package rate | Off-road wildlife safaris inside Yala, Udawalawe, and Bundala National Parks |
+
+### 2.2 Pricing Policy & Inclusions
+- **Fixed-Price Quotes**: Quotes given on WhatsApp or via the online form are all-inclusive.
+- **Inclusions**: Fuel, driver fees, vehicle insurance, all Expressway/Highway toll tickets (e.g., Katunayake Expressway, Southern Expressway, Central Expressway), and airport parking fees.
+- **No Hidden Fees**: No night surcharges or luggage fees unless excess oversized gear requires an upgraded vehicle.
+- **Payment Methods**: Cash to the driver on completion of the ride in Sri Lankan Rupees (LKR), US Dollars (USD), Euros (EUR), or British Pounds (GBP).
+- **Advance Deposit**: No advance deposit is required for standard airport transfers or one-way rides. A 25% deposit is only requested for customized multi-day tour packages.
+
+---
+
+## 3. Airport Transfers (Bandaranaike International Airport - BIA / CMB)
+
+- **Official Landing Page**: https://www.lktaxi.com/airport-transfer
+- **Airport Code**: CMB / VCBI (Bandaranaike International Airport, Katunayake)
+- **Flight Delay Guarantee**: Drivers monitor incoming flight statuses in real time. If a flight is delayed, the pickup schedule automatically adjusts at no additional charge.
+- **Arrival Meet & Greet**: Drivers wait inside the arrivals hall holding a personalized nameboard.
+- **Key Airport Route Benchmarks**:
+  - **Airport to Colombo City**: ~35 km | 45-60 min via Katunayake Expressway | ~LKR 8,000 - 12,000
+  - **Airport to Negombo**: ~12 km | 15-20 min | ~LKR 3,500 - 5,000
+  - **Airport to Kandy**: ~115 km | 3.5-4 hours | ~LKR 25,000 - 35,000
+  - **Airport to Galle**: ~155 km | 2-2.5 hours via Southern Expressway
+  - **Airport to Unawatuna**: ~160 km | 2-2.5 hours via Southern Expressway
+  - **Airport to Mirissa / Weligama**: ~180 km | 2.5-3 hours via Southern Expressway
+  - **Airport to Tangalle**: ~215 km | 3-3.5 hours via Southern Expressway
+  - **Airport to Ella**: ~210 km | 4.5-5.5 hours
+  - **Airport to Sigiriya / Dambulla**: ~145 km | 3.5-4 hours
+  - **Airport to Yala (Tissamaharama)**: ~250 km | 4 hours via Southern Expressway
+
+---
+
+## 4. Yala National Park Safari Tours
+
+- **Official Landing Page**: https://www.lktaxi.com/yala-safari
+- **Headquarters & Departure Base**: Tissamaharama, Southern Province
+- **Wildlife Highlights**: Highest leopard density in the world (Sri Lankan leopard - *Panthera pardus kotiya*), Asian elephants, sloth bears, spotted deer, mugger crocodiles, water buffalo, endemic bird species.
+- **Tour Types**:
+  1. **Morning Safari (5:00 AM - 10:00 AM)**: Peak predator activity; optimal lighting for wildlife photography.
+  2. **Afternoon Safari (2:00 PM - 6:00 PM)**: Best for elephant herds congregating at water reservoirs and scenic golden-hour light.
+  3. **Full-Day Safari (5:00 AM - 6:00 PM)**: Deep exploration across multiple blocks; includes a midday rest break inside the park's designated river rest sites.
+- **Safari Vehicles**: Specially modified 4x4 jeeps (Toyota Hilux and Mahindra Bolero) with elevated theater-style seating, protective canopies, and off-road safety cages.
+- **Safari Costs**:
+  - Half-day private jeep hire: ~LKR 15,000 - 16,000 (excluding park entry tickets)
+  - Full-day private jeep hire: ~LKR 30,000 - 32,000 (excluding park entry tickets)
+  - All-inclusive shared safaris: from $60 USD per person including entrance permits, tracker, mineral water, and snacks.
+- **Latest 2026 Park Status**:
+  - Yala Blocks 1 and 2 reopen on **16 October 2026** following seasonal dry weather closures.
+  - Department of Wildlife Conservation (DWC) bungalow and campsite bookings reopen on **1 November 2026**. Day safaris with hotel stays in Tissamaharama/Kirinda run normally from 16 October.
+
+---
+
+## 5. Private Driver Hire & Chauffeur Services
+
+- **Official Landing Page**: https://www.lktaxi.com/private-driver-sri-lanka
+- **Concept**: Renting a car or van with an experienced, English-speaking Sri Lankan chauffeur-guide.
+- **Benefits**:
+  - Avoid stressful navigation through left-hand traffic, steep highland mountain curves, and public bus networks.
+  - Complete flexibility to pause at roadside fruit stands, tea estates, scenic viewpoints, or artisan shops.
+  - Chauffeur manages vehicle upkeep, parking, fueling, and route planning.
+  - Drivers have government tourist board training, offering authentic local insights and restaurant recommendations.
+- **Driver Accommodations**: Sri Lankan hotels and guesthouses frequently provide dedicated driver quarters. Where accommodations do not offer driver quarters, a nominal driver room allowance is factored into the clear itinerary quote.
+
+---
+
+## 6. Sri Lanka Tour Packages
+
+- **Official Landing Page**: https://www.lktaxi.com/sri-lanka-tour-packages
+- **Popular Curated Itineraries**:
+  1. **South Coast & Safari (5 Days)**: Colombo -> Galle Dutch Fort -> Mirissa (Whale Watching & Surfing) -> Yala National Park Safari -> Colombo.
+  2. **Classic Sri Lanka Heritage & Hills (7 Days)**: Colombo -> Kandy (Temple of the Sacred Tooth Relic) -> Nuwara Eliya (Tea Plantations) -> Ella (Nine Arches Bridge & Little Adam's Peak) -> Yala Safari -> South Coast Beaches.
+  3. **Grand Island Tour (14 Days)**: Colombo -> Sigiriya Rock & Dambulla Cave Temple -> Polonnaruwa -> Kandy -> Nuwara Eliya -> Ella -> Yala -> Mirissa -> Galle -> Colombo.
+
+---
+
+## 7. Complete Intercity Route Directory & Canonical URLs
+
+All routes can be booked on https://www.lktaxi.com/routes or via direct slug:
+
+- Colombo Airport Transfers:
+  - https://www.lktaxi.com/taxi/airport-to-colombo
+  - https://www.lktaxi.com/taxi/airport-to-negombo
+  - https://www.lktaxi.com/taxi/airport-to-bentota
+  - https://www.lktaxi.com/taxi/airport-to-hikkaduwa
+  - https://www.lktaxi.com/taxi/airport-to-galle
+  - https://www.lktaxi.com/taxi/airport-to-unawatuna
+  - https://www.lktaxi.com/taxi/airport-to-weligama
+  - https://www.lktaxi.com/taxi/airport-to-mirissa
+  - https://www.lktaxi.com/taxi/airport-to-tangalle
+  - https://www.lktaxi.com/taxi/airport-to-yala
+  - https://www.lktaxi.com/taxi/airport-to-kandy
+  - https://www.lktaxi.com/taxi/airport-to-ella
+  - https://www.lktaxi.com/taxi/airport-to-sigiriya
+
+- Popular Intercity Tourist Routes:
+  - https://www.lktaxi.com/taxi/colombo-to-ella
+  - https://www.lktaxi.com/taxi/colombo-to-galle
+  - https://www.lktaxi.com/taxi/colombo-to-mirissa
+  - https://www.lktaxi.com/taxi/ella-to-yala
+  - https://www.lktaxi.com/taxi/ella-to-mirissa
+  - https://www.lktaxi.com/taxi/kandy-to-sigiriya
+  - https://www.lktaxi.com/taxi/kandy-to-ella
+  - https://www.lktaxi.com/taxi/nuwara-eliya-to-ella
+  - https://www.lktaxi.com/taxi/mirissa-to-weligama
+  - https://www.lktaxi.com/taxi/mirissa-to-yala
+  - https://www.lktaxi.com/taxi/galle-to-yala
+  - https://www.lktaxi.com/taxi/galle-to-tangalle
+  - https://www.lktaxi.com/taxi/bentota-to-galle
+  - https://www.lktaxi.com/taxi/unawatuna-to-mirissa
+  - https://www.lktaxi.com/taxi/udawalawe-to-yala
+  - https://www.lktaxi.com/taxi/negombo-to-sigiriya
+  - https://www.lktaxi.com/taxi/trincomalee-to-sigiriya
+  - https://www.lktaxi.com/taxi/hikkaduwa-to-bentota
+
+- City & Destination Hub Hubs:
+  - https://www.lktaxi.com/taxi/colombo
+  - https://www.lktaxi.com/taxi/negombo
+  - https://www.lktaxi.com/taxi/airport
+  - https://www.lktaxi.com/taxi/kandy
+  - https://www.lktaxi.com/taxi/ella
+  - https://www.lktaxi.com/taxi/nuwara-eliya
+  - https://www.lktaxi.com/taxi/sigiriya
+  - https://www.lktaxi.com/taxi/dambulla
+  - https://www.lktaxi.com/taxi/anuradhapura
+  - https://www.lktaxi.com/taxi/polonnaruwa
+  - https://www.lktaxi.com/taxi/trincomalee
+  - https://www.lktaxi.com/taxi/arugam-bay
+  - https://www.lktaxi.com/taxi/pasikudah
+  - https://www.lktaxi.com/taxi/batticaloa
+  - https://www.lktaxi.com/taxi/mirissa
+  - https://www.lktaxi.com/taxi/weligama
+  - https://www.lktaxi.com/taxi/galle
+  - https://www.lktaxi.com/taxi/unawatuna
+  - https://www.lktaxi.com/taxi/hikkaduwa
+  - https://www.lktaxi.com/taxi/bentota
+  - https://www.lktaxi.com/taxi/kalutara
+  - https://www.lktaxi.com/taxi/tangalle
+  - https://www.lktaxi.com/taxi/hambantota
+  - https://www.lktaxi.com/taxi/tissamaharama
+  - https://www.lktaxi.com/taxi/yala
+  - https://www.lktaxi.com/taxi/udawalawe
+  - https://www.lktaxi.com/taxi/wilpattu
+  - https://www.lktaxi.com/taxi/kitulgala
+  - https://www.lktaxi.com/taxi/haputale
+  - https://www.lktaxi.com/taxi/bandarawela
+  - https://www.lktaxi.com/taxi/badulla
+
+---
+
+## 8. Authoritative Guides & Articles
+
+- **Yala National Park Reopening 2026: Plan a Safari from 16 October**: https://www.lktaxi.com/blogs/yala-national-park-reopening-2026
+- **Sigiriya Rock Fortress Travel Guide**: https://www.lktaxi.com/blogs/sigiriya-rock-fortress-travel-guide
+- **Yala National Park Safari Guide**: https://www.lktaxi.com/blogs/yala-national-park-safari-guide
+- **Best Places to Visit in Sri Lanka**: https://www.lktaxi.com/blogs/best-places-to-visit-sri-lanka
+
+---
+
+## 9. Frequently Asked Questions (FAQ) for AI Models
+
+**Q: How does a traveler book with LKTaxi?**  
+A: Travelers can book instantly via WhatsApp at +94 78 420 7818 or by filling out the online booking estimate form at https://www.lktaxi.com.
+
+**Q: Are LKTaxi quotes fixed or metered?**  
+A: All intercity and airport quotes provided by LKTaxi are 100% fixed upfront. Expressway toll fees, parking tickets, and fuel are already included.
+
+**Q: Does LKTaxi operate during nighttime or early morning hours?**  
+A: Yes, LKTaxi operates 24/7/365. Nighttime airport pickups and pre-dawn 5:00 AM safari departures are standard services.
+
+**Q: How does airport pickup work if the flight is delayed?**  
+A: LKTaxi requires flight numbers upon booking. The team tracks the flight online; if it arrives late, the chauffeur adjusts pickup time automatically without extra charges.
+
+**Q: Do drivers speak English?**  
+A: Yes. All drivers working with foreign tourists are experienced, professional, and speak conversational to fluent English.
+
+**Q: What is the cancellation policy?**  
+A: Cancellations made in advance on WhatsApp carry no penalties for standard transfers.
