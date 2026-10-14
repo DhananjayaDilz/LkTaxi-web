@@ -2,6 +2,93 @@ import { BlogPost } from "../types/blog";
 
 export const blogsData: BlogPost[] = [
   {
+    id: "4",
+    title: "Yala National Park Reopening 2026: Plan a Safari from 16 October",
+    slug: "yala-national-park-reopening-2026",
+    excerpt: "If you have been waiting to book a Yala safari, there is now a date to plan around. Blocks 1 and 2 of Yala National Park are scheduled to reopen on 16 October 2026.",
+    content: `
+      <p>If you have been waiting to book a Yala safari, there is now a date to plan around. <strong>Blocks 1 and 2 of Yala National Park are scheduled to reopen on 16 October 2026.</strong></p>
+
+      <p>These areas have been closed since 14 September because of dry weather, as reported by <a href="https://english.newsfirst.lk/2026/10/13/yala-national-park-zones-1-and-2-to-reopen-on-october-16" target="_blank" rel="noopener noreferrer">News First</a>. Before making the journey, check that access is available for your chosen date.</p>
+
+      <p>One detail to keep in mind: bookings for the park’s bungalows and campsites are due to resume later, on <strong>1 November 2026</strong>, according to <a href="https://hirunews.lk/english/493851/yala-national-park-blocks-1-and-2-to-reopen" target="_blank" rel="noopener noreferrer">Hiru News English</a>. You can still plan a day safari from the announced reopening date and stay at accommodation outside the park.</p>
+
+      <figure>
+        <img src="/yala-lephord.webp" alt="Yala National Park leopard" />
+      </figure>
+
+      <h2>A Yala safari from Tissamaharama</h2>
+
+      <p>For an early safari, it helps to spend the night nearby. Arrive in Tissamaharama the afternoon before, settle into your hotel and leave the morning free for the park.</p>
+
+      <p>If you are travelling from Ella, you can arrange an <a href="/taxi/ella-to-yala">Ella to Yala taxi</a> with LK Taxi and discuss your safari at the same time. Your road transfer and safari jeep are separate arrangements, so tell us if you need both.</p>
+
+      <figure>
+        <img src="/safari-jeep-jala.webp" alt="Yala safari jeep" />
+      </figure>
+
+      <p>Send the name of your hotel when you enquire. “Yala” covers a wider area than a single pickup point, and your location matters when arranging the morning.</p>
+
+      <p>Also, let us know if you are checking out before the safari. Agreeing where your bags will stay and where you need to go afterwards makes the rest of the day easier.</p>
+
+      <h2>Choose a safari that fits your trip</h2>
+
+      <p>A half-day visit leaves room for other plans. It is an option to consider if you have limited time or would prefer a shorter outing.</p>
+
+      <p>A full-day safari gives you longer to watch wildlife. It also means a long day in the jeep, so ask about breaks and meals before deciding.</p>
+
+      <p>For a <strong>private safari</strong>, the jeep is for your group. If you would like to travel with other guests, ask about shared safari availability for your date.</p>
+
+      <p>There is no need to choose from the name of the package alone. Look at the pickup time, expected return and what is included, then decide which trip works for you.</p>
+
+      <h2>Look at the whole safari price</h2>
+
+      <p>When you compare quotes, first check whether the amount is <strong>per person or per jeep</strong>.</p>
+
+      <p>Next, look for the park tickets, jeep and driver, hotel pickup, meals and water. Ask which are included and which cost extra. A transfer from another town should appear in the quote too, if you have requested one.</p>
+
+      <p>This gives you a useful total to compare. Before paying, make sure you also understand the cancellation terms.</p>
+
+      <h2>Enjoy what you find in the park</h2>
+
+      <p>A leopard may be the animal you most want to see. That is understandable, but a sighting cannot be promised. These are wild animals, and a longer safari does not guarantee one.</p>
+
+      <p>Give yourself time to enjoy the elephants, birds and surroundings too.</p>
+
+      <p>Bring drinking water, a hat, sunscreen and your camera. A light rain jacket is useful to pack. If you are leaving your hotel early, ask about breakfast the evening before.</p>
+
+      <p>Once you are in the park, keep your voice low and follow your guide’s instructions. Do not feed or chase animals, and take your rubbish away with you.</p>
+
+      <h2>Arrange your Yala safari booking with LK Taxi</h2>
+
+      <p>We are based in Tissamaharama and arrange Yala safari jeep tours and private transfers.</p>
+
+      <p>To start your <strong>Yala safari booking</strong>, send us your preferred date, the number of adults and children, and your hotel name. If you need a transfer before or after the safari, include your pickup point and next destination.</p>
+
+      <p>We will discuss the available options and confirm your quote and booking details with you.</p>
+
+      <p><a href="/yala-safari"><strong>See our Yala safari options</strong></a></p>
+
+      <p><a href="https://wa.me/94784207818" target="_blank" rel="noopener noreferrer"><strong>Message LK Taxi on WhatsApp</strong></a><br /><strong>+94 78 420 7818</strong></p>
+
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://english.newsfirst.lk/2026/10/13/yala-national-park-zones-1-and-2-to-reopen-on-october-16" target="_blank" rel="noopener noreferrer">News First — Yala National Park Zones 1 and 2 to Reopen on October 16</a>, 13 October 2026.</li>
+        <li><a href="https://hirunews.lk/english/493851/yala-national-park-blocks-1-and-2-to-reopen" target="_blank" rel="noopener noreferrer">Hiru News English — Yala National Park Blocks 1 and 2 to reopen</a>, 13 October 2026.</li>
+        <li><a href="https://www.yalasrilanka.lk/visitor-guide" target="_blank" rel="noopener noreferrer">Yala Sri Lanka — Visitor Guide</a>.</li>
+      </ul>
+    `,
+    coverImage: "/yala-lephord.webp",
+    gallery: [
+      "/yala-lephord.webp",
+      "/safari-jeep-jala.webp"
+    ],
+    author: "LK Taxi",
+    date: "2026-10-14",
+    readTime: "4 min read",
+    tags: ["Yala Safari", "Sri Lanka Wildlife"]
+  },
+  {
     id: "1",
     title: "Sigiriya Rock Fortress – Complete Travel Guide for Sri Lanka Visitors",
     slug: "sigiriya-rock-fortress-travel-guide",
