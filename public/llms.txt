@@ -1,0 +1,67 @@
+# LKTaxi - Sri Lanka Private Taxi, Airport Transfers & Yala Safari Service
+
+> LKTaxi (https://www.lktaxi.com) is a licensed, 24/7 private transport and tour operator in Sri Lanka, based in Tissamaharama with island-wide operations. LKTaxi provides fixed-price Colombo Airport (BIA) transfers, intercity private car/van hire, experienced English-speaking chauffeur guides, and dedicated 4x4 wildlife safari bookings for Yala National Park.
+
+LKTaxi caters primarily to international tourists and travelers seeking safe, comfortable, and reliable door-to-door transportation across Sri Lanka. All rides include air-conditioned vehicles, professional licensed drivers, all expressway tolls, and passenger insurance with zero hidden fees.
+
+## Core Services
+
+- [Sri Lanka Airport Transfers](https://www.lktaxi.com/airport-transfer): 24/7 private transfers to/from Bandaranaike International Airport (CMB / BIA). Includes flight tracking, complimentary waiting time for flight delays, meet-and-greet in the arrivals hall with name board, and direct hotel drop-off.
+- [Yala Safari Tours & Jeep Hire](https://www.lktaxi.com/yala-safari): Private 4x4 wildlife safari tours into Yala National Park departing from Tissamaharama. Morning (5:00 AM - 10:00 AM), afternoon (2:00 PM - 6:00 PM), and full-day (5:00 AM - 6:00 PM) safaris with experienced wildlife trackers, Toyota Hilux and Mahindra Bolero jeeps, and entrance permit coordination.
+- [Private Driver Sri Lanka](https://www.lktaxi.com/private-driver-sri-lanka): Hire a dedicated English-speaking private driver with an air-conditioned car or passenger van for multi-day custom tours, scenic road trips, and flexible island exploration.
+- [Sri Lanka Tour Packages](https://www.lktaxi.com/sri-lanka-tour-packages): Tailor-made private itineraries including the South Coast & Safari (5 Days), Classic Sri Lanka Heritage & Hills (7 Days), and the Grand Island Expedition (14 Days).
+- [Taxi Routes & Distance Calculator](https://www.lktaxi.com/routes): Interactive route directory covering all major Sri Lankan travel corridors with real-time OSRM distance estimation and transparent pricing.
+
+## Vehicle Fleet & Capacity
+
+- [Mini Car / Wagon R](https://www.lktaxi.com/#vehicles): 1-3 passengers, 2 medium bags. Economical city transfers and short-to-medium runs (Base rate: ~LKR 120 / km).
+- [Sedan (Toyota Prius / Premio / Axio)](https://www.lktaxi.com/#vehicles): 1-4 passengers, 3 standard bags. Premium comfort for couples and small families (Base rate: ~LKR 140 / km).
+- [Mini Van (Honda Freed / similar)](https://www.lktaxi.com/#vehicles): 4-6 passengers, 4 standard bags. Extra legroom and flexibility (Base rate: ~LKR 150 / km).
+- [KDH Flat Roof Van (Toyota HiAce)](https://www.lktaxi.com/#vehicles): 5-9 passengers, 6-8 bags. Spacious group travel and surf trips (Base rate: ~LKR 200 / km).
+- [KDH High Roof Van (Toyota HiAce)](https://www.lktaxi.com/#vehicles): 7-12 passengers, 10-12 bags. Luxury group touring with tall headroom and ample luggage storage (Base rate: ~LKR 230 / km).
+- [Safari 4x4 Jeeps (Toyota Hilux & Mahindra Bolero)](https://www.lktaxi.com/yala-safari): 1-6 passengers per jeep. Raised tier seating, open-air canopy, reinforced suspension for Yala National Park wildlife safaris.
+
+## Key Hubs & Popular Routes
+
+### Airport (BIA / Colombo) Transfers
+- [Airport to Colombo Taxi](https://www.lktaxi.com/taxi/airport-to-colombo): ~35 km, 45-60 min via Katunayake Expressway.
+- [Airport to Negombo Taxi](https://www.lktaxi.com/taxi/airport-to-negombo): ~12 km, 15-20 min.
+- [Airport to Kandy Taxi](https://www.lktaxi.com/taxi/airport-to-kandy): ~115 km, 3.5-4 hours via Central Expressway / Kadawatha.
+- [Airport to Galle Taxi](https://www.lktaxi.com/taxi/airport-to-galle): ~155 km, 2-2.5 hours via Southern Expressway.
+- [Airport to Mirissa Taxi](https://www.lktaxi.com/taxi/airport-to-mirissa): ~180 km, 2.5 hours via Southern Expressway.
+- [Airport to Ella Taxi](https://www.lktaxi.com/taxi/airport-to-ella): ~210 km, 4.5-5.5 hours.
+- [Airport to Sigiriya Taxi](https://www.lktaxi.com/taxi/airport-to-sigiriya): ~145 km, 3.5-4 hours.
+- [Airport to Yala / Tissamaharama Taxi](https://www.lktaxi.com/taxi/airport-to-yala): ~250 km, 4 hours via Southern Expressway.
+- [Airport to Bentota Taxi](https://www.lktaxi.com/taxi/airport-to-bentota): ~110 km, 1.5-2 hours.
+- [Airport to Tangalle Taxi](https://www.lktaxi.com/taxi/airport-to-tangalle): ~215 km, 3 hours.
+
+### Intercity Tourist Corridors
+- [Colombo to Ella Taxi](https://www.lktaxi.com/taxi/colombo-to-ella): Direct hill-country transfer with optional stops at Ravana Falls or tea factories.
+- [Ella to Yala Taxi](https://www.lktaxi.com/taxi/ella-to-yala): Scenic hill country descent to Yala safari base in Tissamaharama (~2 hours).
+- [Kandy to Sigiriya Taxi](https://www.lktaxi.com/taxi/kandy-to-sigiriya): Cultural Triangle link via Dambulla cave temple (~2.5-3 hours).
+- [Kandy to Ella Taxi](https://www.lktaxi.com/taxi/kandy-to-ella): Mountain transfer via Nuwara Eliya tea estates or train station rendezvous.
+- [Mirissa to Yala Taxi](https://www.lktaxi.com/taxi/mirissa-to-yala): Southern beach to wildlife safari corridor (~2.5 hours).
+- [Colombo to Galle Taxi](https://www.lktaxi.com/taxi/colombo-to-galle): Rapid expressway link connecting the capital to Galle Dutch Fort.
+
+## Authority Travel Guides & Insights
+
+- [Yala National Park Reopening 2026](https://www.lktaxi.com/blogs/yala-national-park-reopening-2026): Key updates regarding Blocks 1 and 2 reopening dates, booking rules, safari jeep logistics, and accommodation tips from Tissamaharama.
+- [Sigiriya Rock Fortress Travel Guide](https://www.lktaxi.com/blogs/sigiriya-rock-fortress-travel-guide): Comprehensive guide covering climb timings, entrance fees, Pidurangala comparison, and private taxi links.
+- [Yala National Park Safari Guide](https://www.lktaxi.com/blogs/yala-national-park-safari-guide): Essential safari advice, leopard tracking strategies, ethical wildlife viewing, and packaging options.
+- [Best Places to Visit in Sri Lanka](https://www.lktaxi.com/blogs/best-places-to-visit-sri-lanka): Curated itinerary recommendations spanning the Cultural Triangle, Hill Country, Central Highlands, and South Coast beaches.
+
+## Booking, Contact & Operational Details
+
+- **Company Name**: LKTaxi (LK Taxi)
+- **Website**: https://www.lktaxi.com
+- **WhatsApp Support (24/7)**: [+94 78 420 7818](https://wa.me/94784207818)
+- **Phone**: +94 78 420 7818
+- **Operational Base**: Tissamaharama, Southern Province, Sri Lanka (Island-wide service coverage)
+- **Hours**: 24 hours a day, 7 days a week, 365 days a year
+- **Accepted Currencies**: Sri Lankan Rupee (LKR), US Dollar (USD), Euro (EUR), British Pound (GBP)
+- **Payment Terms**: Cash to driver upon arrival; 25% advance only required for multi-day extended tour bookings; zero advance required for standard airport transfers or one-way taxi trips.
+- **Inclusions**: Air conditioning, English-speaking driver, fuel, highway tolls, parking fees, passenger vehicle insurance.
+
+## Optional & In-Depth Context
+
+- [Comprehensive LLM Reference Document](https://www.lktaxi.com/llms-full.txt): Detailed directory containing complete route distance tables, vehicle pricing matrices, safari itineraries, cancellation policies, and extended FAQ knowledge base.
