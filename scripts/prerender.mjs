@@ -77,12 +77,25 @@ for (const path of [...publicPaths, '/404']) {
   await writeFile(file, html);
 }
 
+// Preserve historical lastmod dates from existing sitemap if available
+const existingLastmods = new Map();
+try {
+  const existingXml = await readFile('public/sitemap.xml', 'utf8');
+  const locRegex = /<url>[\s\S]*?<loc>(.*?)<\/loc>[\s\S]*?<lastmod>(.*?)<\/lastmod>[\s\S]*?<\/url>/g;
+  let match;
+  while ((match = locRegex.exec(existingXml)) !== null) {
+    existingLastmods.set(match[1].trim(), match[2].trim());
+  }
+} catch {
+  // If reading fails, fallback to today
+}
+
 // Generate sitemap with lastmod and priority
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${publicPaths.map(path => {
   const seo = getPageSEO(path);
-  const lastmod = seo.blog?.date || today;
+  const lastmod = seo.blog?.date || existingLastmods.get(seo.canonical) || today;
   const priority = path === '/' ? '1.0' : path.startsWith('/blogs/') ? '0.7' : '0.8';
   const changefreq = path === '/' ? 'weekly' : 'monthly';
   return `  <url>

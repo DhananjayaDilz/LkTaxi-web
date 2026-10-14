@@ -95,9 +95,11 @@ export default function BlogDetail() {
               </figure>
 
               <div className="prose prose-lg md:prose-xl dark:prose-invert prose-headings:font-bold prose-headings:mt-14 prose-headings:mb-6 prose-p:leading-loose prose-p:mb-8 prose-li:my-3 prose-ul:mb-8 prose-a:text-primary prose-img:rounded-2xl prose-img:shadow-md max-w-none text-gray-700 dark:text-gray-300">
-                <p className="text-xl md:text-2xl font-medium text-gray-900 dark:text-gray-100 leading-relaxed mb-10 border-l-4 border-primary pl-6 py-2 bg-primary/5 rounded-r-lg">
-                  {post.excerpt}
-                </p>
+                {post.excerpt && !post.content.toLowerCase().includes(post.excerpt.toLowerCase().slice(0, 30)) && (
+                  <p className="text-xl md:text-2xl font-medium text-gray-900 dark:text-gray-100 leading-relaxed mb-10 border-l-4 border-primary pl-6 py-2 bg-primary/5 rounded-r-lg">
+                    {post.excerpt}
+                  </p>
+                )}
                 <div dangerouslySetInnerHTML={{ __html: post.content }} className="tracking-wide" />
               </div>
 
