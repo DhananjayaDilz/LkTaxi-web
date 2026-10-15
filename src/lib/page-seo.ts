@@ -47,8 +47,10 @@ export function getPageSEO(pathname: string) {
     title = `${blog.title} | LKTaxi`;
     description = blog.excerpt;
   } else if (route) {
-    title = `${route.from === "airport" ? "Colombo Airport" : formatLocationName(route.from)} to ${formatLocationName(route.to)} Taxi | LKTaxi`;
-    description = `Arrange your private taxi from ${formatLocationName(route.from)} to ${formatLocationName(route.to)}. Discuss pickup, luggage and stops; request a quote on WhatsApp.`;
+    const origin = route.from === "airport" ? "Colombo Airport" : formatLocationName(route.from);
+    const dest = formatLocationName(route.to);
+    title = `${origin} to ${dest} Taxi Sri Lanka | Private Transfer | LKTaxi`;
+    description = `Book a private taxi from ${origin} to ${dest} with LKTaxi. Reliable taxi Sri Lanka transfers, professional Srilankan taxi drivers, fixed rates & 24/7 WhatsApp booking.`;
   } else if (location) {
     title = `${location === "airport" ? "Colombo Airport" : formatLocationName(location)} Taxi & Private Transfers | LKTaxi`;
     description = `Arrange a private taxi to or from ${formatLocationName(location)} with LKTaxi. Choose a car or van and confirm your journey details and price on WhatsApp.`;
