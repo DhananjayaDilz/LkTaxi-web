@@ -34,5 +34,10 @@ export default function TransferGuide({ location, route }: { location?: string; 
     <ul className="grid sm:grid-cols-2 gap-3">
       {(related.length ? related : popularRoutes).slice(0, 6).map(r => <li key={getRouteSlug(r)}><Link className="text-primary underline underline-offset-4" to={`/taxi/${getRouteSlug(r)}`}>{r.from === "airport" ? "Colombo Airport" : formatLocationName(r.from)} to {formatLocationName(r.to)} taxi</Link></li>)}
     </ul>
+    <div className="mt-4">
+      <Link to="/routes" className="text-sm text-primary font-medium hover:underline inline-flex items-center gap-1">
+        Browse all Taxi Sri Lanka routes and destination directory &rarr;
+      </Link>
+    </div>
   </section>;
 }

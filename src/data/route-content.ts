@@ -32,6 +32,7 @@ export const routeContent: Record<string, RouteContent> = {
       { q: "Is the road from Colombo to Ella safe?", a: "Yes. The road is paved throughout. LKTaxi drivers are experienced with this route and drive at a safe, comfortable pace. The mountain sections have tight bends but are well-maintained." },
       { q: "Can I stop at Kitulgala on the way?", a: "Yes. Kitulgala is roughly halfway and is a popular stop for white-water rafting. Tell your driver in advance so they can plan the itinerary." },
       { q: "What vehicle is best for Colombo to Ella?", a: "A sedan is fine for 1-3 passengers with standard luggage. For families or groups of 4+, we recommend a spacious van for extra comfort on the long journey." },
+      { q: "Why choose a private Srilankan taxi over the public train or bus?", a: "While the scenic train is popular, tickets frequently sell out weeks in advance and luggage space is very tight. A private Srilankan taxi provides door-to-door hotel pickup, air conditioning, ample boot space, and the flexibility to stop at Kitulgala or waterfalls whenever you like." },
     ],
   },
   "ella-to-yala": {
@@ -53,6 +54,7 @@ export const routeContent: Record<string, RouteContent> = {
     faqs: [
       { q: "Should I book my safari when booking this transfer?", a: "Yes. LKTaxi can arrange both your Ella-to-Tissa transfer and your Yala safari jeep. Booking together ensures your safari guide knows your arrival time." },
       { q: "Where should I stay near Yala?", a: "Most travelers stay in Tissamaharama (20 min from Yala gates). There are also safari camps closer to the park for a more immersive experience." },
+      { q: "Can I book a return taxi Lanka ride after my safari?", a: "Yes. Many travelers book a taxi Lanka return ride from Yala or Tissamaharama onwards to Mirissa, Galle, or back to Colombo Airport. Simply let us know your onwards itinerary when inquiring on WhatsApp." },
     ],
   },
   "airport-to-mirissa": {
@@ -74,6 +76,7 @@ export const routeContent: Record<string, RouteContent> = {
     faqs: [
       { q: "Is it worth going straight to Mirissa from the airport?", a: "Yes. If your priority is beach time and whale watching, going directly to Mirissa saves a night in Colombo. The 3-hour drive is comfortable in an air-conditioned car." },
       { q: "Can we stop for food on the way?", a: "Yes. There are several rest stops on the Southern Expressway with restaurants and facilities. Your driver can also recommend good local restaurants along the route." },
+      { q: "How do I book a reliable taxi Lanka airport transfer?", a: "You can pre-book your taxi Lanka transfer with LKTaxi via WhatsApp before your flight. Share your flight number and hotel address, and your driver will meet you directly at the Colombo Airport arrival lobby with a nameboard." },
     ],
   },
   "kandy-to-sigiriya": {
@@ -95,6 +98,7 @@ export const routeContent: Record<string, RouteContent> = {
     faqs: [
       { q: "Can I do Sigiriya as a day trip from Kandy?", a: "Yes. Leave Kandy by 6:00 AM, climb Sigiriya by 9:00 AM, visit Dambulla Cave Temple in the afternoon, and return to Kandy by evening." },
       { q: "Is it better to stay near Sigiriya?", a: "If you also plan to visit Polonnaruwa and Minneriya, staying one night near Sigiriya makes the itinerary less rushed." },
+      { q: "Why hire a private Srilankan taxi driver for Sigiriya?", a: "Hiring a private Srilankan taxi gives you the freedom to set your own morning departure, stop at Matale spice gardens and Dambulla Cave Temple on the way, and keep your luggage safely stored in the air-conditioned vehicle while exploring." },
     ],
   },
   "galle-to-tangalle": {
@@ -137,6 +141,7 @@ export const routeContent: Record<string, RouteContent> = {
     faqs: [
       { q: "Can I stop at Pinnawala Elephant Orphanage on the way?", a: "Yes. Pinnawala is along the route from the airport to Kandy. Feeding times are at 9:15 AM and 1:15 PM — time your pickup accordingly." },
       { q: "Which route is better — expressway or old road?", a: "The expressway is faster (2.5-3 hours). The old road via Kadugannawa is scenic but adds 30-45 minutes. If you are tired after a long flight, the expressway is recommended." },
+      { q: "Is taxi Sri Lanka service available 24/7 for Kandy airport pickups?", a: "Yes. Our taxi Sri Lanka transfer service operates 24 hours a day, 7 days a week. Whether your flight arrives at 2:00 AM or midday, a reserved air-conditioned vehicle and professional driver will be waiting for you." },
     ],
   },
   "airport-to-ella": {

@@ -73,6 +73,9 @@ const RoutePage = () => {
             <p>
               {content?.description || `Looking for a comfortable and safe taxi from ${fromName} to ${toName}? LKTaxi provides professional private transfer services between these destinations. Avoid the crowds of public transport and enjoy the beauty of Sri Lanka from the comfort of your private car.`}
             </p>
+            <p className="text-muted-foreground leading-relaxed mt-4">
+              Book your private transfer with LKTaxi, a trusted <strong>taxi Sri Lanka</strong> service providing comfortable, air-conditioned vehicles, transparent pricing, and reliable door-to-door pickups across the island.
+            </p>
 
             {content?.scenicHighlights && (
               <>
@@ -98,11 +101,11 @@ const RoutePage = () => {
 
             <h3 className="text-2xl font-semibold mt-8 mb-4">Journey Highlights</h3>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Direct door-to-door transfer</li>
-              <li>Optional stops for photo opportunities or refreshments</li>
-              <li>Fully air-conditioned modern vehicles</li>
-              <li>Confirm tolls, parking and waiting charges in your quote</li>
-              <li>Available 24 hours a day, 7 days a week</li>
+              <li>Direct door-to-door private transfer with an experienced, English-speaking <strong>Srilankan taxi</strong> driver</li>
+              <li>Optional scenic stops for photography, tea factory tours, or refreshments along the way</li>
+              <li>Fully air-conditioned, well-maintained modern vehicles with dedicated luggage capacity</li>
+              <li>Upfront fixed quotes with confirmed highway tolls, parking, and waiting time</li>
+              <li>Available 24 hours a day, 7 days a week with flexible departure scheduling</li>
             </ul>
 
             <h3 id="fares" className="text-2xl font-semibold mt-8 mb-4 scroll-mt-24">Estimated Taxi Fares</h3>
@@ -129,7 +132,7 @@ const RoutePage = () => {
                   </tbody>
                 </table>
                 <p className="text-xs text-muted-foreground mt-2">
-                  * Prices are estimated based on typical distance. Highway tolls and parking charges (if applicable) are extra. Contact us on WhatsApp for exact quotes.
+                  * All <strong>taxi Lanka</strong> bookings with LKTaxi include an air-conditioned vehicle, luggage assistance, and door-to-door service. Highway tolls and parking charges (if applicable) are extra and confirmed upfront on WhatsApp.
                 </p>
               </div>
             ) : (
