@@ -21,6 +21,21 @@ const AirportTransfer = () => {
           <p>
             Start your Sri Lankan holiday stress-free with our private airport transfer service. We monitor your flight for delays, meet you at the arrivals hall with a nameboard, and drive you directly to your hotel.
           </p>
+
+          <figure className="my-8 rounded-2xl overflow-hidden shadow-xl border border-border not-prose">
+            <img 
+              src="/Airport-pickup.webp" 
+              alt="Colombo Airport Transfer - LKTaxi Meet and Greet pickup at Bandaranaike International Airport arrivals hall" 
+              className="w-full h-auto max-h-[520px] object-cover"
+              loading="lazy"
+              width="1280"
+              height="960"
+            />
+            <figcaption className="bg-card p-4 text-sm text-muted-foreground text-center border-t border-border/50">
+              Personalized meet &amp; greet service with your driver at Colombo Airport (BIA) arrivals hall
+            </figcaption>
+          </figure>
+
           <h3>Why Choose LKTaxi for Your Airport Transfer?</h3>
           <ul>
             <li><strong>Fixed Prices:</strong> No hidden fees, tolls and parking included in the quote.</li>
