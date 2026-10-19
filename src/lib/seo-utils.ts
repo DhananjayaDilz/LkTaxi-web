@@ -28,7 +28,7 @@ export const generateStructuredData = (location?: Location, from?: Location, to?
     "@context": "https://schema.org",
     "@type": "TaxiService",
     "name": "LKTaxi",
-    "image": "https://www.lktaxi.com/sri-lanka-private-taxi-and-tours-hero.png",
+    "image": "https://www.lktaxi.com/sri-lanka-private-taxi-and-tours-hero.webp",
     "logo": "https://www.lktaxi.com/lktaxi-sri-lanka-taxi-booking-logo.webp",
     "@id": `https://www.lktaxi.com/#${location || "main"}`,
     "url": "https://www.lktaxi.com",

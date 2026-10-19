@@ -46,6 +46,8 @@ export default function PageSEO() {
       } else if (pathname.startsWith("/blogs/")) {
         breadcrumbs.push({ name: "Travel Blog", url: "https://www.lktaxi.com/blogs" });
         breadcrumbs.push({ name: seo.title.replace(" | LKTaxi", ""), url: seo.canonical });
+      } else {
+        breadcrumbs.push({ name: seo.title.replace(" | LKTaxi", ""), url: seo.canonical });
       }
       const schema = document.createElement("script");
       schema.type = "application/ld+json";
