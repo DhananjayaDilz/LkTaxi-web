@@ -24,6 +24,21 @@
 2. If the existing sitemap `https://www.lktaxi.com/sitemap.xml` is already listed, click it and select **Resubmit**
 3. If not listed, add it
 
+### 2b. Submit all URLs to IndexNow (Bing / Yandex / Seznam / Naver)
+
+IndexNow provides immediate search engine notifications whenever URLs are published or updated.
+- Verification Key: `87ed4e8947b330cfa68e66c17385abea`
+- Key URL: `https://www.lktaxi.com/87ed4e8947b330cfa68e66c17385abea.txt`
+
+Once the site is deployed, submit all 77 pages instantly with one command:
+```bash
+npm run submit:indexnow
+```
+Or test in dry-run mode before submission:
+```bash
+npm run submit:indexnow -- --dry-run
+```
+
 ### 3. Request URL Inspection for key pages (Day 0-1)
 
 Use **URL Inspection** → **Request Indexing** for these priority pages only (Google limits daily requests):
