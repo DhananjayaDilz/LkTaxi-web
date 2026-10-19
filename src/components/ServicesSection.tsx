@@ -1,4 +1,3 @@
-import airportImg from "@/assets/sri-lanka-airport-taxi-transfer-service.webp";
 import dayToursImg from "@/assets/sri-lanka-private-day-tours-from-colombo.webp";
 import longToursImg from "@/assets/sri-lanka-private-multi-day-round-tours.webp";
 import hotelImg from "@/assets/sri-lanka-hotel-taxi-transfer-service.webp";
@@ -7,7 +6,7 @@ const services = [
   {
     title: "Airport Transfer",
     link: "/airport-transfer",
-    image: airportImg,
+    image: "/Airport-pickup.webp",
     short: "Reliable airport pickup and drop-off services at Bandaranaike International Airport. Fixed prices, flight tracking, and meet & greet included.",
     detail: "Our airport transfer service covers all major airports in Sri Lanka. We monitor flight schedules to ensure timely pickups.",
   },
