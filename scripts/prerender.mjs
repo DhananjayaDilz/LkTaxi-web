@@ -29,6 +29,8 @@ for (const path of [...publicPaths, '/404']) {
     } else if (path.startsWith('/blogs/')) {
       breadcrumbs.push({ name: 'Travel Blog', url: 'https://www.lktaxi.com/blogs' });
       breadcrumbs.push({ name: seo.title.replace(' | LKTaxi', ''), url: seo.canonical });
+    } else {
+      breadcrumbs.push({ name: seo.title.replace(' | LKTaxi', ''), url: seo.canonical });
     }
     const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: b.url })) };
     html = html.replace('</head>', `<script type="application/ld+json" data-page-schema>${JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c')}</script></head>`);

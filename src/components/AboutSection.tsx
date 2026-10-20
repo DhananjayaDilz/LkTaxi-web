@@ -53,7 +53,7 @@ const AboutSection = () => {
               {/* Right Image (Tilted Right) */}
               <div className="absolute z-10 w-[48%] aspect-[3/4] rounded-2xl shadow-xl overflow-hidden border-[6px] border-background translate-x-[50%] translate-y-[10%] rotate-[10deg] transition-all duration-500 hover:rotate-[4deg] hover:z-40 hover:scale-[1.03] opacity-95">
                 <img
-                  src="/lktaxi-reliable-airport-transfer-sri-lanka.webp"
+                  src="/Airport-pickup.webp"
                   alt="Reliable airport transfers and drop-offs by LkTaxi Sri Lanka"
                   className="w-full h-full object-cover"
                   loading="lazy"

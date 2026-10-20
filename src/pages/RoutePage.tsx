@@ -99,14 +99,7 @@ const RoutePage = () => {
               </>
             )}
 
-            <h3 className="text-2xl font-semibold mt-8 mb-4">Journey Highlights</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Direct door-to-door private transfer with an experienced, English-speaking <strong>Srilankan taxi</strong> driver</li>
-              <li>Optional scenic stops for photography, tea factory tours, or refreshments along the way</li>
-              <li>Fully air-conditioned, well-maintained modern vehicles with dedicated luggage capacity</li>
-              <li>Upfront fixed quotes with confirmed highway tolls, parking, and waiting time</li>
-              <li>Available 24 hours a day, 7 days a week with flexible departure scheduling</li>
-            </ul>
+
 
             <h3 id="fares" className="text-2xl font-semibold mt-8 mb-4 scroll-mt-24">Estimated Taxi Fares</h3>
             {fareTable.length > 0 ? (

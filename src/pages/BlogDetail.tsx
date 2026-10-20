@@ -91,6 +91,8 @@ export default function BlogDetail() {
                   alt={post.title}
                   className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
                   loading="eager"
+                  width={1200}
+                  height={675}
                 />
               </figure>
 
