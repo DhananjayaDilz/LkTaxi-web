@@ -162,39 +162,15 @@
 ]
     </script>
 
-    <!-- Google tag (gtag.js) + Elfsight reviews widget.
-         Loaded AFTER the page has finished loading so they don't compete with the
-         hero image / main JS bundle (big LCP + TBT win). Events queued in dataLayer
-         before the script loads are still sent. -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18500200952"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-TYD871QG55');
 
-      (function () {
-        var loaded = false;
-        function addScript(src, attrs) {
-          var s = document.createElement('script');
-          s.src = src; s.async = true;
-          if (attrs) for (var k in attrs) s.setAttribute(k, attrs[k]);
-          document.head.appendChild(s);
-        }
-        function loadThirdParty() {
-          if (loaded) return; loaded = true;
-          addScript('https://www.googletagmanager.com/gtag/js?id=G-TYD871QG55');
-          // Elfsight reviews widget is lazy-loaded by ReviewsSection when scrolled into view.
-        }
-        function schedule() {
-          if ('requestIdleCallback' in window) requestIdleCallback(loadThirdParty, { timeout: 3000 });
-          else setTimeout(loadThirdParty, 1500);
-        }
-        if (document.readyState === 'complete') schedule();
-        else window.addEventListener('load', schedule, { once: true });
-        ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (e) {
-          window.addEventListener(e, loadThirdParty, { once: true, passive: true });
-        });
-      })();
+      gtag('config', 'AW-18500200952');
+      gtag('config', 'G-TYD871QG55');
     </script>
   </head>
 
