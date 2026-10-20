@@ -1,7 +1,3 @@
-import dayToursImg from "@/assets/sri-lanka-private-day-tours-from-colombo.webp";
-import longToursImg from "@/assets/sri-lanka-private-multi-day-round-tours.webp";
-import hotelImg from "@/assets/sri-lanka-hotel-taxi-transfer-service.webp";
-
 const services = [
   {
     title: "Airport Transfer",
@@ -13,21 +9,21 @@ const services = [
   {
     title: "Sri Lanka Tour Packages",
     link: "/sri-lanka-tour-packages",
-    image: longToursImg,
+    image: "/day-tour.webp",
     short: "Multi-day tour packages across Sri Lanka with comfortable vehicles and experienced driver-guides. Discover the island's diverse landscapes.",
     detail: "We offer customizable 3-14 day itineraries covering the Cultural Triangle, Hill Country, and Southern Coast beaches.",
   },
   {
     title: "Hire a Private Driver",
     link: "/private-driver-sri-lanka",
-    image: dayToursImg,
+    image: "/hire-private-driver.webp",
     short: "The most comfortable way to explore Sri Lanka. Rent a car with an experienced English-speaking chauffeur to travel at your own pace.",
     detail: "Perfect for hotel-to-hotel transfers, daily excursions, or multi-week road trips. Comfortable sedans and vans available.",
   },
   {
     title: "Yala Safari",
     link: "/yala-safari",
-    image: hotelImg, // We can reuse an image or use a safari image if available, but for now reuse hotelImg or import a safari image
+    image: "/yala-taxi.webp",
     short: "Unforgettable wildlife adventure in Yala National Park. Private 4x4 Jeep Tours with expert local trackers from Tissamaharama.",
     detail: "Choose from morning, afternoon, or full-day leopard safaris. Transparent pricing including jeep and park entrance fees.",
   },
