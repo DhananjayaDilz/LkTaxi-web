@@ -73,13 +73,13 @@ const Footer = () => (
             </li>
           </ul>
           <div className="flex gap-3 mt-4">
-            <a href="https://www.facebook.com/lktaxi" target="_blank" rel="noopener noreferrer" aria-label="LKTaxi Facebook Page" className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+            <a href="https://www.facebook.com/profile.php?id=61584388631334" target="_blank" rel="noopener noreferrer" aria-label="LKTaxi Facebook Page" className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Facebook className="w-4 h-4" />
             </a>
-            <a href="https://www.instagram.com/lktaxi" target="_blank" rel="noopener noreferrer" aria-label="LKTaxi Instagram Profile" className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+            <a href="https://www.instagram.com/lktaxi_/" target="_blank" rel="noopener noreferrer" aria-label="LKTaxi Instagram Profile" className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Instagram className="w-4 h-4" />
             </a>
-            <a href="https://www.youtube.com/@lktaxi" target="_blank" rel="noopener noreferrer" aria-label="LKTaxi YouTube Channel" className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+            <a href="https://www.youtube.com/@Lktaxi-com" target="_blank" rel="noopener noreferrer" aria-label="LKTaxi YouTube Channel" className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Youtube className="w-4 h-4" />
             </a>
           </div>
