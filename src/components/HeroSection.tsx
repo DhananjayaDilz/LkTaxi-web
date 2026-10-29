@@ -12,7 +12,8 @@ import { cn } from "@/lib/utils";
 import { GOOGLE_REVIEWS_URL } from "@/data/business";
 import { tourPricing, vehicles, generateWhatsAppURL } from "@/data/pricing";
 import BookingForm from "@/components/booking/BookingForm";
-import heroBg from "@/assets/sri-lanka-taxi-booking-hero-background.webp";
+import heroDesktop from "@/assets/hero-desktop.jpg";
+import heroMobile from "@/assets/hero-mobile.jpg";
 
 interface HeroSectionProps {
   title?: string;
@@ -31,15 +32,18 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20">
       <div className="absolute inset-0">
-        <img 
-          src={heroBg} 
-          alt={title ? `${title} Background` : "Sri Lanka private taxi service — airport transfers and tours for foreign tourists"} 
-          className="w-full h-full object-cover" 
-          loading="eager"
-          {...{ fetchpriority: "high" }}
-          width={1920}
-          height={1080}
-        />
+        <picture className="block w-full h-full">
+          <source media="(max-width: 767px)" srcSet={heroMobile} />
+          <img 
+            src={heroDesktop} 
+            alt={title ? `${title} Background` : "Sri Lanka private taxi service — airport transfers and tours for foreign tourists"} 
+            className="w-full h-full object-cover object-center" 
+            loading="eager"
+            {...{ fetchpriority: "high" }}
+            width={1024}
+            height={768}
+          />
+        </picture>
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsla(216,16%,9%,0.85), hsla(216,16%,9%,0.55))" }} />
       </div>
       <div className="relative container mx-auto px-4 py-8 sm:py-10 md:py-20">
