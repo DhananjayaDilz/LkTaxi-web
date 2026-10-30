@@ -74,9 +74,12 @@ try {
   await page.getByPlaceholder('Your Name', { exact: true }).fill('Test traveler');
   await page.getByRole('button', { name: 'Send via WhatsApp', exact: true }).first().click();
   const events = await page.evaluate(() => window.__contactEvents);
-  assert.equal(events.length, 1);
-  assert.equal(events[0][1], 'contact_click');
-  assert.equal(events[0][2].contact_method, 'whatsapp');
+  const contactClick = events.find(e => e[1] === 'contact_click');
+  assert.ok(contactClick, 'contact_click GA4 event must fire');
+  assert.equal(contactClick[2].contact_method, 'whatsapp');
+  const conversionEvent = events.find(e => e[1] === 'conversion');
+  assert.ok(conversionEvent, 'Google Ads conversion event must fire');
+  assert.equal(conversionEvent[2].send_to, 'AW-18500200952/ma14CL-8kqMdEPjTyvVE');
   assert.ok(!JSON.stringify(events).includes('Test traveler'), 'Contact events must not include personal form data');
   await page.getByRole('button', { name: 'Fare Calculator' }).click();
   await page.setViewportSize({ width: 390, height: 844 });
