@@ -84,7 +84,7 @@ const ReviewsSection = () => {
   const widgetRef = useLazyElfsight();
 
   return (
-  <section className="section-padding bg-muted/30 relative overflow-hidden">
+  <section id="reviews" className="section-padding bg-muted/30 relative overflow-hidden scroll-mt-20">
     {/* Decorative background blur elements */}
     <div className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
     <div className="absolute bottom-10 right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
