@@ -1,7 +1,7 @@
 import { trackContact } from "@/lib/analytics";
 import { useState, useMemo } from "react";
 import { format } from "date-fns";
-import { CalendarIcon, Car, MapPin, User, MessageSquare, Send, Calculator, Compass, Map } from "lucide-react";
+import { CalendarIcon, Car, MapPin, User, MessageSquare, Send, Calculator, Compass, Map, Star, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,6 +29,13 @@ const tabs = [
 const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
   const [activeTab, setActiveTab] = useState(0);
 
+  const scrollToReviews = () => {
+    const element = document.getElementById("reviews");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20">
       <div className="absolute inset-0">
@@ -48,6 +55,58 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
       </div>
       <div className="relative container mx-auto px-4 py-8 sm:py-10 md:py-20">
         <div className="max-w-2xl mb-6 md:mb-12">
+          {/* Attention-grabbing Social Proof Badge */}
+          {!title && (
+            <button
+              type="button"
+              onClick={scrollToReviews}
+              className="group mb-4 sm:mb-5 inline-flex items-center gap-2 sm:gap-2.5 rounded-full border border-primary/40 bg-card/90 px-3.5 py-1.5 backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-102 hover:border-primary hover:bg-card hover:shadow-primary/25 active:scale-98 text-left cursor-pointer"
+            >
+              {/* Overlapping Traveler Avatars */}
+              <div className="flex -space-x-2 shrink-0">
+                <img
+                  src="/tourist-couple-sri-lanka-taxi-review.webp"
+                  alt="Tourist couple review"
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 rounded-full border-2 border-card object-cover"
+                />
+                <img
+                  src="/family-sri-lanka-airport-transfer-review.webp"
+                  alt="Family transfer review"
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 rounded-full border-2 border-card object-cover"
+                />
+                <img
+                  src="/friends-yala-safari-jeep-tour-review.webp"
+                  alt="Friends safari review"
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 rounded-full border-2 border-card object-cover"
+                />
+              </div>
+
+              {/* Stars & Rating */}
+              <div className="flex items-center gap-1.5 text-xs">
+                <div className="flex text-amber-400">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-3 w-3 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span className="font-bold text-foreground">4.9 / 5.0</span>
+                <span className="text-muted-foreground hidden sm:inline">•</span>
+                <span className="font-medium text-muted-foreground hidden sm:inline">100+ Traveler Reviews</span>
+              </div>
+
+              {/* CTA Arrow */}
+              <span className="ml-1 inline-flex items-center gap-1 text-[11px] font-bold text-primary group-hover:underline underline-offset-2">
+                <span>See Reviews</span>
+                <ArrowDown className="h-3 w-3 transition-transform group-hover:translate-y-0.5" />
+              </span>
+            </button>
+          )}
+
           <h1 className="max-w-xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground mb-4 leading-[1.08] sm:leading-tight">
             {title ? (
               title
