@@ -96,7 +96,7 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
                 </div>
                 <span className="font-bold text-foreground">4.9 / 5.0</span>
                 <span className="text-muted-foreground hidden sm:inline">•</span>
-                <span className="font-medium text-muted-foreground hidden sm:inline">100+ Traveler Reviews</span>
+                <span className="font-medium text-muted-foreground hidden sm:inline">100+ Travelers Trust</span>
               </div>
 
               {/* CTA Arrow */}
