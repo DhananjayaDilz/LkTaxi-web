@@ -1,16 +1,15 @@
 import { GOOGLE_REVIEWS_URL } from "@/data/business";
-import { Star, Quote, Camera } from "lucide-react";
+import { Star, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
 
-const ELFSIGHT_SRC = "https://static.elfsight.com/platform/platform.js";
+const SOCIABLEKIT_SRC = "https://widgets.sociablekit.com/google-reviews/widget.js";
 
 /**
- * Loads the Elfsight platform script only when the reviews widget is about to
- * enter the viewport. The widget is ~470 KB of JS and ~3s of main-thread work on
- * mobile, so loading it up-front was a major cause of poor TBT / LCP.
+ * Loads the SociableKIT platform script only when the reviews widget is about to
+ * enter the viewport. Prevents 3rd-party widget scripts from affecting initial page load (TBT / LCP).
  */
-const useLazyElfsight = () => {
+const useLazySociableKit = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -18,11 +17,10 @@ const useLazyElfsight = () => {
     if (!el) return;
 
     const load = () => {
-      if (document.querySelector(`script[src="${ELFSIGHT_SRC}"]`)) return;
+      if (document.querySelector(`script[src="${SOCIABLEKIT_SRC}"]`)) return;
       const s = document.createElement("script");
-      s.src = ELFSIGHT_SRC;
-      s.async = true;
-      s.setAttribute("data-use-service-core", "");
+      s.src = SOCIABLEKIT_SRC;
+      s.defer = true;
       document.body.appendChild(s);
     };
 
@@ -78,10 +76,8 @@ const clientPhotos = [
   },
 ];
 
-const reviews = [];
-
 const ReviewsSection = () => {
-  const widgetRef = useLazyElfsight();
+  const widgetRef = useLazySociableKit();
 
   return (
   <section id="reviews" className="section-padding bg-muted/30 relative overflow-hidden scroll-mt-20">
@@ -152,44 +148,21 @@ const ReviewsSection = () => {
       </div>
 
       {/* Google Reviews Widget Container */}
-      <div ref={widgetRef} className="max-w-6xl mx-auto mb-12">
-        {/* 
-          STEP 1: Create a widget on https://elfsight.com/google-reviews-widget/ 
-          STEP 2: Once created, they will give you a code like: <div class="elfsight-app-12345678-abcd-1234-abcd-12345678abcd" data-elfsight-app-lazy></div>
-          STEP 3: Replace "YOUR_WIDGET_ID_HERE" below with your actual ID!
-        */}
-        <div className="elfsight-app-165b6c29-3329-41c8-ad55-88b019a1de8a" data-elfsight-app-lazy></div>
+      <div ref={widgetRef} className="max-w-6xl mx-auto mb-12 min-h-[350px]">
+        {/* SociableKIT Google Reviews Widget */}
+        <div className="sk-ww-google-reviews" data-embed-id="25727119"></div>
 
-        {/* Fallback manual reviews just in case the widget hasn't been set up yet */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12 opacity-50">
-          {reviews.map((r) => (
-            <div 
-              key={r.name} 
-              className="bg-card/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-border/60 flex flex-col justify-between group relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-28 h-28 bg-primary/5 rounded-bl-full pointer-events-none" />
-              <div className="absolute top-6 right-6 text-primary/10">
-                <Quote className="w-12 h-12" />
-              </div>
-
-              <div className="relative z-10">
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: r.rating }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-base text-muted-foreground mb-6 italic leading-relaxed">"{r.text}"</p>
-              </div>
-              
-              <div className="relative z-10 pt-4 border-t border-border/40">
-                <div className="flex items-center gap-2">
-                  <p className="font-semibold text-foreground text-base">{r.name}</p>
-                </div>
-                <p className="text-sm text-muted-foreground mt-0.5">{r.country}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Fallback for search crawlers / disabled JS */}
+        <noscript>
+          <div className="text-center p-6 bg-card rounded-xl border border-border">
+            <p className="text-muted-foreground text-sm">
+              See our verified customer reviews directly on{" "}
+              <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="text-primary underline font-medium">
+                Google Reviews
+              </a>.
+            </p>
+          </div>
+        </noscript>
       </div>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
