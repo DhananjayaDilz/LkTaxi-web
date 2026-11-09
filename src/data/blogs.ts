@@ -2,6 +2,189 @@ import { BlogPost } from "../types/blog";
 
 export const blogsData: BlogPost[] = [
   {
+    id: "7",
+    title: "Airport Taxi Colombo: 24/7 Fixed-Price Pickup & Drop from Bandaranaike Airport (CMB)",
+    seoTitle: "Airport Taxi Colombo | Book Colombo Airport Transfer",
+    metaDescription: "Book a airport taxi in Colombo. Fixed prices, 24/7 pickup and drop from Bandaranaike Airport (CMB) to Colombo and all of Sri Lanka. Book online.",
+    slug: "airport-taxi-colombo",
+    excerpt: "Landing at Bandaranaike International Airport (CMB)? Book a fixed-price airport taxi in Colombo with 24/7 arrivals meet-and-greet, E03 expressway transfers, and direct rides across Sri Lanka.",
+    coverImage: "/Airport-pickup.webp",
+    coverImageAlt: "LKTaxi driver meeting international travellers with luggage trolleys inside Bandaranaike International Airport (CMB) arrivals hall for an airport taxi Colombo transfer",
+    gallery: [
+      "/Airport-pickup.webp",
+      "/vehicles/sedan/lktaxi-sedan-interior-seats.webp",
+      "/vehicles/kdh-flat-roof/lktaxi-kdh-flat-roof-side-view.webp",
+      "/lktaxi-sri-lanka-private-driver-tour-guide.webp"
+    ],
+    author: "LKTaxi Travel Team",
+    date: "2026-11-09",
+    dateModified: "2026-11-09",
+    readTime: "7 min read",
+    tags: ["Airport Taxi Colombo", "Colombo Airport Transfer", "Katunayake Airport Taxi", "Airport Pickup Colombo", "Sri Lanka Travel"],
+    faqs: [
+      {
+        q: "How much does an airport taxi Colombo transfer cost from Bandaranaike Airport (CMB)?",
+        a: "A private airport taxi from Bandaranaike International Airport (CMB) to Colombo city centre costs LKR 8,000 – 12,000 (approx. 45–60 minutes via the E03 Katunayake Expressway). Transfers to nearby Negombo cost LKR 3,500 – 5,000 (15–20 minutes), while long-distance transfers to Kandy are LKR 25,000 – 35,000 and Galle or Unawatuna are LKR 22,000 – 28,000."
+      },
+      {
+        q: "Where will my driver meet me for an airport pickup in Colombo?",
+        a: "Your LKTaxi driver waits inside the Bandaranaike International Airport (CMB) arrivals hall right opposite the baggage exit under the 'Welcome to Sri Lanka' sign, holding a clear nameboard with your name. You will also receive your driver's WhatsApp number before you board your flight."
+      },
+      {
+        q: "What happens if my flight into Colombo Airport is delayed or lands at night?",
+        a: "We operate 24/7 and track your incoming flight number in real time. If your flight is delayed or arrives at 2:00 AM, your driver adjusts the pickup time automatically at no extra waiting charge."
+      },
+      {
+        q: "How long does the taxi ride take from Katunayake Airport to Colombo Fort or Galle Face?",
+        a: "Using the Colombo–Katunayake Expressway (E03), the 35 km drive from CMB Airport to central Colombo takes 35 to 45 minutes during off-peak hours and around 50 to 60 minutes during weekday rush hours (7:00–9:00 AM and 5:00–7:00 PM)."
+      },
+      {
+        q: "How early should I book an airport drop from Colombo to CMB Airport?",
+        a: "Airlines at Bandaranaike International Airport recommend arriving at the terminal at least 3 hours before international departure. Because the drive from Colombo takes 45–60 minutes, schedule your hotel pickup 4 to 4.5 hours before your flight's departure time."
+      },
+      {
+        q: "Do I need to pay in advance when booking a Colombo airport taxi online?",
+        a: "No advance payment is required for standard airport pickups and city drops. You receive a confirmed fixed quote before you travel and can pay your driver directly. For multi-day tours or special vehicle requests, a 25% advance may be requested to lock in the reservation."
+      }
+    ],
+    content: `
+      <p>Stepping out of Bandaranaike International Airport (CMB) after ten or twelve hours in the air, the warm Katunayake air hits you right as you wheel your trolley past the duty-free counters and SIM card booths. Booking a reliable <strong>airport taxi Colombo</strong> transfer before you fly means you skip the crowded taxi counters and persistent touts outside the terminal doors. Instead, your driver is already waiting in the arrivals lobby with your name on a sign, ready to load your bags into an air-conditioned car or van and get you straight onto the expressway.</p>
+
+      <p>Whether you are heading into central Colombo for a hotel stay near Galle Face, starting a family holiday on the south coast, or booking an early-morning <strong>airport drop Colombo</strong> ride back to Terminal 1, knowing how routes, vehicle sizes, and fixed fares work at CMB makes the first and last leg of your Sri Lanka trip effortless.</p>
+
+      <!-- TOP CTA BLOCK -->
+      <div style="margin: 32px 0; padding: 28px 24px; border-radius: 16px; background: linear-gradient(135deg, rgba(234, 179, 8, 0.14), rgba(234, 179, 8, 0.05)); border: 1px solid rgba(234, 179, 8, 0.35); text-align: center;">
+        <p style="margin: 0 0 8px 0; font-size: 1.25rem; font-weight: 700;">Book Your Colombo Airport Taxi Online (24/7 Pickup &amp; Drop)</p>
+        <p style="margin: 0 0 20px 0; font-size: 0.95rem; opacity: 0.85;">Check instant fixed fares for sedans, mini vans, and KDH vans, including live flight tracking and arrivals hall meet-and-greet.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+          <a href="/#booking-form" style="background-color: #eab308; color: #111827; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.98rem; display: inline-block;">Book Now — Online Fare Calculator</a>
+          <a href="https://wa.me/94784207818?text=Hello%20LKTaxi%2C%20I%20would%20like%20to%20book%20an%20Airport%20Taxi%20Colombo%20transfer." target="_blank" rel="noopener noreferrer" style="background-color: #25D366; color: #ffffff; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.98rem; display: inline-block;">WhatsApp +94 78 420 7818</a>
+        </div>
+      </div>
+
+      <h2>Why Pre-Booking an Airport Taxi Colombo Saves Time on Arrival</h2>
+      <Br/>
+      <p>Sri Lanka's main international gateway, Bandaranaike International Airport (CMB), isn't actually inside Colombo city. It sits in <strong>Katunayake</strong>, about 35 km north of Colombo Fort and roughly 12 km south of Negombo. First-time visitors are often surprised to learn that relying on ad-hoc ride-hailing apps at the airport can be frustrating: app drivers frequently message asking for cash expressway tolls upfront, decline large suitcases, or ask passengers to walk outside the main terminal compound with their bags to avoid airport entry fees.</p>
+
+      <p>When you pre-book a dedicated <a href="/airport-transfer">Colombo airport transfer service</a> with LKTaxi, every detail is settled before you take off:</p>
+      <ul>
+        <li><strong>Fixed, transparent quotes:</strong> You know the exact LKR fare before landing, with no meter anxiety if weekday traffic slows down near Peliyagoda.</li>
+        <li><strong>Personal meet-and-greet inside arrivals:</strong> Your driver waits inside the air-conditioned arrivals lobby under the main <em>"Welcome to Sri Lanka"</em> sign, right across from the Dialog and Hutch tourist SIM counters.</li>
+        <li><strong>Time to sort essentials first:</strong> Need 15 minutes to pick up a local eSIM or exchange currency at the bank counters in the lobby? Your driver waits patiently and helps wheel your carts straight to the car park.</li>
+        <li><strong>Direct expressway routing:</strong> Instead of crawling through town intersections on the old A3 road, our drivers take the <strong>Colombo–Katunayake Expressway (E03)</strong> for a smooth, direct run into the city or onto the Outer Circular Highway.</li>
+      </ul>
+      <Br/>
+      <h3>Real-Time Flight Tracking &amp; Arrivals Hall Meet-and-Greet</h3>
+      <Br/>
+      <p>Long-haul flights from Europe, the Middle East, Australia, and Southeast Asia land at CMB around the clock, with a heavy wave of arrivals between midnight and 6:00 AM. When you share your flight number during booking, our dispatch team monitors your aircraft's live landing time. Whether your flight touches down 30 minutes early or is delayed by two hours, your <strong>Colombo airport taxi</strong> is timed to your actual arrival at no extra waiting charge.</p>
+      <Br/>
+      <h3>Katunayake Expressway (E03) vs. Old Negombo Road</h3>
+      <Br/>
+      <p>Before the E03 Expressway opened, driving from Katunayake into Colombo meant sitting behind buses and three-wheelers through Ja-Ela and Wattala for well over an hour and a half. Today, a private <strong>Katunayake airport taxi</strong> merges onto the E03 just minutes from the terminal gate, crossing the Kelani River bridge into Colombo in <strong>35 to 45 minutes off-peak</strong> (or 50 to 60 minutes during weekday morning and evening rush hours).</p>
+
+      <!-- MIDDLE CTA BLOCK -->
+      <div style="margin: 36px 0; padding: 28px 24px; border-radius: 16px; background-color: #18181b; color: #f4f4f5; text-align: center; border: 1px solid #27272a;">
+        <p style="margin: 0 0 8px 0; font-size: 1.25rem; font-weight: 700; color: #ffffff;">Going Straight from CMB Airport to Your Hotel?</p>
+        <p style="margin: 0 0 20px 0; font-size: 0.95rem; color: #d4d4d8;">Enter your exact pickup and drop-off hotel in our live route calculator for an instant distance and vehicle fare estimate.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+          <a href="/#booking-form" style="background-color: #eab308; color: #111827; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.98rem; display: inline-block;">Book Now — Instant Fare Calculator</a>
+          <a href="/airport-transfer#booking-form" style="background-color: transparent; color: #eab308; border: 1px solid #eab308; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.98rem; display: inline-block;">View Airport Transfer Page</a>
+        </div>
+      </div>
+
+      <h2>Choosing the Right Vehicle for Your Katunayake Airport Taxi</h2>
+      <p>One of the most common mistakes travellers make when booking a <strong>Colombo airport transfer</strong> is picking a vehicle based only on seat count while forgetting about hard-shell suitcases, strollers, or surf bags. Here is how our five fleet categories match real-world luggage loads:</p>
+
+      <h3>Mini Cars &amp; Sedans for Solo Flyers and Couples (1–4 Passengers)</h3>
+      <ul>
+        <li><strong>Mini Car (Suzuki Wagon R, 1 to 3 passengers):</strong> A clean, air-conditioned city hatchback with a high roof. Best for solo travellers or couples carrying two medium suitcases on short hops to <a href="/taxi/negombo">Negombo</a> or central <a href="/taxi/colombo">Colombo</a>.</li>
+        <li><strong>Comfort Sedan (Toyota Prius / Toyota Axio, 1 to 4 passengers):</strong> Our most requested vehicle for couples and business travellers. Smooth hybrid suspension for highway cruising on the E01 Southern Expressway, comfortably fitting 2–3 passengers with two large suitcases and cabin bags.</li>
+      </ul>
+
+      <figure>
+        <img src="/vehicles/sedan/lktaxi-sedan-interior-seats.webp" alt="Air-conditioned Toyota Prius sedan used for private Colombo airport taxi transfers in Sri Lanka" width="1280" height="967" loading="lazy" decoding="async" />
+        <figcaption>Our Toyota Prius hybrid sedans are ideal for couples and solo travellers heading from Colombo Airport to city hotels or the south coast.</figcaption>
+      </figure>
+
+      <h3>Mini Vans &amp; Toyota KDH Vans for Families, Groups, and Surfboards (4–12 Passengers)</h3>
+      <ul>
+        <li><strong>Mini Van (Honda Freed, 4 to 6 passengers):</strong> Sliding doors and flexible rear space make this a great middle ground for small families with children, strollers, and 3–4 suitcases.</li>
+        <li><strong>Toyota KDH Flat Roof Van (5 to 9 passengers):</strong> The workhorse of Sri Lankan tourism. Dual-zone air conditioning, reclining seats, and deep cargo space that easily fits large family luggage or 6-foot surfboards heading to <a href="/taxi/airport-to-weligama">Weligama</a>, <a href="/taxi/airport-to-hikkaduwa">Hikkaduwa</a>, or <a href="/taxi/airport-to-mirissa">Mirissa</a>.</li>
+        <li><strong>Toyota KDH High Roof Van (7 to 12 passengers):</strong> Extra headroom and dedicated rear luggage capacity for larger groups, extended families, or multi-week island tours.</li>
+      </ul>
+
+      <figure>
+        <img src="/vehicles/kdh-flat-roof/lktaxi-kdh-flat-roof-side-view.webp" alt="Spacious Toyota KDH flat-roof van for family and group Katunayake airport taxi pickups with large luggage" width="1600" height="1200" loading="lazy" decoding="async" />
+        <figcaption>Traveling with family luggage or surfboards? A Toyota KDH van gives everyone proper legroom and air-conditioned comfort after a long flight.</figcaption>
+      </figure>
+
+      <h2>24/7 Airport Pickup Colombo &amp; Airport Drop Colombo: Practical Local Advice</h2>
+      <p>Whether you are arriving in Sri Lanka for the first time or wrapping up a two-week holiday, a few local details will save you stress on travel day.</p>
+
+      <h3>What to Expect During Your Airport Pickup in Colombo (CMB)</h3>
+      <ol>
+        <li><strong>Before you fly:</strong> Send us your flight number, arrival date, passenger count, and luggage details via our <a href="/#booking-form">online booking form</a> or WhatsApp (<a href="https://wa.me/94784207818" target="_blank" rel="noopener noreferrer">+94 78 420 7818</a>).</li>
+        <li><strong>After landing at CMB:</strong> Connect to the free airport Wi-Fi or pick up a local tourist SIM card in the arrivals concourse. Turn on WhatsApp to see your driver's message and live location.</li>
+        <li><strong>Meeting point:</strong> Walk past customs into the main public arrivals hall. Your driver will be standing by the passenger barrier with a printed nameboard.</li>
+        <li><strong>Child seats &amp; stops:</strong> Travelling with a baby or toddler? Ask for a child seat when booking so we can fit it before your driver leaves for the airport. If you want to stop for king coconuts, an ATM, or breakfast along the route, just let your driver know.</li>
+      </ol>
+
+      <h3>When to Leave for Your Airport Drop from Colombo City</h3>
+      <p>Planning an <strong>airport drop Colombo</strong> transfer requires timing around two things: Colombo's commuter traffic and airport security checks at Katunayake. Bandaranaike International Airport has security screening at the terminal entrance as well as before the departure gates, so airlines advise arriving <strong>at least 3 hours before international flights</strong>.</p>
+      <ul>
+        <li><strong>Off-peak departures (late night, midday, or weekends):</strong> Leave your Colombo hotel <strong>3.5 to 4 hours</strong> before your scheduled flight time. The E03 expressway drive takes roughly 35–45 minutes.</li>
+        <li><strong>Weekday rush-hour departures (7:00–9:00 AM and 4:30–7:00 PM):</strong> Leave central Colombo (Fort, Cinnamon Gardens, Kollupitiya, or Mount Lavinia) <strong>4 to 4.5 hours</strong> before departure, as reaching the Peliyagoda expressway entrance can add 20–25 minutes.</li>
+      </ul>
+
+      <h2>Connecting Your Airport Ride with Sri Lanka Tours &amp; Safaris</h2>
+      <p>Many visitors who book their initial <strong>airport pickup Colombo</strong> transfer with us also ask the same driver to stay with them for a multi-day itinerary, or book point-to-point transfers between beach and hill-country hotels later in the trip.</p>
+
+      <figure>
+        <img src="/lktaxi-sri-lanka-private-driver-tour-guide.webp" alt="English-speaking LKTaxi private driver with international tourists during a Sri Lanka airport transfer and tour" width="1600" height="1200" loading="lazy" decoding="async" />
+        <figcaption>Our English-speaking drivers handle both direct airport transfers and multi-day private tours across Sri Lanka.</figcaption>
+      </figure>
+
+      <p>If you are still mapping out the rest of your holiday, explore these services and guides:</p>
+      <ul>
+        <li><strong>Direct Airport Transfers:</strong> Compare vehicle options and expressway routes on our dedicated <a href="/airport-transfer">Colombo airport transfer page</a>, including direct rides from <a href="/taxi/airport-to-colombo">Colombo Airport to Colombo</a>, <a href="/taxi/airport-to-negombo">Negombo</a>, <a href="/taxi/airport-to-kandy">Kandy</a>, <a href="/taxi/airport-to-galle">Galle</a>, and <a href="/taxi/airport-to-ella">Ella</a>.</li>
+        <li><strong>Multi-Day Tours &amp; Chauffeurs:</strong> Browse customizable 5-day, 7-day, and 14-day itineraries on our <a href="/sri-lanka-tour-packages">private Sri Lanka tour packages</a> page, or <a href="/private-driver-sri-lanka">hire a private driver in Sri Lanka</a> for flexible day-by-day travel.</li>
+        <li><strong>Wildlife Safaris:</strong> Heading south? Combine your <a href="/taxi/airport-to-yala">Colombo Airport to Yala taxi</a> with our <a href="/yala-safari">Yala National Park private jeep safari</a> from Tissamaharama.</li>
+        <li><strong>More Travel Guides:</strong> Read our <a href="/blogs/taxi-sri-lanka-guide">complete Taxi Sri Lanka tourist guide</a>, compare options in our <a href="/blogs/taxi-lanka-srilankan-taxi">Srilankan taxi &amp; pricing breakdown</a>, or browse all 33+ destinations on our <a href="/routes">Sri Lanka taxi routes directory</a>.</li>
+        <li><strong>Custom Inquiries:</strong> Have a complex group schedule or late-night flight question? <a href="/#contact">Contact our 24/7 reservations team</a> directly.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions: Airport Taxi Colombo</h2>
+
+      <h3>How much does an airport taxi Colombo transfer cost from Bandaranaike Airport (CMB)?</h3>
+      <p>A private airport taxi from Bandaranaike International Airport (CMB) to Colombo city centre costs <strong>LKR 8,000 – 12,000</strong> (approx. 45–60 minutes via the E03 Katunayake Expressway). Transfers to nearby Negombo cost <strong>LKR 3,500 – 5,000</strong> (15–20 minutes), while long-distance transfers to Kandy are <strong>LKR 25,000 – 35,000</strong> and Galle or Unawatuna are <strong>LKR 22,000 – 28,000</strong>.</p>
+
+      <h3>Where will my driver meet me for an airport pickup in Colombo?</h3>
+      <p>Your LKTaxi driver waits inside the Bandaranaike International Airport (CMB) arrivals hall right opposite the baggage exit under the <em>"Welcome to Sri Lanka"</em> sign, holding a clear nameboard with your name. You will also receive your driver's WhatsApp number before you board your flight.</p>
+
+      <h3>What happens if my flight into Colombo Airport is delayed or lands at night?</h3>
+      <p>We operate 24/7 and track your incoming flight number in real time. If your flight is delayed or arrives at 2:00 AM, your driver adjusts the pickup time automatically at no extra waiting charge.</p>
+
+      <h3>How long does the taxi ride take from Katunayake Airport to Colombo Fort or Galle Face?</h3>
+      <p>Using the Colombo–Katunayake Expressway (E03), the 35 km drive from CMB Airport to central Colombo takes <strong>35 to 45 minutes</strong> during off-peak hours and around <strong>50 to 60 minutes</strong> during weekday rush hours (7:00–9:00 AM and 5:00–7:00 PM).</p>
+
+      <h3>How early should I book an airport drop from Colombo to CMB Airport?</h3>
+      <p>Airlines at Bandaranaike International Airport recommend arriving at the terminal at least 3 hours before international departure. Because the drive from Colombo takes 45–60 minutes, schedule your hotel pickup <strong>4 to 4.5 hours before your flight's departure time</strong>.</p>
+
+      <h3>Do I need to pay in advance when booking a Colombo airport taxi online?</h3>
+      <p>No advance payment is required for standard airport pickups and city drops. You receive a confirmed fixed quote before you travel and can pay your driver directly. For multi-day tours or special vehicle requests, a 25% advance may be requested to lock in the reservation.</p>
+
+      <!-- END CTA BLOCK -->
+      <div style="margin: 36px 0 12px 0; padding: 30px 24px; border-radius: 16px; background: linear-gradient(135deg, rgba(234, 179, 8, 0.16), rgba(234, 179, 8, 0.06)); border: 1px solid rgba(234, 179, 8, 0.4); text-align: center;">
+        <p style="margin: 0 0 8px 0; font-size: 1.3rem; font-weight: 700;">Ready to Book Your Airport Taxi in Colombo?</p>
+        <p style="margin: 0 0 20px 0; font-size: 0.96rem; opacity: 0.9;">Lock in your fixed-price CMB airport pickup or drop today. No advance payment needed for standard airport transfers.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+          <a href="/#booking-form" style="background-color: #eab308; color: #111827; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book Now — Online Booking Form</a>
+          <a href="https://wa.me/94784207818?text=Hello%20LKTaxi%2C%20I%20would%20like%20to%20book%20an%20Airport%20Taxi%20Colombo%20transfer." target="_blank" rel="noopener noreferrer" style="background-color: #25D366; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book via WhatsApp (+94 78 420 7818)</a>
+        </div>
+      </div>
+    `
+  },
+  {
     id: "6",
     title: "Taxi Lanka: The Complete Srilankan Taxi Guide for Tourists (2026)",
     slug: "taxi-lanka-srilankan-taxi",
@@ -38,7 +221,7 @@ export const blogsData: BlogPost[] = [
         <li><strong>Colombo Airport to Mirissa / Weligama:</strong> LKR 24,000 – 30,000 (approx. 2.5–3 hours)</li>
         <li><strong>Colombo Airport to Ella:</strong> LKR 38,000 – 48,000 (approx. 5–6 hours)</li>
       </ul>
-      <p><em>Note: Rates vary depending on vehicle size (car vs van) and specific hotel pickup or drop-off points.</em></p>
+      <p><em>Note: Rates vary depending on vehicle size (car vs van) and specific hotel pickup or drop-off points. Flying into Katunayake soon? Read our dedicated <a href="/blogs/airport-taxi-colombo">Airport Taxi Colombo pickup, E03 expressway &amp; fixed-fare guide</a>.</em></p>
 
       <h2>Top Srilankan Taxi Routes for Tourists</h2>
       <p>Here are some of the most frequently requested routes for private transfers:</p>
@@ -124,7 +307,7 @@ export const blogsData: BlogPost[] = [
           <tr><td><a href="/taxi/airport-to-kandy">Kandy</a></td><td>3.5 – 4 hours</td><td>LKR 25,000 – 35,000</td></tr>
         </tbody>
       </table>
-      <p>For other journeys across Sri Lanka, share your pickup point, destination, number of passengers and luggage, and our <strong>taxi Lanka</strong> team will send you a prompt quote on WhatsApp.</p>
+      <p>For other journeys across Sri Lanka, share your pickup point, destination, number of passengers and luggage, and our <strong>taxi Lanka</strong> team will send you a prompt quote on WhatsApp. You can also read our detailed <a href="/blogs/airport-taxi-colombo">Airport Taxi Colombo arrival &amp; transfer guide</a> for terminal pickup tips.</p>
 
       <h2>Taxi Vehicles: Choose the Right Size</h2>
       <ul>

@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useParams } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -19,6 +19,11 @@ import RoutesPage from "./pages/RoutesPage.tsx";
 
 const queryClient = new QueryClient();
 
+const BlogSlugRedirect = () => {
+  const { slug } = useParams<{ slug: string }>();
+  return <Navigate to={`/blogs/${slug ?? ""}`} replace />;
+};
+
 export const AppContent = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -33,6 +38,7 @@ export const AppContent = () => (
           <Route path="/taxi/:slug" element={<TaxiPageRouter />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
+          <Route path="/blog/:slug" element={<BlogSlugRedirect />} />
           <Route path="/airport-transfer" element={<AirportTransfer />} />
           <Route path="/yala-safari" element={<YalaSafari />} />
           <Route path="/private-driver-sri-lanka" element={<PrivateDriver />} />

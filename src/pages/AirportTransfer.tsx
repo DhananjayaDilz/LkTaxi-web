@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -53,7 +54,7 @@ const AirportTransfer = () => {
             <a href="/taxi/airport-to-ella" className="text-primary hover:underline">Ella</a>, 
             <a href="/taxi/airport-to-kandy" className="text-primary hover:underline">Kandy</a>, 
             and <a href="/taxi/airport-to-yala" className="text-primary hover:underline">Yala</a>. 
-            Check our fare calculator above for an instant estimate.
+            Check our fare calculator above for an instant estimate, or read our <Link to="/blogs/airport-taxi-colombo" className="text-primary hover:underline">complete Airport Taxi Colombo arrival, E03 expressway &amp; fixed-fare guide</Link>.
           </p>
         </section>
         <ServicesSection />

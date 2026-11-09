@@ -44,8 +44,8 @@ export function getPageSEO(pathname: string) {
     title = "Sri Lanka Tour Packages | Private Round Tours & Itineraries";
     description = "Discover the best of Sri Lanka with our carefully curated private tour itineraries. South Coast, Cultural Triangle, and more.";
   } else if (blog) {
-    title = `${blog.title} | LKTaxi`;
-    description = blog.excerpt;
+    title = blog.seoTitle || `${blog.title} | LKTaxi`;
+    description = blog.metaDescription || blog.excerpt;
   } else if (route) {
     const origin = route.from === "airport" ? "Colombo Airport" : formatLocationName(route.from);
     const dest = formatLocationName(route.to);
@@ -58,5 +58,22 @@ export function getPageSEO(pathname: string) {
     title = "Page Not Found | LKTaxi";
     description = "This page could not be found. Browse LKTaxi's Sri Lanka taxi services and travel guides.";
   }
-  return { title, description, canonical: SITE_URL + path, noindex, image: new URL(blog?.coverImage || "/sri-lanka-private-taxi-and-tours-hero.webp", SITE_URL).href, type: blog ? "article" : "website", blog: blog ? { title: blog.title, excerpt: blog.excerpt, date: blog.date, author: blog.author } : undefined };
+  return {
+    title,
+    description,
+    canonical: SITE_URL + path,
+    noindex,
+    image: new URL(blog?.coverImage || "/sri-lanka-private-taxi-and-tours-hero.webp", SITE_URL).href,
+    type: blog ? "article" : "website",
+    blog: blog
+      ? {
+          title: blog.title,
+          excerpt: blog.metaDescription || blog.excerpt,
+          date: blog.date,
+          dateModified: blog.dateModified || blog.date,
+          author: blog.author,
+          faqs: blog.faqs,
+        }
+      : undefined,
+  };
 }

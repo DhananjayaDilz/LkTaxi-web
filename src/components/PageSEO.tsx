@@ -24,13 +24,44 @@ export default function PageSEO() {
     // Clean up old page-specific structured data
     document.querySelectorAll('[data-page-schema]').forEach(el => el.remove());
 
-    // Add BlogPosting schema for blog pages
+    // Add BlogPosting and optional FAQPage schema for blog pages
     if (seo.blog) {
       const schema = document.createElement("script");
       schema.type = "application/ld+json";
       schema.dataset.pageSchema = "";
-      schema.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "BlogPosting", headline: seo.blog.title, description: seo.description, image: seo.image, datePublished: seo.blog.date, author: { "@type": "Organization", name: seo.blog.author }, mainEntityOfPage: seo.canonical });
+      schema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: seo.blog.title,
+        description: seo.description,
+        image: seo.image,
+        datePublished: seo.blog.date,
+        dateModified: seo.blog.dateModified,
+        author: { "@type": "Organization", name: seo.blog.author },
+        publisher: { "@id": "https://www.lktaxi.com/#organization" },
+        about: { "@id": "https://www.lktaxi.com/#taxiservice" },
+        mainEntityOfPage: seo.canonical,
+      });
       document.head.appendChild(schema);
+
+      if (seo.blog.faqs && seo.blog.faqs.length > 0) {
+        const faqSchema = document.createElement("script");
+        faqSchema.type = "application/ld+json";
+        faqSchema.dataset.pageSchema = "";
+        faqSchema.textContent = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: seo.blog.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.a,
+            },
+          })),
+        });
+        document.head.appendChild(faqSchema);
+      }
     }
 
     // Add BreadcrumbList schema for non-homepage pages
@@ -45,7 +76,7 @@ export default function PageSEO() {
         breadcrumbs.push({ name: "Travel Blog", url: seo.canonical });
       } else if (pathname.startsWith("/blogs/")) {
         breadcrumbs.push({ name: "Travel Blog", url: "https://www.lktaxi.com/blogs" });
-        breadcrumbs.push({ name: seo.title.replace(" | LKTaxi", ""), url: seo.canonical });
+        breadcrumbs.push({ name: seo.blog?.title || seo.title.replace(" | LKTaxi", ""), url: seo.canonical });
       } else {
         breadcrumbs.push({ name: seo.title.replace(" | LKTaxi", ""), url: seo.canonical });
       }

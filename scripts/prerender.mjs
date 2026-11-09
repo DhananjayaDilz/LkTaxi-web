@@ -28,7 +28,7 @@ for (const path of [...publicPaths, '/404']) {
       breadcrumbs.push({ name: 'Travel Blog', url: seo.canonical });
     } else if (path.startsWith('/blogs/')) {
       breadcrumbs.push({ name: 'Travel Blog', url: 'https://www.lktaxi.com/blogs' });
-      breadcrumbs.push({ name: seo.title.replace(' | LKTaxi', ''), url: seo.canonical });
+      breadcrumbs.push({ name: seo.blog?.title || seo.title.replace(' | LKTaxi', ''), url: seo.canonical });
     } else {
       breadcrumbs.push({ name: seo.title.replace(' | LKTaxi', ''), url: seo.canonical });
     }
@@ -38,8 +38,36 @@ for (const path of [...publicPaths, '/404']) {
 
   if (seo.blog) {
     const b = seo.blog;
-    const schema = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: b.title, description: b.excerpt, image: seo.image, datePublished: b.date, author: { '@type': 'Organization', name: b.author }, mainEntityOfPage: seo.canonical };
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: b.title,
+      description: b.excerpt,
+      image: seo.image,
+      datePublished: b.date,
+      dateModified: b.dateModified,
+      author: { '@type': 'Organization', name: b.author },
+      publisher: { '@id': 'https://www.lktaxi.com/#organization' },
+      about: { '@id': 'https://www.lktaxi.com/#taxiservice' },
+      mainEntityOfPage: seo.canonical
+    };
     html = html.replace('</head>', `<script type="application/ld+json" data-page-schema>${JSON.stringify(schema).replace(/</g, '\\u003c')}</script></head>`);
+
+    if (b.faqs && b.faqs.length > 0) {
+      const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: b.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a,
+          },
+        })),
+      };
+      html = html.replace('</head>', `<script type="application/ld+json" data-page-schema>${JSON.stringify(faqSchema).replace(/</g, '\\u003c')}</script></head>`);
+    }
   } else if (path === '/routes') {
     const schema = {
       '@context': 'https://schema.org',
