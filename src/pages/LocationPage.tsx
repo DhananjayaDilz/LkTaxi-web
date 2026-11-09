@@ -80,6 +80,17 @@ const LocationPage = () => {
                 </ul>
               </>
             )}
+
+            {(loc === "airport" || loc === "colombo") && (
+              <div className="mt-8 p-4 rounded-xl bg-primary/5 border border-primary/20">
+                <p className="m-0 text-sm">
+                  Planning an arrival or departure? Read our{" "}
+                  <Link to="/blogs/airport-taxi-colombo" className="text-primary font-semibold hover:underline">
+                    Airport Taxi Colombo guide: CMB arrivals pickup, E03 expressway &amp; fixed fares
+                  </Link>.
+                </p>
+              </div>
+            )}
           </div>
         </section>
 

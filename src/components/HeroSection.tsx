@@ -127,7 +127,7 @@ const HeroSection = ({ title, subtitle }: HeroSectionProps) => {
           {!title && <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-primary underline underline-offset-4">Read traveler reviews on Google</a>}
         </div>
 
-        <div className="max-w-4xl rounded-2xl bg-card shadow-2xl overflow-hidden sm:rounded-[1.5rem]">
+        <div id="booking-form" className="max-w-4xl rounded-2xl bg-card shadow-2xl overflow-hidden sm:rounded-[1.5rem] scroll-mt-24">
           {/* User-friendly Segmented Tab Navigation */}
           <div className="p-1.5 sm:p-2.5 bg-muted/40 border-b border-border">
             <div className="grid grid-cols-3 gap-1 sm:gap-2">

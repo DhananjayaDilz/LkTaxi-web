@@ -156,6 +156,15 @@ const RoutePage = () => {
                   <span className="text-primary">&rarr;</span>
                 </Link>
               </div>
+              {(from === "airport" || to === "airport" || from === "colombo" || to === "colombo") && (
+                <Link
+                  to="/blogs/airport-taxi-colombo"
+                  className="mt-3 p-3 bg-card rounded-lg border border-primary/30 hover:border-primary transition-colors text-sm font-medium flex items-center justify-between"
+                >
+                  <span>Airport Taxi Colombo: CMB Arrivals Pickup, E03 Expressway &amp; Fixed-Fare Guide</span>
+                  <span className="text-primary">&rarr;</span>
+                </Link>
+              )}
             </div>
 
             {relatedRoutes.length > 0 && (

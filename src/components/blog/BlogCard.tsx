@@ -14,8 +14,11 @@ export function BlogCard({ post }: BlogCardProps) {
       <Link to={`/blogs/${post.slug}`} className="relative block aspect-[16/9] overflow-hidden">
         <img
           src={post.coverImage}
-          alt={post.title}
+          alt={post.coverImageAlt || post.title}
           loading="lazy"
+          decoding="async"
+          width={1280}
+          height={720}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute top-4 left-4 flex gap-2 flex-wrap">

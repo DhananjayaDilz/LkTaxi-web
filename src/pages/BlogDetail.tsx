@@ -88,11 +88,12 @@ export default function BlogDetail() {
               <figure className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-lg mb-12 bg-gray-100">
                 <img
                   src={post.coverImage}
-                  alt={post.title}
+                  alt={post.coverImageAlt || post.title}
                   className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
                   loading="eager"
-                  width={1200}
-                  height={675}
+                  decoding="async"
+                  width={1280}
+                  height={720}
                 />
               </figure>
 
@@ -109,19 +110,26 @@ export default function BlogDetail() {
 
               {/* Call to Action: Book Your Trip */}
               <div className="mt-16 bg-primary/5 dark:bg-primary/10 rounded-3xl p-8 sm:p-12 text-center border border-primary/20">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">Ready to Explore Sri Lanka?</h3>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">Ready to Book Your Ride in Sri Lanka?</h2>
                 <p className="text-gray-600 dark:text-gray-300 md:text-lg mb-8 max-w-2xl mx-auto">
-                  Experience the beauty of Sri Lanka with our comfortable vehicles and professional drivers. Let LKTaxi make your journey unforgettable.
+                  Calculate your fare online or confirm your pickup directly with our team for air-conditioned vehicles and reliable local drivers.
                 </p>
-                <a 
-                  href={`https://wa.me/${WHATSAPP_NUMBER}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <Button size="lg" className="text-lg px-10 py-6 rounded-full shadow-xl hover:scale-105 transition-transform">
-                    Book Your Trip Now
-                  </Button>
-                </a>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Link to="/#booking-form">
+                    <Button size="lg" className="text-lg px-8 py-6 rounded-full shadow-xl hover:scale-105 transition-transform">
+                      Book Now Online
+                    </Button>
+                  </Link>
+                  <a 
+                    href={`https://wa.me/${WHATSAPP_NUMBER}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-primary/40 hover:bg-primary/10">
+                      WhatsApp Instant Quote
+                    </Button>
+                  </a>
+                </div>
               </div>
 
               {/* Share Story Section */}
