@@ -38,129 +38,685 @@
     <meta name="twitter:description" content="Book safe, affordable taxis and Yala safari jeeps in Sri Lanka. Airport transfers, day tours &amp; wildlife packages. WhatsApp us for an instant quote." />
     <meta name="twitter:image" content="https://www.lktaxi.com/sri-lanka-private-taxi-and-tours-hero.webp" />
 
-    <!-- Structured Data (JSON-LD) — Organization, TaxiService, WebSite -->
+    <!-- Structured Data (JSON-LD) — Advanced Local Business Schema Graph -->
     <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://www.lktaxi.com/#organization",
-    "name": "LKTaxi",
-    "url": "https://www.lktaxi.com",
-    "logo": "https://www.lktaxi.com/lktaxi-sri-lanka-taxi-booking-logo.webp",
-    "image": "https://www.lktaxi.com/sri-lanka-private-taxi-and-tours-hero.webp",
-    "description": "Sri Lanka's trusted private taxi and safari booking service for foreign tourists. Airport transfers, private tours, and Yala safari bookings island-wide.",
-    "telephone": "+94784207818",
-    "email": "info@lktaxi.com",
-    "foundingDate": "2024",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "379 Jayasirimawatha",
-      "addressLocality": "Tissamaharama",
-      "addressRegion": "Southern Province",
-      "addressCountry": "LK"
-    },
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "telephone": "+94784207818",
-        "contactType": "reservations",
-        "availableLanguage": [
-          "English",
-          "Sinhala"
-        ]
-      }
-    ],
-    "areaServed": {
-      "@type": "Country",
-      "name": "Sri Lanka"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "TaxiService",
-    "@id": "https://www.lktaxi.com/#taxiservice",
-    "name": "LKTaxi",
-    "provider": {
-      "@id": "https://www.lktaxi.com/#organization"
-    },
-    "url": "https://www.lktaxi.com",
-    "telephone": "+94784207818",
-    "description": "Safe and reliable taxi and Yala safari booking service in Sri Lanka for foreign tourists. Airport transfers, private tours, and wildlife safaris island-wide.",
-    "priceRange": "$$",
-    "serviceType": [
-      "Airport Transfer",
-      "Yala Safari Booking",
-      "Private Tours",
-      "Hotel Transfers",
-      "Day Tours",
-      "Multi-Day Tours"
-    ],
-    "areaServed": {
-      "@type": "Country",
-      "name": "Sri Lanka"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.lktaxi.com/#localbusiness",
+      "name": "LKTaxi",
+      "alternateName": "LK Taxi Sri Lanka",
+      "url": "https://www.lktaxi.com",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.lktaxi.com/#logo",
+        "url": "https://www.lktaxi.com/lktaxi-sri-lanka-taxi-booking-logo.webp",
+        "contentUrl": "https://www.lktaxi.com/lktaxi-sri-lanka-taxi-booking-logo.webp",
+        "caption": "LKTaxi - Sri Lanka Taxi Booking Logo",
+        "inLanguage": "en"
+      },
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "https://www.lktaxi.com/sri-lanka-private-taxi-and-tours-hero.webp",
+          "width": 1200,
+          "height": 630,
+          "caption": "LKTaxi private taxi and tours in Sri Lanka"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://www.lktaxi.com/lktaxi-reliable-airport-transfer-sri-lanka.webp",
+          "caption": "Reliable airport transfer service in Sri Lanka"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://www.lktaxi.com/lktaxi-comfortable-taxi-service-sri-lanka.webp",
+          "caption": "Comfortable taxi service across Sri Lanka"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://www.lktaxi.com/lktaxi-sri-lanka-private-driver-tour-guide.webp",
+          "caption": "English-speaking private driver and tour guide"
+        }
       ],
-      "opens": "00:00",
-      "closes": "23:59"
+      "description": "Sri Lanka's trusted private taxi and safari booking service for foreign tourists. 24/7 airport transfers from Bandaranaike International Airport (CMB), private tours, Yala National Park safari jeep bookings, and island-wide chauffeur-driven travel with English-speaking drivers.",
+      "telephone": "+94784207818",
+      "email": "info@lktaxi.com",
+      "foundingDate": "2024",
+      "priceRange": "$$",
+      "currenciesAccepted": "LKR, USD",
+      "paymentAccepted": "Cash, Bank Transfer",
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://www.lktaxi.com/#address",
+        "streetAddress": "379 Jayasirimawatha",
+        "addressLocality": "Tissamaharama",
+        "addressRegion": "Southern Province",
+        "postalCode": "82600",
+        "addressCountry": {
+          "@type": "Country",
+          "name": "Sri Lanka",
+          "sameAs": "https://en.wikipedia.org/wiki/Sri_Lanka"
+        }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.277566,
+        "longitude": 81.286032
+      },
+      "hasMap": "https://www.google.com/maps?cid=14061754606776102827",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+94784207818",
+          "contactType": "reservations",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Sri Lanka"
+          },
+          "availableLanguage": ["English", "Sinhala"],
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+94784207818",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "availableLanguage": ["English", "Sinhala"]
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Sri Lanka",
+          "sameAs": "https://en.wikipedia.org/wiki/Sri_Lanka"
+        },
+        {
+          "@type": "City",
+          "name": "Colombo",
+          "sameAs": "https://en.wikipedia.org/wiki/Colombo"
+        },
+        {
+          "@type": "City",
+          "name": "Kandy",
+          "sameAs": "https://en.wikipedia.org/wiki/Kandy"
+        },
+        {
+          "@type": "City",
+          "name": "Galle",
+          "sameAs": "https://en.wikipedia.org/wiki/Galle"
+        },
+        {
+          "@type": "Place",
+          "name": "Bandaranaike International Airport",
+          "sameAs": "https://en.wikipedia.org/wiki/Bandaranaike_International_Airport"
+        },
+        {
+          "@type": "Place",
+          "name": "Yala National Park",
+          "sameAs": "https://en.wikipedia.org/wiki/Yala_National_Park"
+        }
+      ],
+      "knowsLanguage": ["en", "si"],
+      "knowsAbout": [
+        "Sri Lanka taxi services",
+        "Airport transfers in Sri Lanka",
+        "Yala National Park safari",
+        "Sri Lanka tourism",
+        "Private driver hire Sri Lanka"
+      ],
+      "slogan": "Safe, Affordable Taxis & Yala Safari Jeeps in Sri Lanka",
+      "founder": [
+        {
+          "@type": "Person",
+          "@id": "https://www.lktaxi.com/#founder",
+          "name": "T.A Uddeepana",
+          "jobTitle": "Founder & Managing Director",
+          "image": "https://www.lktaxi.com/lktaxi-founder-sri-lanka-tour-expert.webp",
+          "description": "Founder of LKTaxi, leading the company with a strong vision of providing reliable and professional taxi services across Sri Lanka.",
+          "worksFor": { "@id": "https://www.lktaxi.com/#localbusiness" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.lktaxi.com/#cofounder",
+          "name": "Dhanajaya Wijerathna",
+          "jobTitle": "Co-Founder & Operations Manager",
+          "image": "https://www.lktaxi.com/lktaxi-manager-sri-lanka-taxi-operations.webp",
+          "description": "Manages daily operations at LKTaxi, ensuring every ride is organized smoothly and efficiently.",
+          "worksFor": { "@id": "https://www.lktaxi.com/#localbusiness" }
+        }
+      ],
+      "sameAs": [
+        "https://maps.app.goo.gl/KE7DeDT9PN9muG446",
+        "https://www.google.com/maps?cid=14061754606776102827",
+        "https://www.tripadvisor.com/UserReviewEdit-g1102395-d34281680-Lktaxi-Tissamaharama_Southern_Province.html"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "https://www.lktaxi.com/#services",
+        "name": "LKTaxi Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Airport Transfer Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "TaxiService",
+                  "name": "Colombo Airport to Negombo Taxi",
+                  "description": "Private taxi transfer from Bandaranaike International Airport (CMB) to Negombo. 15-20 minutes drive with meet-and-greet at arrivals hall.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "areaServed": { "@type": "City", "name": "Negombo" },
+                  "serviceType": "Airport Transfer"
+                },
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "LKR",
+                  "minPrice": 3500,
+                  "maxPrice": 5000
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "TaxiService",
+                  "name": "Colombo Airport to Colombo City Taxi",
+                  "description": "Private airport taxi from CMB Airport to Colombo city center via E03 Katunayake Expressway. 45-60 minutes drive.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "areaServed": { "@type": "City", "name": "Colombo" },
+                  "serviceType": "Airport Transfer"
+                },
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "LKR",
+                  "minPrice": 8000,
+                  "maxPrice": 12000
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "TaxiService",
+                  "name": "Colombo Airport to Kandy Taxi",
+                  "description": "Private taxi transfer from Bandaranaike International Airport to Kandy, the hill capital. 3.5-4 hours scenic drive.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "areaServed": { "@type": "City", "name": "Kandy" },
+                  "serviceType": "Airport Transfer"
+                },
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "LKR",
+                  "minPrice": 25000,
+                  "maxPrice": 35000
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "TaxiService",
+                  "name": "Colombo Airport to Galle Taxi",
+                  "description": "Private taxi from CMB Airport to historic Galle Fort via Southern Expressway. 2.5 hours drive.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "areaServed": { "@type": "City", "name": "Galle" },
+                  "serviceType": "Airport Transfer"
+                },
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "LKR",
+                  "minPrice": 22000,
+                  "maxPrice": 28000
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "TaxiService",
+                  "name": "Colombo Airport to Ella Taxi",
+                  "description": "Private taxi from Bandaranaike Airport to Ella hill country. 5-6 hours scenic drive through tea plantations.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "areaServed": { "@type": "City", "name": "Ella" },
+                  "serviceType": "Airport Transfer"
+                },
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "LKR",
+                  "minPrice": 38000,
+                  "maxPrice": 48000
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Safari & Tour Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "TouristTrip",
+                  "name": "Yala National Park Half-Day Safari",
+                  "description": "Private 4x4 jeep safari in Yala National Park with expert local trackers. Morning or afternoon departures from Tissamaharama.",
+                  "touristType": "Wildlife enthusiast",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "itinerary": {
+                    "@type": "Place",
+                    "name": "Yala National Park",
+                    "sameAs": "https://en.wikipedia.org/wiki/Yala_National_Park"
+                  }
+                },
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "LKR",
+                  "minPrice": 15000,
+                  "maxPrice": 16000,
+                  "unitText": "per jeep"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "TouristTrip",
+                  "name": "Yala National Park Full-Day Safari",
+                  "description": "Full-day private 4x4 jeep safari in Yala National Park. Complete wildlife experience with extended game drives and leopard tracking.",
+                  "touristType": "Wildlife enthusiast",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" }
+                },
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "LKR",
+                  "minPrice": 30000,
+                  "maxPrice": 32000,
+                  "unitText": "per jeep"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Sri Lanka Private Day Tours",
+                  "description": "Customizable private day tours across Sri Lanka with experienced English-speaking driver-guides. Visit Sigiriya, Kandy, Galle, Ella, and more.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "serviceType": "Private Tour"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Hire a Private Driver in Sri Lanka",
+                  "description": "Rent a car with an experienced English-speaking chauffeur for flexible day-by-day travel across Sri Lanka. Sedans and vans available.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "serviceType": "Private Driver"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Sri Lanka Multi-Day Tour Packages",
+                  "description": "Customizable 3-14 day tour itineraries covering Sri Lanka's Cultural Triangle, Hill Country, and Southern Coast with comfortable vehicles.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "serviceType": "Multi-Day Tour"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "potentialAction": [
+        {
+          "@type": "ReserveAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.lktaxi.com/#booking-form",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ],
+            "inLanguage": "en"
+          },
+          "result": {
+            "@type": "Reservation",
+            "name": "Taxi Booking"
+          }
+        },
+        {
+          "@type": "CommunicateAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://wa.me/94784207818",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          },
+          "name": "WhatsApp Booking"
+        }
+      ]
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "6.2800",
-      "longitude": "81.2858"
+
+    {
+      "@type": "TaxiService",
+      "@id": "https://www.lktaxi.com/#taxiservice",
+      "name": "LKTaxi - Sri Lanka Private Taxi Service",
+      "alternateName": "LK Taxi",
+      "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+      "url": "https://www.lktaxi.com",
+      "telephone": "+94784207818",
+      "description": "24/7 private taxi service in Sri Lanka. Airport transfers from Bandaranaike International Airport (CMB), island-wide transfers with English-speaking drivers, Yala safari jeep bookings, and multi-day tour packages for foreign tourists.",
+      "serviceType": [
+        "Airport Transfer",
+        "Yala Safari Booking",
+        "Private Tours",
+        "Hotel Transfers",
+        "Day Tours",
+        "Multi-Day Tours",
+        "Private Driver Hire",
+        "Wildlife Safari"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://www.lktaxi.com",
+        "servicePhone": "+94784207818",
+        "availableLanguage": ["English", "Sinhala"]
+      }
     },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Taxi & Safari Services",
+
+    {
+      "@type": "WebSite",
+      "@id": "https://www.lktaxi.com/#website",
+      "name": "LKTaxi",
+      "alternateName": "LK Taxi Sri Lanka",
+      "url": "https://www.lktaxi.com",
+      "publisher": { "@id": "https://www.lktaxi.com/#localbusiness" },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://www.lktaxi.com"
+      }
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://www.lktaxi.com/#webpage",
+      "url": "https://www.lktaxi.com/",
+      "name": "Sri Lanka Taxi Booking | Airport Transfers, Tours & Yala Safari | LKTaxi",
+      "description": "Book safe, affordable taxis and Yala safari jeeps in Sri Lanka. Airport transfers, day tours & wildlife packages for foreign tourists. WhatsApp booking available 24/7.",
+      "isPartOf": { "@id": "https://www.lktaxi.com/#website" },
+      "about": { "@id": "https://www.lktaxi.com/#localbusiness" },
+      "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.lktaxi.com/sri-lanka-private-taxi-and-tours-hero.webp"
+      },
+      "breadcrumb": { "@id": "https://www.lktaxi.com/#breadcrumb-home" }
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.lktaxi.com/#breadcrumb-home",
       "itemListElement": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Colombo Airport Transfer",
-            "description": "Private taxi from Bandaranaike International Airport to any destination in Sri Lanka"
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.lktaxi.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Airport Transfer",
+          "item": "https://www.lktaxi.com/airport-transfer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tour Packages",
+          "item": "https://www.lktaxi.com/sri-lanka-tour-packages"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Yala Safari",
+          "item": "https://www.lktaxi.com/yala-safari"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Hire Private Driver",
+          "item": "https://www.lktaxi.com/private-driver-sri-lanka"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Routes",
+          "item": "https://www.lktaxi.com/routes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Blog",
+          "item": "https://www.lktaxi.com/blogs"
+        }
+      ]
+    },
+
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://www.lktaxi.com/#navigation",
+      "name": "Main Navigation",
+      "url": "https://www.lktaxi.com",
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Airport Transfer",
+          "url": "https://www.lktaxi.com/airport-transfer"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Sri Lanka Tour Packages",
+          "url": "https://www.lktaxi.com/sri-lanka-tour-packages"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Yala Safari",
+          "url": "https://www.lktaxi.com/yala-safari"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Hire Private Driver",
+          "url": "https://www.lktaxi.com/private-driver-sri-lanka"
+        },
+        {
+          "@type": "WebPage",
+          "name": "All Routes",
+          "url": "https://www.lktaxi.com/routes"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Blog",
+          "url": "https://www.lktaxi.com/blogs"
+        }
+      ]
+    },
+
+    {
+      "@type": "ItemList",
+      "@id": "https://www.lktaxi.com/#vehicle-fleet",
+      "name": "LKTaxi Vehicle Fleet",
+      "description": "Air-conditioned vehicles available for taxi and tour bookings in Sri Lanka",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Vehicle",
+            "name": "Suzuki Wagon R - Mini Car",
+            "description": "Compact and economical, perfect for short city rides and airport transfers for solo travelers or couples. Air-conditioned.",
+            "seatingCapacity": 3,
+            "vehicleConfiguration": "Mini Car",
+            "fuelType": "Petrol",
+            "image": "https://www.lktaxi.com/suzuki-wagon-r-mini-taxi-sri-lanka.webp"
           }
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Yala Safari Booking",
-            "description": "Private and shared 4x4 jeep safari tours in Yala National Park"
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Vehicle",
+            "name": "Toyota Prius - Comfort Sedan",
+            "description": "Comfortable hybrid sedan ideal for couples and business travellers. Spacious trunk for luggage and smooth highway ride quality.",
+            "seatingCapacity": 4,
+            "vehicleConfiguration": "Sedan",
+            "fuelType": "Hybrid",
+            "image": "https://www.lktaxi.com/toyota-prius-sedan-taxi-sri-lanka.webp"
           }
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Private Day Tours",
-            "description": "Customized private day tours across Sri Lanka with experienced drivers"
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Vehicle",
+            "name": "Honda Freed - Mini Van",
+            "description": "Spacious mini van for group travel with sliding doors and flexible rear space. Air-conditioned with ample luggage space.",
+            "seatingCapacity": 6,
+            "vehicleConfiguration": "Mini Van",
+            "fuelType": "Petrol",
+            "image": "https://www.lktaxi.com/honda-freed-mini-van-taxi-sri-lanka.webp"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Vehicle",
+            "name": "Toyota KDH Flat Roof Van",
+            "description": "The workhorse of Sri Lankan tourism. Dual-zone air conditioning, reclining seats, and deep cargo space for large family luggage or surfboards.",
+            "seatingCapacity": 9,
+            "vehicleConfiguration": "Van",
+            "fuelType": "Diesel",
+            "image": "https://www.lktaxi.com/toyota-kdh-flat-roof-van-sri-lanka.webp"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Vehicle",
+            "name": "Toyota KDH High Roof Van",
+            "description": "Extra spacious high-roof van for larger groups, extended families, or multi-week island tours. Maximum comfort and headroom.",
+            "seatingCapacity": 12,
+            "vehicleConfiguration": "Van",
+            "fuelType": "Diesel",
+            "image": "https://www.lktaxi.com/toyota-kdh-high-roof-van-sri-lanka.webp"
           }
         }
       ]
+    },
+
+    {
+      "@type": "ItemList",
+      "@id": "https://www.lktaxi.com/#safari-jeeps",
+      "name": "Yala Safari Jeep Fleet",
+      "description": "4x4 safari jeeps for Yala National Park wildlife tours",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Vehicle",
+            "name": "Mahindra Bolero 4x4 Safari Jeep",
+            "description": "Reliable and comfortable 4x4 safari jeep, perfectly suited for the rugged terrain of Yala National Park.",
+            "seatingCapacity": 6,
+            "vehicleConfiguration": "4x4 Jeep",
+            "image": "https://www.lktaxi.com/mahindra-bolero-safari-jeep-yala.webp"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Vehicle",
+            "name": "Toyota Hilux 4x4 Safari Jeep",
+            "description": "Premium 4x4 safari experience with extra comfort and elevated seating for superior wildlife viewing.",
+            "seatingCapacity": 6,
+            "vehicleConfiguration": "4x4 Jeep",
+            "image": "https://www.lktaxi.com/toyota-hilux-safari-jeep-yala.webp"
+          }
+        }
+      ]
+    },
+
+    {
+      "@type": "TouristDestination",
+      "@id": "https://www.lktaxi.com/#destination-sri-lanka",
+      "name": "Sri Lanka",
+      "description": "Tropical island nation in the Indian Ocean with ancient ruins, UNESCO heritage sites, tea plantations, pristine beaches, and world-renowned national parks including Yala.",
+      "touristType": ["Adventure Tourist", "Cultural Tourist", "Wildlife Enthusiast", "Beach Tourist"],
+      "includesAttraction": [
+        {
+          "@type": "TouristAttraction",
+          "name": "Yala National Park",
+          "description": "Sri Lanka's most visited and second-largest national park, famous for the highest leopard density in the world.",
+          "sameAs": "https://en.wikipedia.org/wiki/Yala_National_Park"
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Sigiriya Rock Fortress",
+          "description": "UNESCO World Heritage ancient rock fortress and palace ruins dating to the 5th century.",
+          "sameAs": "https://en.wikipedia.org/wiki/Sigiriya"
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Temple of the Sacred Tooth Relic, Kandy",
+          "description": "UNESCO World Heritage Buddhist temple housing the relic of the tooth of the Buddha.",
+          "sameAs": "https://en.wikipedia.org/wiki/Temple_of_the_Tooth"
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Galle Fort",
+          "description": "UNESCO World Heritage Dutch colonial fortress on the southwestern tip of Sri Lanka.",
+          "sameAs": "https://en.wikipedia.org/wiki/Galle_Fort"
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Nine Arches Bridge, Ella",
+          "description": "Iconic colonial-era railway viaduct surrounded by lush tea plantations in Sri Lanka's hill country.",
+          "sameAs": "https://en.wikipedia.org/wiki/Nine_Arch_Bridge"
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Mirissa Beach",
+          "description": "Popular south coast beach town known for whale watching, surfing, and nightlife.",
+          "sameAs": "https://en.wikipedia.org/wiki/Mirissa"
+        }
+      ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://www.lktaxi.com/#website",
-    "name": "LKTaxi",
-    "url": "https://www.lktaxi.com",
-    "publisher": {
-      "@id": "https://www.lktaxi.com/#organization"
-    }
-  }
-]
+  ]
+}
     </script>
 
     <!-- Google tag (gtag.js) -->
