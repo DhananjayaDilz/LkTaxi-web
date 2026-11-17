@@ -176,7 +176,7 @@ function CustomRideForm() {
 
   const handleSend = () => {
     const msg = `🚕 *Custom Ride Request - LKTaxi*\n\n👤 Name: ${name}\n📍 Pickup: ${pickup}\n📍 Destination: ${destination}\n🚗 Vehicle: ${vehicle}\n💬 Message: ${message}`;
-    trackContact("whatsapp", "HeroSection");
+    trackContact("whatsapp", "HeroSection_CustomRide");
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 
@@ -214,7 +214,7 @@ function BookTourForm() {
 
   const handleBook = () => {
     const msg = `🗺️ *Book Tour - LKTaxi*\n\n📅 Start: ${format(startDate, "PPP")}\n📅 End: ${format(endDate, "PPP")}\n📆 Days: ${days}\n🚗 Vehicle: ${vehicle}${pricePerDay ? `\n💰 Price/Day: LKR ${pricePerDay.toLocaleString()}\n💰 Total: LKR ${totalPrice?.toLocaleString()}` : ""}`;
-    trackContact("whatsapp", "HeroSection");
+    trackContact("whatsapp", "HeroSection_BookTour");
     window.open(generateWhatsAppURL(msg), "_blank");
   };
 

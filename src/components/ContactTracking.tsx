@@ -6,8 +6,9 @@ export default function ContactTracking() {
     const listener = (event: MouseEvent) => {
       const anchor = (event.target as Element)?.closest?.("a");
       if (!anchor) return;
-      if (anchor.href.startsWith("https://wa.me/")) trackContact("whatsapp", "link");
-      else if (anchor.href.startsWith("tel:")) trackContact("phone", "link");
+      const source = anchor.dataset.trackSource || "link";
+      if (anchor.href.startsWith("https://wa.me/")) trackContact("whatsapp", source);
+      else if (anchor.href.startsWith("tel:")) trackContact("phone", source);
     };
     document.addEventListener("click", listener);
     return () => document.removeEventListener("click", listener);
