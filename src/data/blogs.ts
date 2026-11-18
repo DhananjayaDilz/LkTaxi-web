@@ -2,6 +2,84 @@ import { BlogPost } from "../types/blog";
 
 export const blogsData: BlogPost[] = [
   {
+    id: "8",
+    title: "Colombo Airport to City: Best Ways to Reach Your Hotel (2026)",
+    seoTitle: "Colombo Airport to City: Best Transport Options (2026)",
+    metaDescription: "Landing at Colombo Airport (CMB)? Compare the best ways to get from Bandaranaike Airport to Colombo city, travel times and a quick arrival checklist.",
+    slug: "colombo-airport-to-city-guide",
+    excerpt: "Flying into Bandaranaike International Airport (CMB)? Here is the quickest way to plan your ride from Colombo Airport to the city or your hotel.",
+    coverImage: "/colombo-airport-cmb-arrivals-terminal.webp",
+    coverImageAlt: "Bandaranaike International Airport (CMB) arrivals terminal in Katunayake with a taxi waiting to take tourists from Colombo Airport to the city",
+    gallery: [],
+    author: "LKTaxi Travel Team",
+    date: "2026-11-18",
+    dateModified: "2026-11-18",
+    readTime: "2 min read",
+    tags: ["Colombo Airport", "Airport Pickup", "Airport Transfer", "Sri Lanka Arrival Guide"],
+    faqs: [
+      {
+        q: "How far is Colombo Airport from Colombo city?",
+        a: "Bandaranaike International Airport (CMB) is in Katunayake, about 35 km north of Colombo. The drive takes 35 to 60 minutes via the E03 Katunayake Expressway, depending on traffic."
+      },
+      {
+        q: "What is the best way to get from Colombo Airport to the city?",
+        a: "A pre-booked private taxi is the easiest option. Your driver meets you inside the arrivals hall with a name board, the fare is fixed in advance, and your flight is tracked in case of delays."
+      },
+      {
+        q: "Can I get a taxi from Colombo Airport at night?",
+        a: "Yes. The airport operates 24/7 and LKTaxi airport pickups run around the clock, including early-morning and late-night arrivals."
+      }
+    ],
+    content: `
+      <p>Bandaranaike International Airport (CMB) is not in Colombo. It is in <strong>Katunayake, about 35 km north of the city</strong>. Planning how to get from <strong>Colombo Airport to the city</strong> before you land makes your first hour in Sri Lanka easy.</p>
+
+      <h2>Colombo Airport to City: Your Options</h2>
+      <table>
+        <thead><tr><th>Option</th><th>Time to Colombo</th><th>Best for</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Pre-booked private taxi</strong></td><td>35 – 60 min</td><td>Families, night arrivals, long trips</td></tr>
+          <tr><td>Airport taxi counter</td><td>35 – 60 min</td><td>Travellers without a booking</td></tr>
+          <tr><td>Ride-hailing apps</td><td>35 – 60 min + walk to pickup zone</td><td>Solo travellers with mobile data</td></tr>
+          <tr><td>Public bus</td><td>90 – 120 min</td><td>Tight budgets, light luggage</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why Pre-Book Your Airport Pickup?</h2>
+      <ul>
+        <li>Your driver waits <strong>inside the arrivals hall</strong> with your name board.</li>
+        <li><strong>Fixed fare</strong> agreed before you fly, with expressway tolls and parking included.</li>
+        <li>Your <strong>flight is tracked</strong>, so delays cost you nothing extra.</li>
+        <li>No local SIM or mobile data needed to find your ride.</li>
+      </ul>
+
+      <h2>Quick Arrival Checklist</h2>
+      <ol>
+        <li>Apply for your Sri Lanka ETA online before you fly.</li>
+        <li>Clear immigration, collect your bags and exit customs.</li>
+        <li>Pick up a SIM card or cash at the arrivals hall counters if needed.</li>
+        <li>Meet your driver and head to the city on the E03 Expressway.</li>
+      </ol>
+
+      <p>Going beyond Colombo? See our <a href="/taxi/airport-to-colombo">Airport to Colombo</a>, <a href="/taxi/airport-to-negombo">Negombo</a>, <a href="/taxi/airport-to-kandy">Kandy</a> and <a href="/taxi/airport-to-galle">Galle</a> transfers, or read the full <a href="/blogs/airport-taxi-colombo">airport taxi Colombo guide</a>.</p>
+
+      <h2>FAQs</h2>
+      <h3>How far is Colombo Airport from Colombo city?</h3>
+      <p>About 35 km. The drive takes 35 to 60 minutes via the E03 Katunayake Expressway, depending on traffic.</p>
+      <h3>What is the best way to get from Colombo Airport to the city?</h3>
+      <p>A pre-booked private taxi. Your driver meets you inside arrivals, the fare is fixed and your flight is tracked.</p>
+      <h3>Can I get a taxi from Colombo Airport at night?</h3>
+      <p>Yes. The airport is open 24/7 and our <a href="/airport-transfer">Colombo airport transfer</a> service runs around the clock.</p>
+
+      <div style="margin: 32px 0 8px 0; padding: 24px; border-radius: 16px; background: linear-gradient(135deg, rgba(234, 179, 8, 0.14), rgba(234, 179, 8, 0.05)); border: 1px solid rgba(234, 179, 8, 0.35); text-align: center;">
+        <p style="margin: 0 0 16px 0; font-size: 1.2rem; font-weight: 700;">Book Your Colombo Airport Pickup</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+          <a href="/#booking-form" style="background-color: #eab308; color: #111827; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block;">Get Instant Fare</a>
+          <a href="https://wa.me/94784207818?text=Hello%20LKTaxi%2C%20I%20would%20like%20to%20book%20a%20Colombo%20Airport%20pickup." target="_blank" rel="noopener noreferrer" data-track-source="BlogAirportCityCTA" style="background-color: #25D366; color: #ffffff; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block;">WhatsApp Us</a>
+        </div>
+      </div>
+    `
+  },
+  {
     id: "7",
     title: "Airport Taxi Colombo: 24/7 Fixed-Price Pickup & Drop from Bandaranaike Airport (CMB)",
     seoTitle: "Airport Taxi Colombo | Book Colombo Airport Transfer",
@@ -149,7 +227,7 @@ export const blogsData: BlogPost[] = [
         <li><strong>Direct Airport Transfers:</strong> Compare vehicle options and expressway routes on our dedicated <a href="/airport-transfer">Colombo airport transfer page</a>, including direct rides from <a href="/taxi/airport-to-colombo">Colombo Airport to Colombo</a>, <a href="/taxi/airport-to-negombo">Negombo</a>, <a href="/taxi/airport-to-kandy">Kandy</a>, <a href="/taxi/airport-to-galle">Galle</a>, and <a href="/taxi/airport-to-ella">Ella</a>.</li>
         <li><strong>Multi-Day Tours &amp; Chauffeurs:</strong> Browse customizable 5-day, 7-day, and 14-day itineraries on our <a href="/sri-lanka-tour-packages">private Sri Lanka tour packages</a> page, or <a href="/private-driver-sri-lanka">hire a private driver in Sri Lanka</a> for flexible day-by-day travel.</li>
         <li><strong>Wildlife Safaris:</strong> Heading south? Combine your <a href="/taxi/airport-to-yala">Colombo Airport to Yala taxi</a> with our <a href="/yala-safari">Yala National Park private jeep safari</a> from Tissamaharama.</li>
-        <li><strong>More Travel Guides:</strong> Read our <a href="/blogs/taxi-sri-lanka-guide">complete Taxi Sri Lanka tourist guide</a>, compare options in our <a href="/blogs/taxi-lanka-srilankan-taxi">Srilankan taxi &amp; pricing breakdown</a>, or browse all 33+ destinations on our <a href="/routes">Sri Lanka taxi routes directory</a>.</li>
+        <li><strong>More Travel Guides:</strong> Compare your <a href="/blogs/colombo-airport-to-city-guide">Colombo Airport to city transport options</a>, read our <a href="/blogs/taxi-sri-lanka-guide">complete Taxi Sri Lanka tourist guide</a>, compare options in our <a href="/blogs/taxi-lanka-srilankan-taxi">Srilankan taxi &amp; pricing breakdown</a>, or browse all 33+ destinations on our <a href="/routes">Sri Lanka taxi routes directory</a>.</li>
         <li><strong>Custom Inquiries:</strong> Have a complex group schedule or late-night flight question? <a href="/#contact">Contact our 24/7 reservations team</a> directly.</li>
       </ul>
 
