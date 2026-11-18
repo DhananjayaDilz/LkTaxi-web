@@ -1,4 +1,4 @@
-import { trackContact } from "@/lib/analytics";
+import { trackContact, trackWhatsAppMenuOpen } from "@/lib/analytics";
 import { WHATSAPP_NUMBER } from "@/data/pricing";
 import {
   DropdownMenu,
@@ -20,15 +20,15 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 const WhatsAppButton = () => {
-  const handleOptionClick = (message: string) => {
+  const handleOptionClick = (message: string, source: string) => {
     const encodedMessage = encodeURIComponent(message);
-    trackContact("whatsapp", "WhatsAppButton");
+    trackContact("whatsapp", source);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      <DropdownMenu>
+      <DropdownMenu onOpenChange={(open) => { if (open) trackWhatsAppMenuOpen("WhatsAppButton"); }}>
         <DropdownMenuTrigger asChild>
           <button
             aria-label="Chat on WhatsApp"
@@ -38,15 +38,15 @@ const WhatsAppButton = () => {
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" sideOffset={12} className="w-48 bg-white/95 backdrop-blur-sm border-gray-200 shadow-xl">
-          <DropdownMenuItem onClick={() => handleOptionClick("I would like to book a tour")} className="cursor-pointer gap-3 py-3">
+          <DropdownMenuItem onClick={() => handleOptionClick("I would like to book a tour", "WhatsAppButton_BookTour")} className="cursor-pointer gap-3 py-3">
             <Map className="w-4 h-4 text-[#25D366]" />
             <span className="font-medium text-gray-700">Book Tour</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleOptionClick("I would like to book a taxi")} className="cursor-pointer gap-3 py-3">
+          <DropdownMenuItem onClick={() => handleOptionClick("I would like to book a taxi", "WhatsAppButton_BookTaxi")} className="cursor-pointer gap-3 py-3">
             <Car className="w-4 h-4 text-[#25D366]" />
             <span className="font-medium text-gray-700">Book Taxi</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleOptionClick("Hi, I have an inquiry")} className="cursor-pointer gap-3 py-3">
+          <DropdownMenuItem onClick={() => handleOptionClick("Hi, I have an inquiry", "WhatsAppButton_Other")} className="cursor-pointer gap-3 py-3">
             <HelpCircle className="w-4 h-4 text-[#25D366]" />
             <span className="font-medium text-gray-700">Other</span>
           </DropdownMenuItem>

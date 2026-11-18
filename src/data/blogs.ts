@@ -136,7 +136,7 @@ export const blogsData: BlogPost[] = [
         <p style="margin: 0 0 20px 0; font-size: 0.95rem; opacity: 0.85;">Check instant fixed fares for sedans, mini vans, and KDH vans, including live flight tracking and arrivals hall meet-and-greet.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
           <a href="/#booking-form" style="background-color: #eab308; color: #111827; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.98rem; display: inline-block;">Book Now — Online Fare Calculator</a>
-          <a href="https://wa.me/94784207818?text=Hello%20LKTaxi%2C%20I%20would%20like%20to%20book%20an%20Airport%20Taxi%20Colombo%20transfer." target="_blank" rel="noopener noreferrer" style="background-color: #25D366; color: #ffffff; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.98rem; display: inline-block;">WhatsApp +94 78 420 7818</a>
+          <a href="https://wa.me/94784207818?text=Hello%20LKTaxi%2C%20I%20would%20like%20to%20book%20an%20Airport%20Taxi%20Colombo%20transfer." target="_blank" rel="noopener noreferrer" data-track-source="BlogTopCTA" style="background-color: #25D366; color: #ffffff; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.98rem; display: inline-block;">WhatsApp +94 78 420 7818</a>
         </div>
       </div>
 
@@ -257,7 +257,7 @@ export const blogsData: BlogPost[] = [
         <p style="margin: 0 0 20px 0; font-size: 0.96rem; opacity: 0.9;">Lock in your fixed-price CMB airport pickup or drop today. No advance payment needed for standard airport transfers.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
           <a href="/#booking-form" style="background-color: #eab308; color: #111827; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book Now — Online Booking Form</a>
-          <a href="https://wa.me/94784207818?text=Hello%20LKTaxi%2C%20I%20would%20like%20to%20book%20an%20Airport%20Taxi%20Colombo%20transfer." target="_blank" rel="noopener noreferrer" style="background-color: #25D366; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book via WhatsApp (+94 78 420 7818)</a>
+          <a href="https://wa.me/94784207818?text=Hello%20LKTaxi%2C%20I%20would%20like%20to%20book%20an%20Airport%20Taxi%20Colombo%20transfer." target="_blank" rel="noopener noreferrer" data-track-source="BlogEndCTA" style="background-color: #25D366; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block;">Book via WhatsApp (+94 78 420 7818)</a>
         </div>
       </div>
     `

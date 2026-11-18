@@ -71,6 +71,7 @@ export const BlogSidebarAd = () => {
             href={generateWhatsAppURL("Hello! I am reading the LKTaxi blog and would like to book a taxi/tour.")}
             target="_blank"
             rel="noopener noreferrer"
+            data-track-source="BlogFloatingSidebar"
             className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold py-2.5 px-4 rounded-xl transition-all shadow-md active:scale-95"
           >
             <MessageCircle className="w-5 h-5" />
@@ -100,6 +101,7 @@ export const BlogSidebarAd = () => {
           href={generateWhatsAppURL("Hello! I am reading the LKTaxi blog and would like to book a taxi/tour.")}
           target="_blank"
           rel="noopener noreferrer"
+          data-track-source="BlogStickyBottomBar"
           className="flex items-center justify-center gap-1.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold py-2 px-3 md:px-4 md:py-2.5 rounded-lg transition-colors text-sm whitespace-nowrap shadow-sm"
         >
           <MessageCircle className="w-4 h-4" />

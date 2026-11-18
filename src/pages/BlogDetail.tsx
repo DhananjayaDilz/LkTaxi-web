@@ -124,6 +124,7 @@ export default function BlogDetail() {
                     href={`https://wa.me/${WHATSAPP_NUMBER}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    data-track-source="BlogBottomCTA"
                   >
                     <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-primary/40 hover:bg-primary/10">
                       WhatsApp Instant Quote
