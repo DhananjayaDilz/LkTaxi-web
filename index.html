@@ -390,6 +390,72 @@
                 }
               }
             ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Vehicle Options",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mini Car Taxi Hire - Suzuki Wagon R (up to 3 passengers)",
+                  "description": "Compact and economical air-conditioned car for short city rides and airport transfers for solo travelers or couples.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "serviceType": "Private Taxi"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Sedan Taxi Hire - Toyota Prius (up to 4 passengers)",
+                  "description": "Comfortable hybrid sedan ideal for couples and business travellers with spacious trunk for luggage.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "serviceType": "Private Taxi"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mini Van Taxi Hire - Honda Freed (up to 6 passengers)",
+                  "description": "Spacious air-conditioned mini van for small families and group travel with sliding doors and flexible luggage space.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "serviceType": "Private Taxi"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Flat Roof Van Hire - Toyota KDH (up to 9 passengers)",
+                  "description": "Air-conditioned van with dual-zone cooling, reclining seats, and deep cargo space for family luggage or surfboards.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "serviceType": "Private Van Hire"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "High Roof Van Hire - Toyota KDH (up to 12 passengers)",
+                  "description": "Extra spacious high-roof van for larger groups, extended families, and multi-week island tours.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "serviceType": "Private Van Hire"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Yala 4x4 Safari Jeep Hire - Mahindra Bolero & Toyota Hilux (up to 6 passengers)",
+                  "description": "Private 4x4 safari jeeps with elevated seating suited for Yala National Park wildlife tours.",
+                  "provider": { "@id": "https://www.lktaxi.com/#localbusiness" },
+                  "serviceType": "Safari Jeep Hire"
+                }
+              }
+            ]
           }
         ]
       },
@@ -570,115 +636,6 @@
           "@type": "WebPage",
           "name": "Blog",
           "url": "https://www.lktaxi.com/blogs"
-        }
-      ]
-    },
-
-    {
-      "@type": "ItemList",
-      "@id": "https://www.lktaxi.com/#vehicle-fleet",
-      "name": "LKTaxi Vehicle Fleet",
-      "description": "Air-conditioned vehicles available for taxi and tour bookings in Sri Lanka",
-      "numberOfItems": 5,
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "Vehicle",
-            "name": "Suzuki Wagon R - Mini Car",
-            "description": "Compact and economical, perfect for short city rides and airport transfers for solo travelers or couples. Air-conditioned.",
-            "seatingCapacity": 3,
-            "vehicleConfiguration": "Mini Car",
-            "fuelType": "Petrol",
-            "image": "https://www.lktaxi.com/suzuki-wagon-r-mini-taxi-sri-lanka.webp"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "Vehicle",
-            "name": "Toyota Prius - Comfort Sedan",
-            "description": "Comfortable hybrid sedan ideal for couples and business travellers. Spacious trunk for luggage and smooth highway ride quality.",
-            "seatingCapacity": 4,
-            "vehicleConfiguration": "Sedan",
-            "fuelType": "Hybrid",
-            "image": "https://www.lktaxi.com/toyota-prius-sedan-taxi-sri-lanka.webp"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "item": {
-            "@type": "Vehicle",
-            "name": "Honda Freed - Mini Van",
-            "description": "Spacious mini van for group travel with sliding doors and flexible rear space. Air-conditioned with ample luggage space.",
-            "seatingCapacity": 6,
-            "vehicleConfiguration": "Mini Van",
-            "fuelType": "Petrol",
-            "image": "https://www.lktaxi.com/honda-freed-mini-van-taxi-sri-lanka.webp"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "item": {
-            "@type": "Vehicle",
-            "name": "Toyota KDH Flat Roof Van",
-            "description": "The workhorse of Sri Lankan tourism. Dual-zone air conditioning, reclining seats, and deep cargo space for large family luggage or surfboards.",
-            "seatingCapacity": 9,
-            "vehicleConfiguration": "Van",
-            "fuelType": "Diesel",
-            "image": "https://www.lktaxi.com/toyota-kdh-flat-roof-van-sri-lanka.webp"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "item": {
-            "@type": "Vehicle",
-            "name": "Toyota KDH High Roof Van",
-            "description": "Extra spacious high-roof van for larger groups, extended families, or multi-week island tours. Maximum comfort and headroom.",
-            "seatingCapacity": 12,
-            "vehicleConfiguration": "Van",
-            "fuelType": "Diesel",
-            "image": "https://www.lktaxi.com/toyota-kdh-high-roof-van-sri-lanka.webp"
-          }
-        }
-      ]
-    },
-
-    {
-      "@type": "ItemList",
-      "@id": "https://www.lktaxi.com/#safari-jeeps",
-      "name": "Yala Safari Jeep Fleet",
-      "description": "4x4 safari jeeps for Yala National Park wildlife tours",
-      "numberOfItems": 2,
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "Vehicle",
-            "name": "Mahindra Bolero 4x4 Safari Jeep",
-            "description": "Reliable and comfortable 4x4 safari jeep, perfectly suited for the rugged terrain of Yala National Park.",
-            "seatingCapacity": 6,
-            "vehicleConfiguration": "4x4 Jeep",
-            "image": "https://www.lktaxi.com/mahindra-bolero-safari-jeep-yala.webp"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "Vehicle",
-            "name": "Toyota Hilux 4x4 Safari Jeep",
-            "description": "Premium 4x4 safari experience with extra comfort and elevated seating for superior wildlife viewing.",
-            "seatingCapacity": 6,
-            "vehicleConfiguration": "4x4 Jeep",
-            "image": "https://www.lktaxi.com/toyota-hilux-safari-jeep-yala.webp"
-          }
         }
       ]
     },
