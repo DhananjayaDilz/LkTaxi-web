@@ -13,6 +13,7 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import InstallAppBanner from "@/components/InstallAppBanner";
 
 const Index = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const Index = () => {
   return (
     <>
       <WhatsAppButton />
+      <InstallAppBanner />
       <Header />
       <main>
         <HeroSection />

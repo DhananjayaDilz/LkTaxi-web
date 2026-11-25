@@ -16,6 +16,7 @@ import YalaSafari from "./pages/YalaSafari.tsx";
 import PrivateDriver from "./pages/PrivateDriver.tsx";
 import TourPackages from "./pages/TourPackages.tsx";
 import RoutesPage from "./pages/RoutesPage.tsx";
+import QuickBook from "./pages/QuickBook.tsx";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ export const AppContent = () => (
           <Route path="/yala-safari" element={<YalaSafari />} />
           <Route path="/private-driver-sri-lanka" element={<PrivateDriver />} />
           <Route path="/sri-lanka-tour-packages" element={<TourPackages />} />
+          <Route path="/quick-book" element={<QuickBook />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
