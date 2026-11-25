@@ -1,0 +1,43 @@
+{
+  "name": "LK Taxi — Book a Taxi in Sri Lanka",
+  "short_name": "LK Taxi",
+  "description": "Instantly book a private taxi, airport transfer, or tour in Sri Lanka. Fast, safe, and affordable.",
+  "start_url": "/quick-book?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#141719",
+  "theme_color": "#F5A623",
+  "categories": ["travel", "transportation"],
+  "icons": [
+    {
+      "src": "/lktaxi-sri-lanka-taxi-booking-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/sri-lanka-private-taxi-and-tours-mobile.webp",
+      "sizes": "750x1334",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Quick Taxi Booking"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book a Taxi Now",
+      "short_name": "Book Taxi",
+      "url": "/quick-book?source=shortcut",
+      "icons": [
+        {
+          "src": "/lktaxi-sri-lanka-taxi-booking-logo.webp",
+          "sizes": "512x512",
+          "type": "image/webp"
+        }
+      ]
+    }
+  ]
+}
